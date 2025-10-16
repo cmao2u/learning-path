@@ -1,0 +1,15 @@
+﻿  2.cpp
+  BubbleSort.cpp
+  PrintArray.cpp
+  PrintArray.h
+  swap1.cpp
+  swap1.h
+  swap2.cpp
+  swap2.h
+  正在生成代码...
+C:\Users\cmao2\Desktop\项目\Project2\Project2\2.cpp(13,1): warning C4172: 返回局部变量的地址或临时 : a
+Debug\max.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+Debug\PrintArray.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+Debug\swap1.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+Debug\swap2.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  Project2.vcxproj -> C:\Users\cmao2\Desktop\项目\Project2\Debug\Project2.exe

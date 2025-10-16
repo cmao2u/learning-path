@@ -1,0 +1,3 @@
+﻿  2cpp.cpp
+firstcpp.obj : error LNK2005: main 已经在 2cpp.obj 中定义
+C:\Users\cmao2\Desktop\Project1\x64\Debug\Project1.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

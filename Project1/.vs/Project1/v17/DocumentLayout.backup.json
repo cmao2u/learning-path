@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\Project1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5EDAB72C-387F-4E16-934F-692607016000}|Project1\\Project1.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\Project1\\Project1\\firstcpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5EDAB72C-387F-4E16-934F-692607016000}|Project1\\Project1.vcxproj|solutionrelative:Project1\\firstcpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "firstcpp.cpp",
+              "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\Project1\\Project1\\firstcpp.cpp",
+              "RelativeDocumentMoniker": "Project1\\firstcpp.cpp",
+              "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\Project1\\Project1\\firstcpp.cpp",
+              "RelativeToolTip": "Project1\\firstcpp.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-23T00:41:22.936Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
