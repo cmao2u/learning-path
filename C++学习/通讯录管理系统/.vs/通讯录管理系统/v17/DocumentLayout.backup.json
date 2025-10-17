@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cmao2\\source\\repos\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC57A2C1-0775-487A-B28F-543905B03F07}|\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF.vcxproj|C:\\Users\\cmao2\\source\\repos\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\mainbody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AC57A2C1-0775-487A-B28F-543905B03F07}|\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF.vcxproj|solutionrelative:\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\mainbody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "mainbody.cpp",
+              "DocumentMoniker": "C:\\Users\\cmao2\\source\\repos\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\mainbody.cpp",
+              "RelativeDocumentMoniker": "\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\mainbody.cpp",
+              "ToolTip": "C:\\Users\\cmao2\\source\\repos\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\mainbody.cpp",
+              "RelativeToolTip": "\u901A\u8BAF\u5F55\u7BA1\u7406\u7CFB\u7EDF\\mainbody.cpp",
+              "ViewState": "AgIAAAIBAAAAAAAAAAAAAAgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-17T09:19:27.565Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
