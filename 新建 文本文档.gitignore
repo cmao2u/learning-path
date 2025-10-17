@@ -1,2 +1,12 @@
-*.ipch
+Debug/
+Release/
+x64/
 .vs/
+*.suo
+*.user
+*.pch
+*.ipch
+*.obj
+*.exe
+*.dll
+*.lib

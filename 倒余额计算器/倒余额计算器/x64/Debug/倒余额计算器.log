@@ -1,3 +1,0 @@
-﻿  FileName.cpp
-C:\Users\cmao2\Desktop\项目\倒余额计算器\倒余额计算器\FileName.cpp(11,10): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-  倒余额计算器.vcxproj -> C:\Users\cmao2\Desktop\项目\倒余额计算器\x64\Debug\倒余额计算器.exe
