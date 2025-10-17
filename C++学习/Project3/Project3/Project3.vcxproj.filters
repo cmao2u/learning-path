@@ -24,12 +24,18 @@
     <ClCompile Include="circle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="point.cpp">
+    <ClCompile Include="pointvoi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="isInCircle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="isInCircle.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

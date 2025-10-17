@@ -1,6 +1,8 @@
 #include <iostream>
+#include"point.h"
+#include"circle.h"
+#include "isInCircle.h"
 using namespace std;
-
 /*3.2º¯ÊýÕ¼Î»
 void func(int a,int)
 {
@@ -249,7 +251,16 @@ int main()
 */
 
 
-
+	point p1;
+	p1.setX(10);
+	p1.setY(10);
+	circle c1;
+	c1.setR(10);
+	point center;
+	center.setX(10);
+	center.setY(0);
+	c1.setcenter(center);
+	isInCircle(c1, p1);
 
 
 	return 0;

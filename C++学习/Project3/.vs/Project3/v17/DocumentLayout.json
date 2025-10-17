@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\mainbody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\isInCircle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\isInCircle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\circle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\circle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\pointvoi.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\pointvoi.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\isInCircle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\isInCircle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\circle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\circle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\circle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8445692-37CB-44F3-9A4C-8DBEA9C418D1}|Project3\\Project3.vcxproj|solutionrelative:Project3\\circle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,56 +38,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "point.cpp",
-              "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\point.cpp",
-              "RelativeDocumentMoniker": "Project3\\point.cpp",
-              "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\point.cpp",
-              "RelativeToolTip": "Project3\\point.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "isInCircle.cpp",
+              "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\isInCircle.cpp",
+              "RelativeDocumentMoniker": "Project3\\isInCircle.cpp",
+              "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\isInCircle.cpp",
+              "RelativeToolTip": "Project3\\isInCircle.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-16T04:54:29.727Z"
+              "WhenOpened": "2025-10-17T13:57:09.791Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "isInCircle.h",
+              "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\isInCircle.h",
+              "RelativeDocumentMoniker": "Project3\\isInCircle.h",
+              "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\isInCircle.h",
+              "RelativeToolTip": "Project3\\isInCircle.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-17T13:55:58.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "pointvoi.cpp",
+              "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\pointvoi.cpp",
+              "RelativeDocumentMoniker": "Project3\\pointvoi.cpp",
+              "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\pointvoi.cpp",
+              "RelativeToolTip": "Project3\\pointvoi.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-16T04:54:29.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "circle.cpp",
               "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\circle.cpp",
               "RelativeDocumentMoniker": "Project3\\circle.cpp",
               "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\circle.cpp",
               "RelativeToolTip": "Project3\\circle.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-16T04:54:21.648Z"
+              "WhenOpened": "2025-10-16T04:54:21.648Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "point.h",
               "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\point.h",
               "RelativeDocumentMoniker": "Project3\\point.h",
               "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\point.h",
               "RelativeToolTip": "Project3\\point.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-16T04:54:14.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "circle.h",
               "DocumentMoniker": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\circle.h",
               "RelativeDocumentMoniker": "Project3\\circle.h",
               "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\circle.h",
               "RelativeToolTip": "Project3\\circle.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-16T04:53:52.016Z"
+              "WhenOpened": "2025-10-16T04:53:52.016Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -89,7 +126,7 @@
               "RelativeDocumentMoniker": "Project3\\mainbody.cpp",
               "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project3\\Project3\\mainbody.cpp",
               "RelativeToolTip": "Project3\\mainbody.cpp",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAAPoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAAAPwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-14T01:43:53.901Z",
               "EditorCaption": ""
