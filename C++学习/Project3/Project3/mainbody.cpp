@@ -382,6 +382,89 @@ public:
 };
 int person::age = 18; 
 */
+/*4.3C++对象模型和this指针
+* 4.3.1 成员变量和成员函数分开存储
+class person
+{public:
+	int m_a;
+};*/
+/*this指针的用法
+class person
+{
+public:
+	int age;
+	person(int age)
+	{
+		this->age = age;
+	}
+	person& personaddage(person p)
+	{
+		this->age += p.age;
+		return *this;
+	}
+};
+void test01()
+{
+	person p1(10);
+	cout << p1.age << endl;
+	person p2(10);
+	p2.personaddage(p1).personaddage(p1).personaddage(p1);//链式编程
+	cout << p2.age << endl;
+}*/
+/*4.3.3空指针访问成员函数
+class person
+{
+public:
+	int m_age;
+	void func01()
+	{
+		cout << "nothing" << endl;
+	}
+	void func02()
+	{
+		if (this == NULL)
+		{
+			return ;
+		}
+		cout <<this->m_age << endl;
+	}
+};
+void test01()
+{
+	person* p = NULL;
+	p->func01();
+	p->func02();
+}*/
+/*4.3.4 const修饰成员函数
+class person
+{
+public:
+	mutable int m_age;
+	 int m_age2;
+
+
+	void func01() const
+	{
+		m_age = 100;
+	}
+};
+void test02()
+{
+
+}
+void test01()
+{
+	const person p;
+	p.m_age = 100;
+	p.func01();
+}
+常函数：
+成员函数后加const后我们称为这个函数为常函数
+常函数内不可以修改成员属性
+成员属性声明时加关键字mutable后，在常函数中依然可以修改
+常对象：
+声明对象前加const称该对象为常对象
+常对象只能调用常函数*/
 int main()
 {
 	/*func(1, 3.12);
@@ -480,6 +563,12 @@ int main()
 
 	//test01();
 	//cout << person::age << endl;
+	/*4.3.1成员变量和成员函数分开存储
+	person p;
+	cout << sizeof(p);*/
+
+      //test01();
+//test01();
 
 
 	return 0;
