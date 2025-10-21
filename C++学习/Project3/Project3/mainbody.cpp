@@ -465,6 +465,102 @@ void test01()
 常对象：
 声明对象前加const称该对象为常对象
 常对象只能调用常函数*/
+/*4.4友元
+* 4.4.1 全局函数做友元
+class building
+{public:
+	string m_bedroom;
+	building()
+	{
+		m_bedroom = "卧室";
+		m_livingroom = "客厅";
+	}
+private:
+	string m_livingroom;
+	friend void func01(building *b1)
+	{
+		 cout << "正在访问" << b1->m_bedroom<< endl;
+		 cout << "正在访问" << b1->m_livingroom << endl;
+	}
+	
+};
+void test01()
+{
+	building b;
+	func01(&b);
+}*/
+/*类做友元
+class person;
+class building
+{
+public:
+	string m_livingroom;
+	building();
+	friend class person;
+private:
+	string m_bedroom;
+	
+};
+building::building()
+{
+	m_bedroom = "卧室";
+}
+class person
+{
+public:
+	void visit()
+	{
+		building* b1 = new building;
+		cout << "正在访问" << b1->m_bedroom;
+	}
+};
+void test01()
+{
+	person p;
+	p.visit();
+}*/
+/*4.5.1 加号运算符重载
+class person
+{
+public:
+	int m_A;
+	int m_B;
+	person()
+	{ }
+person(int a,int b):m_A(a),m_B(b)
+{ }
+//person& operator+(const person& p1)
+//{
+//	person temp;
+//	temp.m_A = this->m_A + p1.m_A;
+//	temp.m_B = this->m_B + p1.m_B;
+//	return temp;
+//}
+
+};
+//person& operator+(person& p1, int val)
+//{
+//	person temp;
+//	temp.m_A = p1.m_A + val;
+//	temp.m_B = p1.m_A + val;
+//	return temp;
+//}
+person& operator+(person& p1, person &p2)
+{
+	person temp;
+	temp.m_A = p1.m_A + p2.m_A;
+	temp.m_B = p1.m_A + p2.m_B ;
+	return temp;
+}
+void test() {
+	person p1(10, 10);
+	person p2(20, 20);
+	//成员函数方式
+	person p3 = p2 + p1;  //相当于 p2.operaor+(p1)
+	cout << "mA:" << p3.m_A << " mB:" << p3.m_B << endl;
+	//person p4 = p3 + 10; //相当于 operator+(p3,10)
+	//cout << "mA:" << p4.m_A << " mB:" << p4.m_B << endl;
+}*/
 int main()
 {
 	/*func(1, 3.12);
@@ -567,9 +663,12 @@ int main()
 	person p;
 	cout << sizeof(p);*/
 
-      //test01();
+//test01();
+//test01();
 //test01();
 
+   //test01();
+ //test();
 
 	return 0;
 

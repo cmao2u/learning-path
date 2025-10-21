@@ -139,6 +139,7 @@ int main()
 	return 0;
 }
 */
+/*
 #include <iostream>
 using namespace std;
 int main()
@@ -178,7 +179,103 @@ int main()
 	if (flag == 0)
 		cout << a1 << oper << a2 << "=" << result << endl;
 	return 0;
+}*/
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	double x, y;
+	cout << "请输入x的值" << endl;
+	cin >> x;
+	if (x >= -5 && x <= 5)
+	{
+		y = x - 1;
+	}
+	else if (x > 5 && x <= 10)
+	{
+		y = x + 1;
+	}
+	else
+	{
+		y = 15.6;
+	}
+	cout << "y的值是" << y << endl;
+	return 0;
+
+}*/
+/*
+#include <iostream>
+using namespace std;
+#include <cmath>
+int main()
+{
+	double a, x1, x2;
+	cout << "请输入a的值" << endl;
+	cin >> a;
+	x2 = a / 2;
+	do {
+		x1 = x2;
+		x2 = 0.5 * (x1 + a / x1);
+	} while (fabs(x2 - x1) >=1e-5);
+	cout << "近似值是" << x2 << endl;
+	return 0;
+	
 }
+*/
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	double salary,tax;
+	cout << "请输入收入" << endl;
+	cin >> salary;
+	if (salary < 0)
+	{
+		cout << "错误" << endl;
+	}
+	else if (salary <= 800)
+		cout << "您无需交税" << endl;
+	else if (salary > 800 && salary <= 1200)
+	{
+		tax = (salary - 800) * 0.05;
+	}
+	else if (salary > 1200 && salary <= 2000)
+	{
+		tax = (1200 - 800) * 0.05 + (salary - 1200) * 0.08;
+	}
+	else 
+	{
+		tax = (1200 - 800) * 0.05 + (200 - 1200) * 0.08 + (salary - 2000) * 0.2;
+	}
+	cout << "您要交税" << tax << "元" << endl;
+	return 0;
 
+}
+*/
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "请输入一行字符" << endl;
+	char ch;
+	int digital=0, letter=0, other=0;
+	while ((ch = cin.get()) != '\n')
+	{
+		if (int(ch) >= 48 && int(ch) <= 57)
+		{
+			digital++;
+		}
+		else if ((int(ch) >= 65 && int(ch) <= 90) || (int(ch) >= 97 && int(ch) <= 122))
+			letter++;
+		else
+			other++;
+	}
+	cout << "数字个数为" << digital<< endl;
+	cout << "字母个数为" << letter<< endl;
+	cout << "其它个数为" << other<< endl;
+	return 0;
 
+}
 
