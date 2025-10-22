@@ -561,6 +561,150 @@ void test() {
 	//person p4 = p3 + 10; //相当于 operator+(p3,10)
 	//cout << "mA:" << p4.m_A << " mB:" << p4.m_B << endl;
 }*/
+/*4.5.2 左移运算符重载
+class person
+{
+	friend ostream& operator<<(ostream& cout, person& p);
+private:
+	int m_A;
+	int m_B;
+public:
+	person()
+	{ }
+	person(int a, int b) :m_A(a), m_B(b)
+	{
+
+	}
+};
+ostream& operator<<(ostream& cout, person& p)
+{
+	cout << "m_A:" << p.m_A << " m_B:" << p.m_B;
+	return cout;
+}
+void test01()
+{
+	person p(10, 10);
+	cout << p << " helloworld" << endl;
+
+}*/
+/*/递增运算符重载
+class person
+{
+public:
+	person()
+	{ }
+	person(int age) :m_A(age)
+	{ }
+	friend	ostream& operator<<(ostream& cout, person p);
+	person& operator--()
+	{
+		m_A--;
+		return *this;
+	}
+	person operator--(int)
+	{
+		person temp=*this;
+		m_A--;
+		return temp;
+		
+	}
+private:
+	int m_A;
+
+};
+ostream& operator<<(ostream& cout, person p)
+{
+	cout << "m_A:" << p.m_A << endl;
+	return cout;
+}
+
+void test01()
+{
+	person p1(10);
+	cout << --(--p1);
+	cout << p1;
+	person p2(10);
+	cout << p2-- << endl;
+	cout << p2 << endl;
+}*/
+/*4.5.4 赋值运算符重载
+class person
+{
+public:
+	friend ostream& operator<<(ostream& cout, person& p);
+	person(int a)
+	{
+		m_A = new int(a);
+	}
+	person& operator=(person& p)
+	{
+		if (m_A != NULL)
+		{
+			delete m_A;
+			m_A = NULL;
+		}
+		m_A = new int(*p.m_A);
+		return *this;
+	}
+	~person()
+	{
+		if (m_A != NULL)
+		{
+			delete m_A;
+			m_A = NULL;
+		}
+	}
+
+private:
+	int *m_A;
+
+};
+ostream& operator<<(ostream& cout, person& p)
+{
+	cout << *p.m_A << endl;
+	return cout;
+}
+void test01()
+{
+	person p1(10);
+	person p2(19);
+	person p3(29);
+	cout << p1;
+	cout << p2;
+	cout << p3;
+	p3=p2 = p1;
+	cout << p2 << endl;
+	cout << p3;
+}*/
+/*4.5.5 关系运算符重载
+class person
+{
+public:
+	person(int a, string name1) :m_A(a), name(name1)
+	{
+
+	}
+	bool operator==(person& p)
+	{
+		if (name == p.name &&m_A==p.m_A)
+			return true;
+		else return false;
+	}
+private:
+	int m_A;
+	string name;
+};
+void test01()
+{
+	person p1(18, "张三");
+	person p2(18,"tom");
+	if (p1 == p2)
+	{
+		cout << "相同" << endl;
+	}
+	else cout << "不同" << endl;
+
+}*/
 int main()
 {
 	/*func(1, 3.12);
@@ -669,6 +813,8 @@ int main()
 
    //test01();
  //test();
+  //test01();
+test01();
 
 	return 0;
 
