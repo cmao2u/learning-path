@@ -705,6 +705,502 @@ void test01()
 	else cout << "不同" << endl;
 
 }*/
+/*继承方式
+class base1
+{
+public:
+	int m_A;
+protected:
+	int m_B;
+private:
+	int m_C;
+
+};
+class son1 :public base1
+{
+public:
+	void func()
+	{
+		m_A = 10;
+			m_B = 10;
+			//m_C = 10;//错误
+	}
+};
+class son2 :protected base1
+{ 
+public:
+	void func()
+	{
+				m_A = 10;
+		m_B = 10;
+		//m_C = 10;//错误
+	}
+};
+class son3 :private base1
+{
+	public:
+	void func()
+	{
+		m_A = 10;
+		m_B = 10;
+		//m_C = 10;//错误
+	}
+};
+void test01()
+{
+	son1 s1;
+	s1.m_A = 10;
+		s1.m_B = 10;
+		s1.m_C = 10;
+}
+void test02()
+{
+	son2 s2;
+	s2.m_A = 10;
+	s2.m_B = 10;
+	s2.m_C = 10;
+}
+void test03()
+{
+	son3 s3;
+	s3.m_A = 10;
+	s3.m_B = 10;
+	s3.m_C = 10;
+}*/
+/*
+class base1
+{
+public:
+	int m_A;
+protected:
+	int m_B;
+private:
+	int m_C;
+};
+class son1 :public base1
+{
+public:
+	int m_D;
+	
+};
+void test01()
+{
+	cout << "sizeof Son = " << sizeof(son1) << endl;
+}*/
+/*4.6.7 多继承语法
+class base1
+{
+public:
+	int m_A;
+	base1()
+	{
+		m_A = 10;
+	}
+};
+class base2
+{
+public:
+	int m_B;
+	base2()
+	{
+		m_B = 20;
+	}
+};
+class son :public base1, public base2
+{
+public:
+	int m_C;
+	int m_D;
+	son()
+	{
+		m_C = 12;
+		m_D = 32;
+	}
+};
+void test01()
+{
+	son s;
+	cout << s.m_A << endl;
+	s.m_A = 98;
+	cout << s.m_A << endl;
+	cout << sizeof(s) << endl;
+}*/ 
+/*菱形继承和虚继承
+class animal
+{
+public:
+	int age;
+
+};
+class sheep : virtual public animal
+{
+};
+class goldenfish : virtual public animal
+{
+	
+};
+class dog : public sheep, public goldenfish
+{
+public:
+	dog()
+	{
+	}
+	
+};
+void test01()
+{
+	dog d;
+	d.sheep::age = 109;
+	d.goldenfish::age = 98;
+	cout << "sheep age:" << d.sheep::age << endl;
+	cout << "goldenfish age:" <<d. goldenfish::age << endl;
+	cout << "animal age:" << d.age << endl;
+}*/
+/*4.7.1 多态的基本概念
+class animal
+{
+public:
+	virtual void speak()//函数前面加上virtual关键字，变成虚函数，那么编译器在编译的时候就不能确定函数调用了。
+	{
+		cout << "动物在说话" << endl;
+	}
+
+};
+class cat :public animal
+{
+public:
+	void speak()
+	{
+		cout << "喵喵喵" << endl;
+	}
+};
+class dog :public animal
+{
+public:
+	void speak()
+	{
+		cout << "汪汪汪" << endl;
+	}
+};
+void dospeak(animal& animal)
+{
+	animal.speak();
+}
+void test01()
+{
+	cat cat;
+	dospeak(cat);
+	dog dog;
+	dospeak(dog);
+
+} //多态满足条件： 
+//1、有继承关系
+//2、子类重写父类中的虚函数
+//多态使用：
+//父类指针或引用指向子类对象*/
+/*4.7.2 多态案例一-计算器类
+class calculator
+{
+public:
+	int m_Number1;
+	int m_Number2;
+	virtual int getresult()
+	{
+		return 0;
+	}
+};
+class addcalculator:public calculator
+{
+public:
+	int getresult()
+	{
+		return m_Number1 + m_Number2;
+	}
+};
+class subcalculator:public calculator
+{
+public:
+	int getresult()
+	{
+		return m_Number1 - m_Number2;
+	}
+};
+class mulcalculator:public calculator
+{
+public:
+	int getresult()
+	{
+		return m_Number1 * m_Number2;
+	}
+};
+void test01()
+{
+	calculator* ptr = new addcalculator;
+	ptr->m_Number1 = 100;
+	ptr->m_Number2 = 100;
+	cout << ptr->m_Number1 << "+" << ptr->m_Number2 << "="<<ptr->getresult() << endl;
+	delete  ptr;
+	
+
+
+	ptr = new subcalculator;
+	ptr->m_Number1 = 100;
+	ptr->m_Number2 = 100;
+	cout << ptr->m_Number1 << "-" << ptr->m_Number2 << "=" <<ptr->getresult() << endl;
+	delete  ptr;
+	ptr = new mulcalculator;
+	ptr->m_Number1 = 100;
+	ptr->m_Number2 = 100;
+	cout << ptr->m_Number1 << "*" << ptr->m_Number2 <<"=" << ptr->getresult() << endl;
+	delete  ptr;
+	
+}*/
+/*4.7.3 纯虚函数和抽象类
+class base
+{
+public:
+	virtual void func() = 0;
+};
+class son :public base
+{
+public:
+	void func()
+	{
+		cout << "重写" << endl;
+	}
+};
+void test01()
+{
+	base* base = new son;
+	base->func();
+	delete base;
+}*/
+/*制作饮品
+class abstractdrink
+{
+public:
+	virtual void boil() = 0;
+	virtual void brew() = 0;
+	virtual void PourInCup() = 0;
+	virtual void AddThings() = 0;
+};
+class coffee :public abstractdrink
+{
+public:
+	void boil()
+	{
+		cout << "煮水" << endl;
+	}
+	void brew()
+	{
+		cout << "冲泡咖啡" << endl;
+	}
+	void PourInCup()
+	{
+		cout << "倒入杯中" << endl;
+	}
+	void AddThings()
+	{
+		cout << "加糖和牛奶" << endl;
+	}
+};
+class tea :public abstractdrink
+{
+	public:
+	void boil()
+	{
+		cout << "煮水" << endl;
+	}
+	void brew()
+	{
+		cout << "冲泡茶叶" << endl;
+	}
+	void PourInCup()
+	{
+		cout << "倒入杯中" << endl;
+	}
+	void AddThings()
+	{
+		cout << "加柠檬" << endl;
+	}
+};
+void dowork(abstractdrink* drink)
+{
+	drink->boil();
+	drink->brew();
+	drink->PourInCup();
+	drink->AddThings();
+}
+void test01()
+{
+	abstractdrink* drink = new coffee;
+	dowork(drink);
+	delete drink;
+	cout << "-------------------" << endl;
+	drink = new tea;
+	dowork(drink);
+	delete drink;
+}*/
+/*4.7.5 虚析构和纯虚析构
+class animal
+{
+public:
+	animal()
+	{
+		cout << "animal构造函数调用" << endl;
+	}
+	virtual void speak() = 0;
+	virtual ~animal() = 0;
+};
+animal::~animal()
+{
+	cout << "animal析构函数调用" << endl;
+}
+class cat :public animal
+{
+public:
+	cat(string name)
+	{
+		cout << "cat构造函数调用" << endl;
+		m_Name = new  string (name);
+	}
+	void speak()
+	{
+		cout <<*m_Name <<"喵喵喵" << endl;
+	}
+	~cat()
+	{
+		cout << "cat析构函数调用" << endl;
+		if (m_Name != NULL)
+		{
+			delete m_Name;
+			m_Name = NULL;
+		}
+	}
+	string *m_Name;
+};
+void test01()
+{
+	animal* animal = new cat("tom小猫");
+	animal->speak();
+	delete animal;
+}*/
+class CPU
+{
+public:
+	virtual void  calculate() = 0;
+};
+class videoCard
+{
+	public:
+	virtual void display() = 0;
+};
+class memory
+{
+	public:
+	virtual void storage() = 0;
+};
+class computer
+{
+public:
+	computer(CPU* cpu, videoCard* vc, memory* mem)
+	{
+		m_cpu = cpu;
+		m_vc = vc;
+		m_mem = mem;
+	}
+	 ~computer()
+	{
+		 if(m_cpu!=NULL)
+		 {
+			 delete m_cpu;
+			 m_cpu = NULL;
+		 }
+		 if (m_vc != NULL)
+		 {
+			 delete m_vc;
+			 m_vc = NULL;
+		 }
+		 if (m_mem != NULL)
+		 {
+			 delete m_mem;
+			 m_mem = NULL;
+		 }
+	}
+	void work()
+	{
+		m_cpu->calculate();
+		m_vc->display();
+		m_mem->storage();
+	}
+private:
+	CPU* m_cpu;
+	videoCard* m_vc;
+	memory* m_mem;
+};
+class intelCPU :public CPU
+{
+	public:
+	void calculate()
+	{
+		cout << "intel CPU计算中" << endl;
+	}
+};
+class intelVideoCard :public videoCard
+{
+	public:
+	void display()
+	{
+		cout << "intel 显卡显示中" << endl;
+	}
+};
+class intelMemory :public memory
+{
+	public:
+	void storage()
+	{
+		cout << "intel 内存储存中" << endl;
+	}
+};
+class lenovoCPU :public CPU
+{
+	public:
+	void calculate()
+	{
+		cout << "lenovo CPU计算中" << endl;
+	}
+};
+class lenovoVideoCard :public videoCard
+{
+	public:
+	void display()
+	{
+		cout << "lenovo 显卡显示中" << endl;
+	}
+};
+class lenovoMemory :public memory
+{
+	public:
+	void storage()
+	{
+		cout << "lenovo 内存储存中" << endl;
+	}
+};
+void test01()
+{
+	CPU* cpu = new intelCPU;
+	videoCard* vc = new intelVideoCard;
+	memory* mem = new intelMemory;
+	computer* computer1 = new computer(cpu, vc, mem);
+	computer1->work();
+	delete computer1;
+	cpu = new lenovoCPU;
+	vc = new lenovoVideoCard;
+	mem = new lenovoMemory;
+	computer* computer2 = new computer(cpu, vc, mem);
+	computer2->work();
+	delete computer2;
+}
 int main()
 {
 	/*func(1, 3.12);
@@ -814,6 +1310,7 @@ int main()
    //test01();
  //test();
   //test01();
+ //test01();
 test01();
 
 	return 0;

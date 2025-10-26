@@ -38,5 +38,8 @@
     <ClInclude Include="isInCircle.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="mainbody.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
