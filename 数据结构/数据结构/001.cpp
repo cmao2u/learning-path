@@ -37,6 +37,7 @@ double function02(int n, double a[], double x)
 	}
 	return p;
 }*/
+/*关于算法效率
 clock_t start,finish;
 double duration;
 double function01(int n, double a[], double x)
@@ -56,6 +57,57 @@ double function02(int n, double a[], double x)
 		p = (p * x + (1 / a[i - 1]));
 	}
 	return p;
+}*/
+
+
+int func01(int A[], int n)
+{
+	
+	int MaxSum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			int ThisSum = 0;
+			for (int k = i; k < j; k++)
+			{
+				ThisSum += A[k];	
+			}
+			if (ThisSum > MaxSum)
+			MaxSum = ThisSum;
+			
+		}
+	}
+	return MaxSum;
+}
+int func02(int A[],int n)
+{
+	int MaxSum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		int ThisSum = 0;
+		for (int j = i; j < n; j++)
+		{
+			ThisSum += A[j];
+			if (ThisSum > MaxSum)
+				MaxSum = ThisSum;
+		}
+				
+			
+	}
+	return MaxSum;
+}
+void test01()
+{
+	int A[] = { -2,11,-4,13,-5,-2 ,5,-8,4,8,-9};
+	int n = sizeof(A) / sizeof(A[0]);
+	cout << func01(A, n) << endl;
+}
+void test02()
+{
+	int A[] = { -2,11,-4,13,-5,-2 ,5,-8,4,8,-9};
+	int n = sizeof(A) / sizeof(A[0]);
+	cout << func02(A, n) << endl;
 }
 int main()
 {/*
@@ -91,6 +143,7 @@ int main()
 	cout << "function02 时间: " << duration02 << "s" << endl;
 	cout << function02(n, a, x) << endl;	*/
 
+	/*
 	double a[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 };// 多项式系数
 	int n = 20;
 	double x = 10.0;
@@ -112,7 +165,9 @@ int main()
 	 finish = clock();
 	double duration02 = double(finish - start) / CLOCKS_PER_SEC;
 	cout << "function02 时间: " << duration02 << "s" << endl;
-	cout << function02(n, a, x) << endl;
+	cout << function02(n, a, x) << endl;*/
+	test01();
+	test02();
 
 
 return 0;

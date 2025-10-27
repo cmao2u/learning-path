@@ -2,6 +2,9 @@
 #include"point.h"
 #include"circle.h"
 #include "isInCircle.h"
+#include <fstream>
+#include <ctime>
+#include <string>
 using namespace std;
 /*3.2函数占位
 void func(int a,int)
@@ -1085,6 +1088,7 @@ void test01()
 	animal->speak();
 	delete animal;
 }*/
+/*4.7.6 多态案例三-电脑组装
 class CPU
 {
 public:
@@ -1200,7 +1204,170 @@ void test01()
 	computer* computer2 = new computer(cpu, vc, mem);
 	computer2->work();
 	delete computer2;
-}
+}*/
+/*5.1.1写文件
+void test01()
+{
+	ofstream ofs;
+	ofs.open("test.txt", ios::out);
+	ofs << "橙猫猫在学操作文件" << endl;
+	ofs << "加油" << endl;
+	ofs << "2025.10.27" << endl;
+	ofs.close();
+	cout << "文件写入成功" << endl;
+}*/
+/*
+void test01()
+{
+		const int repeat = 1000;  // 循环次数（不宜过大，否则运行过久）
+		clock_t start, end;
+		ifstream ifs;
+		string filename = "test.txt";  // 待读取的文件
+
+		// 1. 方式一：使用 >> 运算符读取（按空白分隔）
+		ifs.open(filename, ios::in);
+		if (!ifs.is_open()) {  // 检查文件是否打开成功
+			cout << "方式一：文件打开失败！" << endl;
+			return;
+		}
+		start = clock();  // 开始计时
+		for (int i = 0; i < repeat; i++) {
+			char buf[10240] = { 0 };
+			ifs.clear();  // 重置文件状态（清除eofbit等标志）
+			ifs.seekg(0, ios::beg);  // 指针移回文件开头
+			while (ifs >> buf) {  // 按空白（空格/换行）分隔读取
+				// 注释掉控制台输出，避免拖慢测试（输出速度远慢于文件读取）
+				// cout << buf << " ";
+			}
+			// cout << endl;  // 每行结束换行（仅作格式参考）
+		}
+		end = clock();  // 结束计时
+		ifs.close();
+		cout << "方式一（>> 运算符）用时："
+			<< (double)(end - start) / CLOCKS_PER_SEC << "秒" << endl;
+
+
+		// 2. 方式二：使用 ifstream::getline 读取（C风格字符数组）
+		ifs.open(filename, ios::in);
+		if (!ifs.is_open()) {
+			cout << "方式二：文件打开失败！" << endl;
+			return;
+		}
+		start = clock();
+		for (int i = 0; i < repeat; i++) {
+			char buf[10240] = { 0 };
+			ifs.clear();
+			ifs.seekg(0, ios::beg);
+			while (ifs.getline(buf, sizeof(buf))) {  // 按行读取（C数组）
+				// cout << buf << endl;
+			}
+		}
+		end = clock();
+		ifs.close();
+		cout << "方式二（ifs.getline + 字符数组）用时："
+			<< (double)(end - start) / CLOCKS_PER_SEC << "秒" << endl;
+
+
+		// 3. 方式三：使用全局 getline 读取（C++ string）
+		ifs.open(filename, ios::in);
+		if (!ifs.is_open()) {
+			cout << "方式三：文件打开失败！" << endl;
+			return;
+		}
+		start = clock();
+		for (int i = 0; i < repeat; i++) {
+			string buf;
+			ifs.clear();
+			ifs.seekg(0, ios::beg);
+			while (getline(ifs, buf)) {  // 按行读取（C++ string，更灵活）
+				// cout << buf << endl;
+			}
+		}
+		end = clock();
+		ifs.close();
+		cout << "方式三（全局getline + string）用时："
+			<< (double)(end - start) / CLOCKS_PER_SEC << "秒" << endl;
+
+
+		// 4. 方式四：使用 ifstream::get 读取（逐个字符）
+		ifs.open(filename, ios::in);
+		if (!ifs.is_open()) {
+			cout << "方式四：文件打开失败！" << endl;
+			return;
+		}
+		start = clock();
+		for (int i = 0; i < repeat; i++) {
+			char c;
+			ifs.clear();
+			ifs.seekg(0, ios::beg);
+			while ((c = ifs.get()) != EOF) {  // 逐个字符读取
+				// cout << c;
+			}
+			// cout << endl;
+		}
+		end = clock();
+		ifs.close();
+		cout << "方式四（ifs.get 逐个字符）用时："
+			<< (double)(end - start) / CLOCKS_PER_SEC << "秒" << endl;
+
+}*/
+/*最快
+char buf[1024] = { 0 };
+ while (ifs.getline(buf,sizeof(buf)))
+ {
+   cout << buf << endl;
+}*//*
+void test01() {
+
+
+	ifstream ifs;
+	ifs.open("test.txt", ios::in);
+	char buf[10245] = { 0 };
+	while (ifs.getline(buf, sizeof(buf)))
+	{
+		cout << buf << endl;
+
+	}
+
+}*/
+/*
+class person
+{
+public:	
+	string name;
+	 int age;
+
+};
+void test01()
+{
+	ofstream ofs;
+	ofs.open("test2.txt", ios::out | ios::binary);
+	person p1 = { "张三",18 };
+	ofs.write((const char *) &p1, sizeof(p1));
+}*/
+/*5.2.2 读文件
+class person
+{
+public:
+	string name;
+	int age;
+
+};
+void test01()
+{
+	ifstream ifs;
+	ifs.open("test.txt", ios::in | ios::binary);
+	if(!ifs.is_open())
+	{
+		cout << "文件打开失败" << endl;
+		return;
+	}
+	person p1;
+	ifs.read((char*)&p1, sizeof(p1));
+	cout << p1.name << endl;
+	cout << p1.age << endl;
+	ifs.close();
+}*/
 int main()
 {
 	/*func(1, 3.12);
