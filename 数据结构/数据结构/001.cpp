@@ -78,7 +78,7 @@ int func01(int A[], int n)
 			
 		}
 	}
-	return MaxSum;
+	return MaxSum; 
 }
 int func02(int A[],int n)
 {
@@ -97,6 +97,44 @@ int func02(int A[],int n)
 	}
 	return MaxSum;
 }
+int Max3(int a, int b, int c)
+{
+	return a > b ? a > c ? a : c : b > c ? b : c;
+}
+int MaxSubseqSum(int List[], int  left, int right)
+{
+	int center, MaxLeftSum, MaxRightSum;
+	int MaxLeftBorderSum, MaxRightBorderSum;
+	int LeftBorderSum, RightBorderSum;
+	center = (left + right) / 2;
+	if (left == right)
+	{
+		return List[left] > 0 ? List[left] : 0;
+	}
+	MaxLeftSum = MaxSubseqSum(List, left, center);
+	MaxRightSum = MaxSubseqSum(List, center + 1, right);
+	MaxLeftBorderSum = 0; LeftBorderSum = 0;
+	for (int i = center; i >= left; i--)
+	{
+		LeftBorderSum += List[i];
+		if (LeftBorderSum > MaxLeftBorderSum)
+			MaxLeftBorderSum = LeftBorderSum;
+	}
+	RightBorderSum = 0; MaxRightBorderSum = 0;
+	for (int i = center + 1; i <= right; i++)
+	{
+		RightBorderSum += List[i];
+		if (RightBorderSum > MaxRightBorderSum)
+			MaxRightBorderSum = RightBorderSum;
+	}
+	return Max3(MaxLeftSum, MaxRightSum, MaxLeftBorderSum + MaxRightBorderSum);
+}
+int func03(int List[],int n)
+{
+	return MaxSubseqSum(List, 0, n - 1);
+}
+
+
 void test01()
 {
 	int A[] = { -2,11,-4,13,-5,-2 ,5,-8,4,8,-9};
@@ -108,6 +146,12 @@ void test02()
 	int A[] = { -2,11,-4,13,-5,-2 ,5,-8,4,8,-9};
 	int n = sizeof(A) / sizeof(A[0]);
 	cout << func02(A, n) << endl;
+}
+void test03()
+{
+	int A[] = { -2,11,-4,13,-5,-2 ,5,-8,4,8,-9};
+	int n = sizeof(A) / sizeof(A[0]);
+	cout << func03(A, n) << endl;
 }
 int main()
 {/*
@@ -168,6 +212,7 @@ int main()
 	cout << function02(n, a, x) << endl;*/
 	test01();
 	test02();
+	test03();
 
 
 return 0;
