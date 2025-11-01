@@ -59,7 +59,7 @@ double function02(int n, double a[], double x)
 	return p;
 }*/
 
-
+/*Maximum Subsequence Sum Problem
 int func01(int A[], int n)
 {
 	
@@ -133,6 +133,21 @@ int func03(int List[],int n)
 {
 	return MaxSubseqSum(List, 0, n - 1);
 }
+int func04(int List[],int n)
+{
+	int ThisSum = 0; int MaxSum = 0;
+		for (int i = 0;i <= n; i++)
+		{
+			ThisSum += List[i];
+			if(ThisSum>MaxSum)
+				MaxSum = ThisSum;
+			else if (ThisSum < 0)
+				ThisSum = 0;
+
+		}
+		return MaxSum;
+}
+
 
 
 void test01()
@@ -153,6 +168,12 @@ void test03()
 	int n = sizeof(A) / sizeof(A[0]);
 	cout << func03(A, n) << endl;
 }
+void test04()
+{
+	int A[] = { -2,11,-4,13,-5,-2 ,5,-8,4,8,-9};
+	int n = sizeof(A) / sizeof(A[0]);
+	cout << func04(A, n) << endl;
+}*/
 int main()
 {/*
 	//printN(1000);
@@ -210,10 +231,11 @@ int main()
 	double duration02 = double(finish - start) / CLOCKS_PER_SEC;
 	cout << "function02 Ê±¼ä: " << duration02 << "s" << endl;
 	cout << function02(n, a, x) << endl;*/
-	test01();
+	/*Maximum Subsequence Sum Problem
+	/test01();
 	test02();
 	test03();
-
+	test04();*/
 
 return 0;
 }

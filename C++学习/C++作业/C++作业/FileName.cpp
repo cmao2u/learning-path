@@ -253,7 +253,7 @@ int main()
 	return 0;
 
 }
-*/
+*//*
 #include <iostream>
 using namespace std;
 int main()
@@ -278,4 +278,178 @@ int main()
 	return 0;
 
 }
+*/
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int x, y;
+//	for (x = 1; x < 30; x++)
+//		for (y = 1; y < 30; y++)
+//			if (2 * x + 4 * y == 90 && x + y == 30)
+//			{
+//				cout << "鸡有:" << x << '\t' << "兔有:" << y << endl;
+//			}
+//	return 0;
+//}
 
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int a0, a1, a2;
+//	int b;
+//	for (a2 = 1; a2 <= 9; a2++)
+//		for (a1 = 0; a1 <= 9; a1++)
+//			for (a0 = 0; a0 <= 9; a0++)
+//			{
+//				b = a2 * 100 + a1 * 10 + a0;
+//				if (b == a0 * a0 * a0 + a1 * a1 * a1 + a2 * a2 * a2)
+//					cout << b << endl;
+//			}
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int a0, a1, a2;
+//	int b;
+//	for (b = 100; b <= 999; b++)
+//	{
+//		a2 = b / 100;
+//		a1 = b / 10 % 10;
+//		a0 = b % 10;
+//		if (b == a0 * a0 * a0 + a1 * a1 * a1 + a2 * a2 * a2)
+//			cout << b << '\t';
+//	}
+//	cout << endl;
+//	return 0;
+
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	for (int i = 1; i < 600; i++)
+//		if (i % 3 == 0 && (i % 10 == 5 || i / 10 % 10 == 5 || i / 100 == 5))
+//		{
+//			cout << i << '\t';
+//		}
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int a;
+//	int b;
+//	int sum = 0;
+//	cout << "请输入一个整数" << endl;
+//	cin >> a;
+//	while (a)
+//	{
+//		b = a % 10;
+//		sum += b;
+//		a = a / 10;
+//	}
+//	cout << "该整数的各位数字之和是" << sum << endl;
+//	return 0;
+//}
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int a, b;
+//	int t, x;
+//	cout << "请输入两个正整数";
+//	cin >> a >> b;
+//	x = a * b;
+//	if (a < b)
+//	{
+//		t = a, a = b, b = t;
+//	}
+//	if (t = a % b)
+//	{
+//		a = b;
+//		b = t;
+//	}
+//	cout << "最大公约数为" << b << endl;
+//	cout << "最小公倍数为" << x / b << endl;
+//	return 0;
+//}
+
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int a, b, c, i;
+//	cout << "Input three number;";
+//	cin >> a >> b >> c;
+//	for (i = a; i <= a; i--)
+//		if (a % i == 0 && b % i == 0 && c % i == 0)
+//			break;
+//	cout << i << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int a, i;
+//	cout << "请输入一个正整数:";
+//	cin >> a;
+//	for (i = 2; i <= a / 2; i++)
+//	{
+//		if (a % i == 0)
+//		{
+//			cout << a << "不是素数" << endl;
+//			break;
+//		}
+//		if (i == a / 2)
+//			cout << a << "是素数" << endl;
+//	}
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int IsPrime(int a)
+//{
+//	for (int i = 2; i <= a / 2; i++)
+//	{
+//		if (a % i == 0)
+//			return 0;
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	for (int i = 100; i <= 200; i++)
+//	{
+//		if (IsPrime(i))
+//			cout << i << '\t';
+//	}
+//	return 0;
+//}
+#include <iostream>
+using namespace std;
+int IsNumber(int a)
+{
+	int sum = 0;
+	for (int i = 1; i < a; i++)
+	{
+		if (a % i == 0)
+			sum += i;
+	}
+	if (sum == a)
+		return 1;
+	return 0;
+}
+int main()
+{
+	for (int i = 1; i <= 1000; i++)
+	{
+		if (IsNumber(i))
+			cout << i << '\t';
+	}
+	return 0;
+}
