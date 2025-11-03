@@ -182,6 +182,8 @@ void WorkerManager::DelEmp()
 			cout << "删除失败,未找到该职工!" << endl;
 		}
 	}
+	system("pause");
+	system("cls");
 }
 int WorkerManager::IstExist(int id)
 {
@@ -193,6 +195,7 @@ int WorkerManager::IstExist(int id)
 			index = i;
 				break;
 		}
+
 	}
 	return index;
 }
@@ -248,6 +251,8 @@ void WorkerManager::ModEmp()
 		{
 			cout << "修改失败,未找到该职工!" << endl;
 		}
+		system("pause");	
+		system("cls");	
 	}
 }
 void WorkerManager::FindEmp()
@@ -314,4 +319,6 @@ void WorkerManager::CleanFile()
 	{
 		cout << "取消清空!" << endl;
 	}
+	system("pause");
+	system("cls");
 }

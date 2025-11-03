@@ -429,27 +429,109 @@ int main()
 //			cout << i << '\t';
 //	}
 //	return 0;
+////}
+//#include <iostream>
+//using namespace std;
+//int IsNumber(int a)
+//{
+//	int sum = 0;
+//	for (int i = 1; i < a; i++)
+//	{
+//		if (a % i == 0)
+//			sum += i;
+//	}
+//	if (sum == a)
+//		return 1;
+//	return 0;
 //}
-#include <iostream>
+//int main()
+//{
+//	for (int i = 1; i <= 1000; i++)
+//	{
+//		if (IsNumber(i))
+//			cout << i << '\t';
+//	}
+//	return 0;
+//}
+
+//
+//#include <iostream>
+//using namespace std;
+//int area(int a,int b,int c)
+//{
+//	int s = (a + b + c) / 2;
+//	return sqrt(s * (s - a) * (s - b) * (s - c));
+//}
+//int main()
+//{
+//	int a = 0; int b = 0; int c = 0;
+//	cout << "请输入三角形三边长" << endl;
+//	cin >> a >> b >> c;
+//	cout << "三角形面积是" << area(a, b, c) << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int symm(long n)
+//{
+//	int s = 0;
+//	int temp = n;
+//	while (n)
+//	{
+//		s = s * 10 + n % 10;
+//		n /= 10;
+//	}
+//	if (s == temp)
+//		return 1;
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	for (int m = 11; m< 1000; m++)
+//	{
+//		if (symm(m) && symm(m * m) && symm(m * m * m))
+//			cout << m << '\t';
+//	}
+//}
+/*#include <iostream>
 using namespace std;
-int IsNumber(int a)
+int Fibonnaci(int n)
 {
-	int sum = 0;
-	for (int i = 1; i < a; i++)
+	if (n == 1 || n == 2)
 	{
-		if (a % i == 0)
-			sum += i;
-	}
-	if (sum == a)
 		return 1;
-	return 0;
+	}
+	if (n > 2)
+	{
+		return Fibonnaci(n - 1) + Fibonnaci(n - 2);
+	}
+	
 }
 int main()
 {
-	for (int i = 1; i <= 1000; i++)
+	int n = 0;
+	cout << "请输入要输出的项数" << endl;
+	cin >> n;
+	for (int i = 1; i <= n; i++)
 	{
-		if (IsNumber(i))
-			cout << i << '\t';
+		
+		cout << Fibonnaci(i) << '\t';
+		if (i % 5 == 0)
+			cout << endl;
 	}
+	return 0;
+}*///复习
+#define MAX(a,b) ((a)>(b)?(a):(b))
+#define MIN(a,b) ((a)<(b)?(a):(b))
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a, b, c;
+	cout << "请输入三个整数" << endl;
+	cin >> a >> b >> c;
+	cout << "最大值是" << MAX(MAX(a, b), c) << endl;
+	cout << "最小值是" << MIN(MIN(a, b), c) << endl;
 	return 0;
 }
