@@ -1,5 +1,7 @@
 //这是cpp提高阶段
 #include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 /*1.2 函数模板
 template<typename T>
@@ -203,6 +205,7 @@ void test01()
 	person<string, int> p1("tom", 18);
 	p1.showinfo();
 }*/
+/*1.3.8 类模板与友元
 template <class T1, class T2> class person;//为了声明showinfo2，由于里面有person不认识所以先声明一下person
 template <class T1, class T2>
 void showinfo2(person<T1, T2>& p2);//可用1111111111111111111处替换
@@ -241,6 +244,116 @@ void test02()
 	person<string, int> p2("jerry",2);
 	showinfo2(p2);
 }
+*/
+/*2.5.1 vector存放内置数据类型
+void func1(int val)
+{
+	cout << val << endl;
+}
+void test01()
+{
+	vector<int> v;
+	v.push_back(10);
+	v.push_back(20);
+	v.push_back(30);
+	v.push_back(40);
+	/*vector<int>::iterator itBegin = v.begin();
+	vector<int>::iterator itEnd = v.end();
+	while (itBegin != itEnd)
+	{
+		cout << *itBegin << endl;
+		itBegin++;
+	//for(vector<int>::iterator itBegin=v.begin();itBegin!=v.end();itBegin++)
+	//{
+	//	cout << *itBegin << endl;
+	//}
+	for_each(v.begin(), v.end(), func1);
+}*/
+/*2.5.2 Vector存放自定义数据类型
+class person
+{
+public:
+	person(string name,int age)
+	{
+		this->name = name;
+		this->age = age;
+	}
+	string name;
+	int age;
+};
+void test01()
+{
+	person p1("aaa", 111);
+	person p2("bbb", 222);
+	person p3("ccc", 333);
+	person p4("ddd", 444);
+	person p5("eee", 555);
+	person p6("fff", 666);
+	vector<person> v;
+	v.push_back(p1);
+	v.push_back(p2);
+	v.push_back(p3);
+	v.push_back(p4);
+	v.push_back(p5);
+	v.push_back(p6);
+	for (vector<person>::iterator itBegin=v.begin(); itBegin != v.end(); itBegin++)
+	{
+		cout << "姓名是:" << itBegin->name;
+		cout << "年龄是:" << itBegin->age << endl;
+	}
+}
+void test02()
+{
+	person p1("aaa", 111);
+	person p2("bbb", 222);
+	person p3("ccc", 333);
+	person p4("ddd", 444);
+	person p5("eee", 555);
+	person p6("fff", 666);
+	vector<person*> v2;
+	v2.push_back(&p1);
+	v2.push_back(&p2);
+	v2.push_back(&p3);
+	v2.push_back(&p4);
+	v2.push_back(&p5);
+	v2.push_back(&p6);
+	for (vector<person*>::iterator itBegin = v2.begin(); itBegin != v2.end(); itBegin++)
+	{
+		cout << "姓名是:" << (**itBegin).name << " " << "年龄是:" << (**itBegin).age << endl;
+	}
+}*/
+void test01()
+{
+	vector<vector<int>> v;
+	vector<int> v1;
+	vector<int> v2;
+	vector<int> v3;
+	vector<int> v4;
+	for (int i = 1; i < 5; i++)
+	{
+		v1.push_back(i);
+		v2.push_back(i + 4);
+		v3.push_back(i + 8);
+		v4.push_back(i + 12);
+	}
+	v.push_back(v1);
+	v.push_back(v2);
+	v.push_back(v3);
+	v.push_back(v4);
+	for (vector<vector<int>>::iterator itBegin = v.begin(); itBegin != v.end(); itBegin++)
+	{
+		for (vector<int>::iterator itBegin2 = (*itBegin).begin(); (itBegin2) != (*itBegin).end(); itBegin2++)
+		{
+			cout << *itBegin2<<'\t';
+		}
+		cout << endl;
+	}
+
+}
+
+
+
+
 
 
 
@@ -259,9 +372,8 @@ int main()
 	/*test01();*/
 	/*test01();
 	test02();*/
+	/*test01();
+	test02();*/
 	test01();
-	test02();
-
-
 	return 0;
 }
