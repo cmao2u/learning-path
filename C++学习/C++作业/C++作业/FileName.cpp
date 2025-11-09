@@ -522,6 +522,7 @@ int main()
 	}
 	return 0;
 }*///复习
+/*
 #define MAX(a,b) ((a)>(b)?(a):(b))
 #define MIN(a,b) ((a)<(b)?(a):(b))
 #include <iostream>
@@ -534,4 +535,90 @@ int main()
 	cout << "最大值是" << MAX(MAX(a, b), c) << endl;
 	cout << "最小值是" << MIN(MIN(a, b), c) << endl;
 	return 0;
+}*/
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int t = 2;
+	int s = 0;
+	for (int i = 1; i <= 7; i++)
+	{
+		s += t;
+		t = t * 10 + 2;
+	}
+	cout << "2+22+222+...+2222222=" << s << endl;
+	return 0;
+}*/
+/*
+#include<iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	double x;
+	cout << "请输入x的值" << endl;
+	cin >> x;
+	double y, y2;
+	y = x;
+	do {
+		y2 = y;
+		y = 2 * y / 3 + x / (3 * y * y);
+	} while (fabs(y2 - y) >= 1e-5);
+	cout << "x的立方根是" << y << endl;
+
+	return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "Input n,x:" << endl;
+	double n, x, y;
+	cin >> n >> x;
+	double sum = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		double temp = 1;
+		y = 1;
+		for (int j = 1; j <= 2 * i - 1; j++)
+		{
+
+			y *= x;
+			temp *= j;
+		}
+		y /= temp;
+		if (i % 2 == 1)
+		{
+			sum += y;
+		}
+		else
+		{
+			sum -= y;
+		}
+	}
+	cout << "值是" << sum << endl;
+	return 0;
+}*/
+
+
+#include <iostream>	
+using namespace std;
+int main()
+{
+	float y = 1, t = 1;
+	int n;
+	cout << "Input n:" << endl;
+	cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
+		t = t * i;
+		y = y + t;
+	}
+	cout << "1+1!+2!+...+" << n << "!=" << y << endl;
+	return 0;
+
 }
