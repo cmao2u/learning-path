@@ -322,6 +322,7 @@ void test02()
 		cout << "姓名是:" << (**itBegin).name << " " << "年龄是:" << (**itBegin).age << endl;
 	}
 }*/
+/*
 void test01()
 {
 	vector<vector<int>> v;
@@ -349,13 +350,232 @@ void test01()
 		cout << endl;
 	}
 
+}*/
+/*string容器
+void test01()
+{
+	/*string s1;
+	const char* str = "hello，world";
+	string s2(str);
+	cout << "s2=" << s2 << endl;
+	string s3(10, 'd');
+	cout << "s3=" << s3;*/
+	/*
+	string str1;
+	str1.assign("hello,world");
+	cout << str1 << endl;
+	string str2;
+	str2.assign("hello,c++", 5);
+	cout << str2 << endl;
+	string str3;
+	str3.assign(str2);
+	cout << str3;*/
+	/*string str1;
+	str1 = "I";
+	cout << str1 << endl;
+	string str2;
+	str2 = " love";
+	str1 += str2;
+	cout << str1 << endl;
+	string str3;
+	str3 = " coding";
+	str1.append(str3);
+	cout << str1 << endl;
+	string str4 = "啦啦啦啾咪";
+	str1.append(str4, 6, 4);
+	cout << str1 << endl;*/
+	/*string str1;
+	str1 = "abcdefgh";
+	int res=str1.find("gh");
+	cout << res << endl;
+	str1.replace(1, 3, "22222");
+	cout << str1 << endl;*/
+	/*string str1 = "abcde";
+	string str2 = "abced";
+	int res = str1.compare(str2);
+	if (res > 0)
+		cout << "相同" << endl;
+	if (res < 0)
+		cout << "不同" << endl;*/
+	/*string str1 = "hello,c++";
+	for (int i = 0; i < str1.size(); i++)
+		cout << str1.at(i);
+	cout << endl;*/
+	//string str1 = "soife";
+	//str1.insert(1, "222");
+	//str1.erase(4, 1);
+	//cout << str1 << endl;
+	//string str1 = "abedfggg";
+	//string str2 = str1.substr(1, 4);
+	//cout << str2 << endl;
+	/*string str1 = "ggbond@gmail.com";
+	int pos = str1.find("@");
+	string str2 = str1.substr(0, pos);
+	cout << "username:" << str2 << endl;*/
+//}
+/*3.2.2 vector构造函数
+void PrintVector(vector<int>& v)
+{
+	for (vector<int>::iterator itBegin = v.begin(); itBegin < v.end(); itBegin++)
+	{
+		cout << *itBegin << " ";
+	}
+	cout << '\n';
 }
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+	PrintVector(v1);//默认构造
+	vector<int> v2(v1.begin(), v1.end());
+	PrintVector(v2);//区间构造
+	vector<int> v3(10, 100);
+	PrintVector(v3);//n elem构造
+	vector<int> v4(v3);
+	PrintVector(v4);//拷贝构造
+}*/
+/*3.2.3 vector赋值操作
+void PrintVector(vector<int>& v)
+{
+	for (vector<int>::iterator ItBegin = v.begin(); ItBegin < v.end(); ItBegin++)
+	{
+		cout << *ItBegin << " ";
+	}
+	cout << endl;
+}
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+	PrintVector(v1);
+	vector<int> v2;
+	v2 = v1;//operator=赋值
+	PrintVector(v2);
+	vector<int> v3;
+	v3.assign(v1.begin(), v1.end());//assign区间赋值
+	PrintVector(v3);
+	vector<int> v4;
+	v4.assign(10, 100);//assign——n elem赋值
+	PrintVector(v4);
+}*/
+void PrintVector(vector<int>& v)
+{
+	for (vector<int>::iterator ItBegin = v.begin(); ItBegin < v.end(); ItBegin++)
+	{
+		cout << *ItBegin << " ";
+	}
+	cout << endl;
+}
+/*3.2.4 vector容量和大小
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+	cout << v1.empty() << endl;;
+	cout << "v1的容量是" << v1.capacity() << endl;
+	cout << "v1的大小是" << v1.size() << endl;
+	v1.resize(18, 8888);
+	PrintVector(v1);
+}*/
+/*3.2.5 vector插入和删除
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 20; i++)
+	{
+		v1.push_back(i);
+	}
+	PrintVector(v1);
+	v1.pop_back();
+	PrintVector(v1);
+	v1.insert(v1.begin(), 100);
+	PrintVector(v1);
+	v1.insert(v1.begin(), 2, 100);
+	PrintVector(v1);
+	v1.erase(v1.begin());
+	PrintVector(v1);
+	v1.clear();
+	PrintVector(v1);
 
-
-
-
-
-
+}*/
+/*3.2.6 vector数据存取
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+	for (int i = 0; i < v1.size(); i++)
+	{
+		cout << v1.at(i);
+	}
+	cout << '\n';
+	cout << v1.front() << endl;
+	cout << v1.back() << endl;
+}*/
+//void test01()
+//{
+//	vector<int> v1;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		v1.push_back(i);
+//	}
+//	vector<int>v2;
+//	for (int i = 9; i >= 0; i--)
+//	{
+//		v2.push_back(i);
+//	}
+//	PrintVector(v1);
+//	PrintVector(v2);
+//	v1.swap(v2);
+//	PrintVector(v1);
+//	PrintVector(v2);
+//}
+/*3.2.7 vector互换容器
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 100000; i++)
+	{
+		v1.push_back(i);
+	}
+	cout << "v1的容量是" << v1.capacity() << endl;
+	cout << "v1的大小是" << v1.size() << endl;
+	v1.resize(3);
+	cout << "v1的容量是" << v1.capacity() << endl;
+	cout << "v1的大小是" << v1.size() << endl;
+	vector<int>(v1).swap(v1);
+	cout << "v1的容量是" << v1.capacity() << endl;
+	cout << "v1的大小是" << v1.size() << endl;
+}*///可以用来回收空间
+/*3.2.8 vector预留空间
+void test01()
+{
+	int* p = NULL;
+	int num = 0;
+	vector<int> v1;
+	v1.reserve(10000000);
+	for (int i = 0; i < 100000; i++)
+	{
+		v1.push_back(i);
+		if (p != &v1[0])
+		{
+			p = &v1[0];
+			num++;
+		}
+	}
+	cout << num;
+}*/
 
 int main()
 {
