@@ -2,6 +2,12 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include <deque>
+#include <stack>
+#include <queue>
+#include<list>
+#include <set>
+#include <map>
 using namespace std;
 /*1.2 函数模板
 template<typename T>
@@ -464,6 +470,7 @@ void test01()
 	v4.assign(10, 100);//assign——n elem赋值
 	PrintVector(v4);
 }*/
+/*
 void PrintVector(vector<int>& v)
 {
 	for (vector<int>::iterator ItBegin = v.begin(); ItBegin < v.end(); ItBegin++)
@@ -471,7 +478,7 @@ void PrintVector(vector<int>& v)
 		cout << *ItBegin << " ";
 	}
 	cout << endl;
-}
+}*/
 /*3.2.4 vector容量和大小
 void test01()
 {
@@ -576,6 +583,440 @@ void test01()
 	}
 	cout << num;
 }*/
+void PrintDeque(deque<int> &d)
+{
+	for (deque<int>::iterator ItBegin = d.begin(); ItBegin < d.end(); ItBegin++)
+	{
+		cout << *ItBegin << " ";
+	}
+	cout << endl;
+}/*
+void test01()
+{
+	deque<int> d1;
+	for (int i = 0; i < 10; i++)
+	{
+		d1.push_back(i);
+	}
+	PrintDeque(d1);
+	deque<int> d2;
+	d2.assign(5, 100);
+	PrintDeque(d2);
+	deque<int> d3(d1.begin(), d1.end());
+	PrintDeque(d3);
+	deque<int> d4(d3);
+	PrintDeque(d4);
+}*/
+/*
+void test01()
+{
+	deque<int> d1;
+	for (int i = 0; i < 10; i++)
+	{
+		d1.push_back(i);
+	}
+	PrintDeque(d1);
+	if (d1.empty())
+	{
+		cout << "容器空" << endl;
+	}
+	else
+		cout << "容器不空" << endl;
+	cout << "容器大小为" << d1.size() << endl;
+	d1.resize(3);
+	PrintDeque(d1);
+	cout << "容器大小为 " << d1.size() << endl;
+}*/
+/*
+void test01()
+{
+	deque<int> d1;
+	d1.push_back(10);
+	PrintDeque;
+	d1.push_front(3);
+	PrintDeque(d1);
+	d1.pop_front();
+	PrintDeque(d1);
+	deque<int> d2;
+	d2.insert(d2.begin(), d1.begin(), d1.end());
+	PrintDeque(d2);
+
+}*/
+/*
+void test01()
+{
+	deque<int> d1;
+	d1.push_back(10);
+	d1.push_back(12);
+	d1.push_back(1);
+	d1.push_back(43);
+	d1.push_back(2);
+	PrintDeque(d1);
+	sort(d1.begin(), d1.end());
+		PrintDeque(d1);
+}*/
+/*
+void test01()
+{
+	stack<int> s1;
+	s1.push(10);
+	s1.push(20);
+	s1.push(30);
+	s1.push(40);
+	s1.push(50);
+	while (!s1.empty())
+	{
+		cout << "栈顶是" << s1.top() << endl;
+		s1.pop();
+	}
+	cout << "stack中个数是" << s1.size();
+}*/
+/*
+void test01()
+{
+	class person
+	{
+	public:
+		string name;
+		int age;
+		person(string name,int age)
+		{
+			this->name = name;
+			this->age = age;
+		}
+	};
+	person p1("唐僧", 30);
+	person p2("孙悟空", 1000);
+	person p3("猪八戒", 900);
+	person p4("沙僧", 800);
+	queue<person> q1;
+	q1.push(p1);
+	q1.push(p2);
+	q1.push(p3);
+	q1.push(p4);
+	while (!q1.empty())
+	{
+		cout << "队头是" << q1.front().name << ",年龄是" << q1.front().age << endl;
+		cout << "队尾是" << q1.back().name << ",年龄是" << q1.back().age << endl;
+		q1.pop();
+	}
+}*/
+void PrintList(const list<int>& l)
+{
+	for (list<int>::const_iterator ItBegin = l.begin(); ItBegin != l.end(); ItBegin++)
+		cout << *ItBegin << " ";
+	cout << endl;
+}
+/*list构造
+void test01()
+{
+	list<int> l1;
+	l1.push_back(10);
+	l1.push_back(20);
+	l1.push_back(30);
+	l1.push_back(40);
+	l1.push_back(50);
+	PrintList(l1);
+	list<int> l2(l1.begin(), l1.end());
+	list<int> l3(l2);
+	list<int> l4(7, 100);
+	PrintList(l2);
+	PrintList(l3);
+	PrintList(l4);
+}*/
+/*
+void test01()
+{
+	list<int> L1;
+	L1.push_back(10);
+	L1.push_back(20);
+	L1.push_back(30);
+	L1.push_back(40);
+	L1.push_back(50);
+	PrintList(L1);
+	list<int> L2;
+	L2.assign(L1.begin(), L1.end());
+	L2.pop_back();
+	PrintList(L2);
+	L2.swap(L1);
+	PrintList(L1);
+	PrintList(L2);
+}*/
+/*
+void test01()
+{
+	list<int> L1;
+	L1.push_back(10);
+	L1.push_back(20);
+	L1.push_back(30);
+	L1.push_back(40);
+	L1.push_back(50);
+	while (1)
+	{
+		if (!L1.empty())
+		{
+			cout << "L1不为空" << endl;;
+			PrintList(L1);
+			L1.resize(0);
+		}
+		else
+		{
+			cout << "L1为空" << endl;;
+			break;
+		}
+	}
+}*/
+/*
+void test01()
+{
+	list<int> L1;
+	L1.push_back(100);
+	L1.push_front(13);
+	list<int>::iterator it = L1.begin();
+	L1.insert(++it, 123,2);
+	PrintList(L1);
+	L1.remove(2);
+	PrintList(L1);
+
+}*/
+/*
+void test01()
+{
+	list<int> L1;
+	L1.push_back(10);
+	L1.push_back(20);
+	L1.push_back(30);
+	L1.push_back(40);
+	L1.push_back(50);
+	cout << "front:" << L1.front() << " back:" << L1.back();
+}*/
+/*
+bool MyCompare(int a, int b)
+{
+	return a > b;
+}
+void test01()
+{
+	list<int> L1;
+	L1.push_back(10);
+	L1.push_back(24560);
+	L1.push_back(3024);
+	L1.push_back(420);
+	L1.push_back(50);
+	PrintList(L1);
+	L1.sort();
+	PrintList(L1);
+	L1.reverse();
+	PrintList(L1);
+	L1.sort(MyCompare);
+	PrintList(L1);
+}*/
+void PrintSet(set<int> s)
+{
+	for (set<int>::iterator ItBegin = s.begin(); ItBegin != s.end(); ItBegin++)
+	{
+		cout << *ItBegin << " ";
+	}
+	cout << endl;
+}
+/*set构造
+void test01()
+{
+	set<int> s;
+	s.insert(10);
+	s.insert(132);
+	s.insert(12);
+	s.insert(15);
+	s.insert(11);
+	PrintSet(s);
+	s.insert(11);
+	PrintSet(s);
+}*/
+/*
+void test01()
+{
+	set<int> s1;
+	s1.insert(1);
+	s1.insert(12);
+	s1.insert(13);
+	s1.insert(14);
+	s1.insert(15);
+	s1.insert(15);
+	s1.insert(16);
+	PrintSet(s1);
+	set<int>::iterator pos = s1.find(25);
+	if (pos !=s1.end())
+	{
+		cout << "找到了"<< *pos << endl;
+	}
+	else
+	{
+		cout << "没找到" << endl;
+	}
+	cout << s1.count(15) << endl;
+}*/
+/*
+void test01()
+{
+	set<int> s1;
+	pair<set<int>::iterator, bool> res = s1.insert(10);
+	if (res.second == 1)
+	{
+		cout << "插入成功" << endl;
+	}
+	else
+	{
+		cout << "插入失败" << endl;
+	}
+	res = s1.insert(10);
+	if (res.second == 1)
+	{
+		cout << "插入成功" << endl;
+	}
+	else
+	{
+		cout << "插入失败" << endl;
+	}
+}*/
+/*pair用法
+void test01()
+{
+	pair<string, int > p("Tom", 3);
+	cout << "姓名是" << p.first << " 年龄是" << p.second << endl;
+}*/
+
+
+/*
+class MyCompare
+{
+public:
+	bool operator()(int a,int b)const
+	{
+		return a > b;
+	}
+};
+void test01()
+{
+	set<int,MyCompare> s1;
+	s1.insert(10);
+	s1.insert(11);
+	s1.insert(12);
+	s1.insert(13);
+	s1.insert(14);
+	s1.insert(15);
+	for (set<int, MyCompare>::iterator it = s1.begin(); it != s1.end(); it++)
+	{
+		cout << *it;
+	}
+}*/
+/*set装其它类
+class person
+{
+public:
+	string m_name;
+	int m_age;
+	person(string name, int age)
+	{
+		m_name = name;
+		m_age = age;
+	}
+};
+person p1("刘备", 28);
+person p2("张飞", 25);
+person p3("关羽", 27);
+class MyCompare
+{
+public:
+	bool operator()(const person &p1, const person&p2) const
+	{
+		return p1.m_age > p2.m_age;
+	}
+};
+void test01()
+{
+	set<person,MyCompare> s1;
+	s1.insert(p1);
+	s1.insert(p2);
+	s1.insert(p3);
+	for (set<person, MyCompare>::iterator it = s1.begin(); it != s1.end(); it++)
+	{
+		cout << "姓名" << it->m_name << "年龄" << it->m_age << endl;
+	}
+}*/
+
+void PrintMap(const map<int, int> & m)
+{ 
+	for (map<int, int>::const_iterator it = m.begin(); it != m.end(); it++)
+	{
+		cout << "key:" << it->first << "   value:" << it->second << endl;;
+	}
+	cout << endl;
+}
+/*
+void test01()
+{
+	map<int, int> m;
+	m.insert(pair<int, int>(1, 12));
+	m.insert(pair<int, int>(3, 18));
+	m.insert(pair<int, int>(2, 16));
+	m.insert(pair<int, int>(4, 10));
+	PrintMap(m);
+	map<int, int>m3(m);
+	PrintMap(m3);
+}*/
+/*
+void test01()
+{
+	map<int, int> m1;
+	m1.insert(pair<int, int>(1, 10));
+	m1[2] = 15;
+	PrintMap(m1);
+	m1[3] = 23;
+	m1.insert(pair<int, int>(5, 20));
+	PrintMap(m1);
+	m1.erase(m1.begin());
+	m1.erase(5);
+	PrintMap(m1);
+	m1.clear();
+	PrintMap(m1);
+}*/
+/*
+void test01()
+{
+	map<int, int> m1;
+	m1.insert(pair<int, int>(1, 19));
+	m1.insert(pair<int, int>(2, 13));
+	m1.insert(pair<int, int>(3, 18));
+	m1.insert(pair<int, int>(4, 15));
+	m1.insert(pair<int, int>(5, 16));
+	PrintMap(m1);
+	map<int, int>::iterator res = m1.find(3);
+	cout <<"找到了元素,key=" << res->first << "value=" << res->second << endl;
+	cout << "出现" << m1.count(3);//////注：：：都是对key进行操作的
+}*/
+class MyCompare
+{
+public:
+	bool operator()(int v1, int v2) const
+	{
+		return v1 > v2;
+	}
+};
+void test01()
+{
+	map<int, int,MyCompare> m1;
+	m1.insert(pair<int, int>(1, 15));
+	m1.insert(pair<int, int>(2, 16));
+	m1.insert(pair<int, int>(3, 10));
+	m1.insert(pair<int, int>(4, 11));
+	m1.insert(pair<int, int>(5, 17));
+	m1.insert(pair<int, int>(6, 18));
+	for (map<int, int>::iterator itq = m1.begin(); itq != m1.end(); itq++)
+	{
+		cout << itq->first <<"   " << itq->second<<"   "<<endl;
+	}
+
+}
 
 int main()
 {

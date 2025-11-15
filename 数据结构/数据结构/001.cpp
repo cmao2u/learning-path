@@ -1,21 +1,21 @@
-#include <iostream>
-#include <time.h>
-using namespace std;
-/*
-void printN(int N)
-{
-	for(int i=1;i<N;i++)
-	{
-		cout << i << endl;
-	}
-}
-void printn(int N)
-{
-	if (N) {
-		printn(N - 1);
-			cout << N << endl;
-	}
-}*/
+//#include <iostream>
+//#include <time.h>
+//using namespace std;
+///*
+//void printN(int N)
+//{
+//	for(int i=1;i<N;i++)
+//	{
+//		cout << i << endl;
+//	}
+//}
+//void printn(int N)
+//{
+//	if (N) {
+//		printn(N - 1);
+//			cout << N << endl;
+//	}
+//}*/
 /*关于算法效率
 clock_t start, finish;
 double duration;
@@ -172,9 +172,7 @@ void test04()
 {
 	int A[] = { -2,11,-4,13,-5,-2 ,5,-8,4,8,-9};
 	int n = sizeof(A) / sizeof(A[0]);
-	cout << func04(A, n) << endl;
-}*/
-int main()
+	cout << func04(A, n) << endl
 {/*
 	//printN(1000);
 	printn(10000);
@@ -211,19 +209,7 @@ int main()
 	/*
 	double a[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 };// 多项式系数
 	int n = 20;
-	double x = 10.0;
-	const int repeat = 1000000;
-	clock_t start = clock();
-	for (int i = 0; i < repeat; i++)
-	{
-		function01(n,a,x);
-	}
-	clock_t finish = clock();
-	double duration01 = double(finish - start) / CLOCKS_PER_SEC;
-	cout << "function01 时间: " << duration01 << "s" << endl;
-	cout << function01(n, a, x) << endl;
-	 start = clock();
-	for (int i = 0; i < repeat; i++)
+	
 	{
 		function02(n, a, x);
 	}
@@ -236,7 +222,110 @@ int main()
 	test02();
 	test03();
 	test04();*/
+#include <iostream>
+#include <vector>
+#include <map>
+#include <algorithm>
+using namespace std;
 
+// 多项式项类
+class Polynomial {
+public:
+	int coef;  // 系数
+	int expon; // 指数
+	Polynomial(int c, int e) : coef(c), expon(e) {}
+};
 
-return 0;
+// 读取多项式（静默读取，按指数降序返回）
+vector<Polynomial> readPoly() {
+	int n;
+	cin >> n;
+	map<int, int> polyMap; // 用map自动按指数升序存储，合并同类项
+	for (int i = 0; i < n; i++) {
+		int c, e;
+		cin >> c >> e;
+		polyMap[e] += c; // 自动合并同类项（输入可能有重复指数，题目虽未说但需兼容）
+	} 
+	// 转换为vector，按指数降序排列
+	vector<Polynomial> poly;
+	for (auto it = polyMap.rbegin(); it != polyMap.rend(); it++) {
+		if (it->second != 0) { // 系数不为0才加入
+			poly.push_back(Polynomial(it->second, it->first));
+		}
+	}
+	return poly;
+}
+
+// 多项式加法（用map实现，自动合并同类项）
+vector<Polynomial> addPoly(const vector<Polynomial>& p1, const vector<Polynomial>& p2) {
+	map<int, int> polyMap;
+	// 加入p1的项
+	for (const auto& term : p1) {
+		polyMap[term.expon] += term.coef;
+	}
+	// 加入p2的项，自动合并同类项
+	for (const auto& term : p2) {
+		polyMap[term.expon] += term.coef;
+	}
+	// 转换为vector，按指数降序
+	vector<Polynomial> result;
+	for (auto it = polyMap.rbegin(); it != polyMap.rend(); it++) {
+		if (it->second != 0) {
+			result.push_back(Polynomial(it->second, it->first));
+		}
+	}
+	return result;
+}
+
+// 多项式乘法（用map实现，自动合并同类项）
+vector<Polynomial> mulPoly(const vector<Polynomial>& p1, const vector<Polynomial>& p2) {
+	map<int, int> polyMap;
+	// 遍历p1和p2的所有项，计算乘积并存入map
+	for (const auto& term1 : p1) {
+		for (const auto& term2 : p2) {
+			int new_e = term1.expon + term2.expon; // 指数相加
+			int new_c = term1.coef * term2.coef;   // 系数相乘
+			polyMap[new_e] += new_c;               // 自动合并同类项
+		}
+	}
+	// 转换为vector，按指数降序
+	vector<Polynomial> result;
+	for (auto it = polyMap.rbegin(); it != polyMap.rend(); it++) {
+		if (it->second != 0) { // 系数不为0才加入
+			result.push_back(Polynomial(it->second, it->first));
+		}
+	}
+	return result;
+}
+
+// 打印多项式（严格按题目格式：无多余空格，零多项式输出0 0）
+void printPoly(const vector<Polynomial>& poly) {
+	if (poly.empty()) {
+		cout << "0 0";
+	}
+	else {
+		for (size_t i = 0; i < poly.size(); i++) {
+			if (i > 0) {
+				cout << " ";
+			}
+			cout << poly[i].coef << " " << poly[i].expon;
+		}
+	}
+	cout << endl;
+}
+
+int main() {
+	// 读取两个多项式（无交互式提示，兼容样例批量输入）
+	vector<Polynomial> p1 = readPoly();
+	vector<Polynomial> p2 = readPoly();
+
+	// 计算乘积和和
+	vector<Polynomial> product = mulPoly(p1, p2);
+	vector<Polynomial> sum_poly = addPoly(p1, p2);
+
+	// 输出结果（先乘积，后和，符合题目要求）
+	printPoly(product);
+	printPoly(sum_poly);
+
+	return 0;
 }
