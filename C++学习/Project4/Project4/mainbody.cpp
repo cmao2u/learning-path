@@ -8,6 +8,7 @@
 #include<list>
 #include <set>
 #include <map>
+#include <functional>
 using namespace std;
 /*1.2 函数模板
 template<typename T>
@@ -994,6 +995,7 @@ void test01()
 	cout <<"找到了元素,key=" << res->first << "value=" << res->second << endl;
 	cout << "出现" << m1.count(3);//////注：：：都是对key进行操作的
 }*/
+/*
 class MyCompare
 {
 public:
@@ -1015,7 +1017,55 @@ void test01()
 	{
 		cout << itq->first <<"   " << itq->second<<"   "<<endl;
 	}
+}*/
+/*
+void test01()
+{
+	negate<int> n;
+	cout << n(10) << endl;
+	plus<double> p;
+	cout << p(24.1, 10.7) << endl;
+}*/
+/*template<class T> bool equal_to<T> //等于
+template<class T> bool not_equal_to<T> //不等于
+template<class T> bool greater<T> //大于
+template<class T> bool greater_equal<T> //大于等于
+template<class T> bool less<T> //小于
+template<class T> bool less_equal<T> //小于等于*/
 
+void PrintVector(const vector<bool>& v)
+{
+	for (vector<bool>::const_iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+/*
+void test01()
+{
+	vector<int> v;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+	PrintVector(v);
+	sort(v.begin(), v.end(),greater<int>());
+	PrintVector(v);
+	
+}*/
+void test01()
+{
+	vector<bool> v1;
+	v1.push_back(true);
+	v1.push_back(true);
+	v1.push_back(false);
+	v1.push_back(true);
+	vector<bool> v2;
+	v2.resize(v1.size());
+	PrintVector(v1);
+	transform(v1.begin(), v1.end(), v2.begin(), logical_not<bool>());
+	PrintVector(v2);
 }
 
 int main()

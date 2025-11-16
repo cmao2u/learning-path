@@ -1,352 +1,459 @@
 ﻿  001.cpp
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\sal.h(2361,8): error C2598: 链接规范必须在全局范围内
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(560,37): error C2825: '_Alloc': 当后面跟“::”时必须为类或命名空间
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(560,37):
+      模板实例化上下文(最早的实例化上下文)为
+          C:\Users\cmao2\Desktop\项目\数据结构\数据结构\001.cpp(377,19):
+          查看对正在编译的 类 模板 实例化“std::vector<int,int>”的引用
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(448,26):
+          查看对正在编译的 别名 模板 实例化“std::_Rebind_alloc_t<_Alloc,_Ty>”的引用
+          with
+          [
+              _Alloc=int,
+              _Ty=int
+          ]
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(778,69):
+          查看对正在编译的 类 模板 实例化“std::allocator_traits<_Alloc>”的引用
+          with
+          [
+              _Alloc=int
+          ]
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,27):
+          查看对正在编译的 类 模板 实例化“std::_Normal_allocator_traits<_Alloc>”的引用
+          with
+          [
+              _Alloc=int
+          ]
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\concurrencysal.h(22,8): error C2598: 链接规范必须在全局范围内
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(560,45): error C2510: “_Alloc”:“::”的左边必须是类/结构/联合
   (编译源文件“001.cpp”)
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vadefs.h(51,8): error C2598: 链接规范必须在全局范围内
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(560,45): error C2061: 语法错误: 标识符“value_type”
   (编译源文件“001.cpp”)
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vadefs.h(173,18): error C2951: 模板 声明只能在全局、命名空间或类范围内使用
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(358,27): error C2825: '_Ty': 当后面跟“::”时必须为类或命名空间
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(358,27):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(562,68):
+          查看对正在编译的 类 模板 实例化“std::_Get_pointer_type<_Alloc,void>”的引用
+          with
+          [
+              _Alloc=int
+          ]
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vadefs.h(179,18): error C2951: 模板 声明只能在全局、命名空间或类范围内使用
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(358,32): error C2510: “_Ty”:“::”的左边必须是类/结构/联合
   (编译源文件“001.cpp”)
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vadefs.h(185,18): error C2951: 模板 声明只能在全局、命名空间或类范围内使用
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(358,32): error C2061: 语法错误: 标识符“value_type”
   (编译源文件“001.cpp”)
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vadefs.h(191,18): error C2951: 模板 声明只能在全局、命名空间或类范围内使用
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(562,68): error C2039: "type": 不是 "std::_Get_pointer_type<_Alloc,void>" 的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(562,68): error C2039:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(562,68): error C2039:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(562,68): error C2039:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(562,68): error C2039:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(357,8):
+      参见“std::_Get_pointer_type<_Alloc,void>”的声明
+          with
+          [
+              _Alloc=int
+          ]
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vcruntime.h(247,18): error C2951: 模板 声明只能在全局、命名空间或类范围内使用
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(562,68): error C2061: 语法错误: 标识符“type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt.h(256,13): error C2951: 模板 声明只能在全局、命名空间或类范围内使用
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(370,53): error C2039: "type": 不是 "std::_Get_pointer_type<_Alloc,void>" 的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(370,53): error C2039:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(370,53): error C2039:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(370,53): error C2039:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(370,53): error C2039:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(357,8):
+      参见“std::_Get_pointer_type<_Alloc,void>”的声明
+          with
+          [
+              _Alloc=int
+          ]
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(370,53):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(563,74):
+          查看对正在编译的 类 模板 实例化“std::_Get_const_pointer_type<_Alloc,void>”的引用
+          with
+          [
+              _Alloc=int
+          ]
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt.h(259,13): error C2951: 模板 声明只能在全局、命名空间或类范围内使用
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(370,53): error C2061: 语法错误: 标识符“type”
   (编译源文件“001.cpp”)
   
-D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vcruntime_new.h(33,15): error C2870: “std”: 命名空间定义必须出现在文件范围内或紧接着出现在另一命名空间定义内
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(371,29): error C2825: '_Ty': 当后面跟“::”时必须为类或命名空间
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(456,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(371,34): error C2510: “_Ty”:“::”的左边必须是类/结构/联合
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(456,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(371,34): error C2061: 语法错误: 标识符“value_type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(456,30): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(372,44): error C2065: “_Ptrty”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(526,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(372,29): error C2923: "std::pointer_traits": "_Ptrty" 不是参数 "_Ty" 的有效 模板 类型参数
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(372,44):
+      参见“_Ptrty”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(526,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(372,75): error C2065: “_Valty”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(526,30): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(372,69): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(635,20): error C2061: 语法错误: 标识符“va_list”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(372,75): error C2146: 语法错误: 缺少“>”(在标识符“_Valty”的前面)
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\crtdbg.h(645,20): error C2061: 语法错误: 标识符“va_list”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(384,53): error C2039: "type": 不是 "std::_Get_pointer_type<_Alloc,void>" 的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(384,53): error C2039:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(384,53): error C2039:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(384,53): error C2039:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(384,53): error C2039:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(357,8):
+      参见“std::_Get_pointer_type<_Alloc,void>”的声明
+          with
+          [
+              _Alloc=int
+          ]
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(384,53):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(564,73):
+          查看对正在编译的 类 模板 实例化“std::_Get_void_pointer_type<_Alloc,void>”的引用
+          with
+          [
+              _Alloc=int
+          ]
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_math.h(527,93): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(384,53): error C2061: 语法错误: 标识符“type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(38,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(385,44): error C2065: “_Ptrty”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(38,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(385,29): error C2923: "std::pointer_traits": "_Ptrty" 不是参数 "_Ty" 的有效 模板 类型参数
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(385,44):
+      参见“_Ptrty”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(38,30): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(385,62): error C2903: “rebind”: 符号既不是类 模板 也不是函数 模板 
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(39,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(395,53): error C2039: "type": 不是 "std::_Get_pointer_type<_Alloc,void>" 的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(395,53): error C2039:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(395,53): error C2039:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(395,53): error C2039:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(395,53): error C2039:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(357,8):
+      参见“std::_Get_pointer_type<_Alloc,void>”的声明
+          with
+          [
+              _Alloc=int
+          ]
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(395,53):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(565,79):
+          查看对正在编译的 类 模板 实例化“std::_Get_const_void_pointer_type<_Alloc,void>”的引用
+          with
+          [
+              _Alloc=int
+          ]
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(39,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(395,53): error C2061: 语法错误: 标识符“type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(39,30): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(396,44): error C2065: “_Ptrty”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(57,27): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(396,29): error C2923: "std::pointer_traits": "_Ptrty" 不是参数 "_Ty" 的有效 模板 类型参数
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(396,44):
+      参见“_Ptrty”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(57,17): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(396,62): error C2903: “rebind”: 符号既不是类 模板 也不是函数 模板 
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(57,35): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(406,53): error C2039: "type": 不是 "std::_Get_pointer_type<_Alloc,void>" 的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(406,53): error C2039:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(406,53): error C2039:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(406,53): error C2039:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(406,53): error C2039:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(357,8):
+      参见“std::_Get_pointer_type<_Alloc,void>”的声明
+          with
+          [
+              _Alloc=int
+          ]
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(406,53):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(567,62):
+          查看对正在编译的 类 模板 实例化“std::_Get_size_type<_Alloc,void>”的引用
+          with
+          [
+              _Alloc=int
+          ]
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(417,70):
+          查看对正在编译的 类 模板 实例化“std::_Get_difference_type<_Ty,void>”的引用
+          with
+          [
+              _Ty=int
+          ]
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_search.h(33,60): error C2061: 语法错误: 标识符“rsize_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(406,53): error C2061: 语法错误: 标识符“type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_search.h(41,65): error C2061: 语法错误: 标识符“rsize_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(407,44): error C2065: “_Ptrty”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(54,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(407,29): error C2923: "std::pointer_traits": "_Ptrty" 不是参数 "_Ty" 的有效 模板 类型参数
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(407,44):
+      参见“_Ptrty”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(54,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(407,53): error C2955: “std::pointer_traits”: 使用 类 模板 需要 模板 参数列表
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xutility(514,8):
+      参见“std::pointer_traits”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(54,30): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(407,53): error C2039: "difference_type": 不是 "std::pointer_traits<_Ty>" 的成员
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xutility(514,8):
+      参见“std::pointer_traits<_Ty>”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): error C2988: 不可识别的模板声明/定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(407,53): error C2061: 语法错误: 标识符“difference_type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(417,70): error C2039: "type": 不是 "std::_Get_difference_type<_Ty,void>" 的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(417,70): error C2039:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(417,70): error C2039:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(417,70): error C2039:             _Ty=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(417,70): error C2039:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(405,8):
+      参见“std::_Get_difference_type<_Ty,void>”的声明
+          with
+          [
+              _Ty=int
+          ]
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): error C7525: 内联变量至少需要 "/std:c++17"
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(417,70): error C2146: 语法错误: 缺少“>”(在标识符“type”的前面)
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(568,68): error C2039: "type": 不是 "std::_Get_difference_type<_Ty,void>" 的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(568,68): error C2039:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(568,68): error C2039:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(568,68): error C2039:             _Ty=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(568,68): error C2039:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(405,8):
+      参见“std::_Get_difference_type<_Ty,void>”的声明
+          with
+          [
+              _Ty=int
+          ]
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): error C2732: 链接规范与“errno_t”的早期规范冲突
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(568,68): error C2061: 语法错误: 标识符“type”
   (编译源文件“001.cpp”)
-      D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5):
-      参见“errno_t”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): warning C4273: “errno_t”: dll 链接不一致
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(581,80): error C3646: “allocate”: 未知重写说明符
   (编译源文件“001.cpp”)
-      D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(54,14):
-      参见“errno_t”的前一个定义
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): error C2065: “_Size”: 未声明的标识符
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,17): error C2065: “_Al”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,9): error C2275: “_Alloc”: 应为表达式而不是类型
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(77,22): error C2988: 不可识别的模板声明/定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,22): error C2226: 语法错误: 意外的“std::_Normal_allocator_traits<_Alloc>::size_type”类型
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,22): error C2226:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,22): error C2226:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,22): error C2226:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,22): error C2226:         ]
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(77,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(582,65): error C2334: “{”的前面有意外标记；跳过明显的函数体
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C2988: 不可识别的模板声明/定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(586,80): error C3646: “allocate”: 未知重写说明符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,17): error C2065: “_Al”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C7525: 内联变量至少需要 "/std:c++17"
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,9): error C2275: “_Alloc”: 应为表达式而不是类型
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,22): error C2226: 语法错误: 意外的“std::_Normal_allocator_traits<_Alloc>::size_type”类型
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,22): error C2226:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,22): error C2226:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,22): error C2226:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,22): error C2226:         ]
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C2374: “errno_t”: 重定义；多次初始化
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(587,97): error C2334: “{”的前面有意外标记；跳过明显的函数体
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C2086: “int errno_t”: 重定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(606,54): error C2061: 语法错误: 标识符“pointer”
   (编译源文件“001.cpp”)
-      D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5):
-      参见“errno_t”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C2065: “_Size”: 未声明的标识符
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66): error C2027: 使用了未定义类型“std::_Replace_first_parameter<_Other,_Ty>”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66): error C2027:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66): error C2027:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66): error C2027:             _Other=int,
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66): error C2027:             _Ty=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66): error C2027:         ]
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xutility(429,8):
+      参见“std::_Replace_first_parameter<_Other,_Ty>”的声明
+          with
+          [
+              _Other=int,
+              _Ty=int
+          ]
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(778,69):
+          查看对正在编译的 别名 模板 实例化“std::_Normal_allocator_traits<_Alloc>::rebind_alloc<_Ty>”的引用
+          with
+          [
+              _Alloc=int,
+              _Ty=int
+          ]
+          D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(576,69):
+          查看对正在编译的 类 模板 实例化“std::_Get_rebind_type<_Alloc,_Ty,void>”的引用
+          with
+          [
+              _Alloc=int,
+              _Ty=int
+          ]
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(84,5): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(469,66): error C2061: 语法错误: 标识符“type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(99,22): error C2988: 不可识别的模板声明/定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(576,69): error C2794: “type”: 不是“std::_Get_rebind_type<_Alloc,_Ty,void>”的任何直接或间接基类的成员
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(576,69): error C2794:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(576,69): error C2794:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(576,69): error C2794:             _Alloc=int,
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(576,69): error C2794:             _Ty=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(576,69): error C2794:         ]
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(99,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(778,69): error C2938: “std::_Normal_allocator_traits<_Alloc>::rebind_alloc”: 未能使别名模板专用化
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(778,69): error C2938:         with
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(778,69): error C2938:         [
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(778,69): error C2938:             _Alloc=int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(778,69): error C2938:         ]
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C2988: 不可识别的模板声明/定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(448,26): error C2938: “std::_Rebind_alloc_t”: 未能使别名模板专用化
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(452,76): error C2825: '_Alloc': 当后面跟“::”时必须为类或命名空间
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C7525: 内联变量至少需要 "/std:c++17"
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(452,84): error C2510: “_Alloc”:“::”的左边必须是类/结构/联合
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(452,84): error C2146: 语法错误: 缺少“>”(在标识符“value_type”的前面)
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C2374: “errno_t”: 重定义；多次初始化
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(452,52): error C2062: 意外的类型“<error type>” 
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C2086: “int errno_t”: 重定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(453,68): error C2238: 意外的标记位于“;”之前
   (编译源文件“001.cpp”)
-      D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5):
-      参见“errno_t”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C2065: “_Size”: 未声明的标识符
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(459,52): error C2955: “std::allocator_traits”: 使用 类 模板 需要 模板 参数列表
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(106,5): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(459,52): error C2039: "pointer": 不是 "std::allocator_traits<_Alloc>" 的成员
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits<_Alloc>”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(130,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(459,52): error C2061: 语法错误: 标识符“pointer”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(145,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(460,52): error C2955: “std::allocator_traits”: 使用 类 模板 需要 模板 参数列表
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(160,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(460,52): error C2039: "const_pointer": 不是 "std::allocator_traits<_Alloc>" 的成员
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits<_Alloc>”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(175,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(460,52): error C2061: 语法错误: 标识符“const_pointer”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(190,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(463,52): error C2955: “std::allocator_traits”: 使用 类 模板 需要 模板 参数列表
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(203,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(463,52): error C2039: "size_type": 不是 "std::allocator_traits<_Alloc>" 的成员
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits<_Alloc>”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(216,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(463,52): error C2061: 语法错误: 标识符“size_type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(227,18): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(464,52): error C2955: “std::allocator_traits”: 使用 类 模板 需要 模板 参数列表
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(238,18): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(464,52): error C2039: "difference_type": 不是 "std::allocator_traits<_Alloc>" 的成员
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\xmemory(755,8):
+      参见“std::allocator_traits<_Alloc>”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(249,18): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(464,52): error C2061: 语法错误: 标识符“difference_type”
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(260,18): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,30): error C2065: “size_type”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(264,22): error C2988: 不可识别的模板声明/定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,41): error C2065: “difference_type”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(264,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,58): error C2065: “pointer”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(279,22): error C2988: 不可识别的模板声明/定义
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,67): error C2065: “const_pointer”: 未声明的标识符
   (编译源文件“001.cpp”)
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(279,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,9): error C2923: "std::_Vec_iter_types": "size_type" 不是参数 "_Size_type" 的有效 模板 类型参数
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,30):
+      参见“size_type”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(301,18): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,9): error C2923: "std::_Vec_iter_types": "difference_type" 不是参数 "_Difference_type" 的有效 模板 类型参数
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,41):
+      参见“difference_type”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(316,34): error C2061: 语法错误: 标识符“_locale_t”
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,9): error C2923: "std::_Vec_iter_types": "pointer" 不是参数 "_Pointer" 的有效 模板 类型参数
   (编译源文件“001.cpp”)
+      D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,58):
+      参见“pointer”的声明
   
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(331,34): error C2061: 语法错误: 标识符“_locale_t”
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(348,22): error C2988: 不可识别的模板声明/定义
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(348,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C2988: 不可识别的模板声明/定义
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C7525: 内联变量至少需要 "/std:c++17"
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C2374: “errno_t”: 重定义；多次初始化
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C2086: “int errno_t”: 重定义
-  (编译源文件“001.cpp”)
-      D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5):
-      参见“errno_t”的声明
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C2065: “_Size”: 未声明的标识符
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(357,5): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(388,22): error C2988: 不可识别的模板声明/定义
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(388,22): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2988: 不可识别的模板声明/定义
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C7525: 内联变量至少需要 "/std:c++17"
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2374: “errno_t”: 重定义；多次初始化
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2086: “int errno_t”: 重定义
-  (编译源文件“001.cpp”)
-      D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(61,5):
-      参见“errno_t”的声明
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2065: “_DriveSize”: 未声明的标识符
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2065: “_DirSize”: 未声明的标识符
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2065: “_NameSize”: 未声明的标识符
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2065: “_ExtSize”: 未声明的标识符
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(400,5): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(409,26): error C2988: 不可识别的模板声明/定义
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(409,26): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(424,26): error C2988: 不可识别的模板声明/定义
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(424,26): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(431,9): error C2988: 不可识别的模板声明/定义
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(431,9): error C2143: 语法错误: 缺少“;”(在“__cdecl”的前面)
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(431,9): error C7525: 内联变量至少需要 "/std:c++17"
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(431,9): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(431,9): error C2374: “errno_t”: 重定义；多次初始化
-  (编译源文件“001.cpp”)
-  
-D:\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_wstdlib.h(431,9): error C1003: 错误计数超过 100；正在停止编译
+D:\visual studio\visualstudio 2022\VC\Tools\MSVC\14.44.35207\include\vector(608,9): error C1003: 错误计数超过 100；正在停止编译
   (编译源文件“001.cpp”)
   
