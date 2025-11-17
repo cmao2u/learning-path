@@ -604,7 +604,7 @@ int main()
 	return 0;
 }*/
 
-
+/*
 #include <iostream>	
 using namespace std;
 int main()
@@ -621,4 +621,195 @@ int main()
 	cout << "1+1!+2!+...+" << n << "!=" << y << endl;
 	return 0;
 
+}*/
+//#include <iostream>
+//using namespace std;
+//float fun(float x)
+//{
+//	float y;
+//	y = 2 * x * x + 5 * x + 3;
+//	return y;
+//}
+//int main()
+//{
+//	float y1, y2;
+//	y1 = fun(1.0);
+//	y2 = fun(1.2);
+//	cout << "y1=" << y1 << endl;
+//	cout << "y2=" << y2 << endl;
+//	return 0;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//double f(double x)
+//{
+//	float y;
+//	y = x * x + 3 * x - 4;
+//	return y;
+//}
+//double df(double x)
+//{
+//	float y;
+//	y = 2 * x + 3;
+//	return y;
+//}
+//int main()
+//{
+//	float x1, x0;
+//	x1 = 0;
+//	do
+//	{
+//		x0 = x1;
+//		x1 = x0 - f(x0) / df(x0);
+//	} while (f(x1) > 1e-5);
+//	cout << "x=" << x1 << endl;
+//	return 0;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//float f(float x)
+//{
+//	return x * x + 3 * x - 4;
+//}
+//int main()
+//{
+//	float x1, x2, x0;
+//	do
+//	{
+//		cout << "请输入初值x1和x2:" << endl;
+//		cin >> x1 >> x2;
+//	} while ((f(x1) * f(x2)) > 0);
+//	do {
+//		x0 = (x1 + x2) / 2;
+//		if ((f(x0) * f(x1)) > 0)
+//			x1 = x0;
+//		else
+//			x2 = x0;
+//	} while (fabs(f(x0)) > 1e-5);
+//	cout << "x0=" << x0 << endl;
+//	return 0;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//double f(double x)
+//{
+//	return x * x + 3 * x - 4;
+//}
+//double dx(double x)
+//{
+//	return 2 * x + 3;
+//}
+//void recursion(double x0)
+//{
+//	if (fabs(f(x0)) < 1e-5)
+//	{
+//		cout << "x0=" << x0 << endl;
+//		return;
+//	}
+//	double x1 = x0 - f(x0) / dx(x0);
+//	recursion(x1);
+//}
+//int main()
+//{
+//	double x0 = 2;
+//	recursion(x0);
+//	return 0;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//double f(double x)
+//{
+//	return x * x + 3 * x - 4;
+//}
+//double dx(double x)
+//{
+//	return 2 * x + 3;
+//}
+//void recursion(double x0)
+//{
+//	if (fabs(f(x0)) < 1e-5)
+//	{
+//		cout << "x0=" << x0 << endl;
+//		return;
+//	}
+//	double x1 = x0 - f(x0) / dx(x0);
+//	recursion(x1);
+//}
+//int main()
+//{
+//	double x0 = 2;
+//	recursion(x0);
+//	return 0;
+////}
+//#include <iostream>
+//using namespace std;
+//int prime(int x)
+//{
+//	for (int i = 2; i < x; i++)
+//		if (x & i == 0)
+//			return 0;
+//	return 1;
+//}
+//int main()
+//{
+//	for (int i = 100; i <= 200; i++)
+//	{
+//		if (prime(i) == 1)
+//			cout << i << '\t';
+//	}
+//	return 0;
+//}
+//
+//#include <iostream>
+//using namespace std;
+//int IsPrime(int num)
+//{
+//	for (int i = 2; i < num; i++)
+//		if (num % i == 0)
+//			return 0;
+//	return 1;
+//}
+//int main()
+//{
+//	int n;
+//	cout << "请输入一个整数:" << endl;
+//	cin >> n;
+//	for (int i = 2; i <= n / 2; i++)
+//	{
+//		if (n % i == 0 && IsPrime(i))
+//			cout << i << '\t';
+//	}
+//	cout << endl;
+//	return 0;
+//}
+//+
+#include <iostream>
+using namespace std;
+int fun(int num)
+{
+	int mul = 1;
+	while (num)
+	{
+		mul *= num % 10;
+		num /= 10;
+	}
+	return mul;
+}
+int main()
+{
+	int n, mul;
+	cout << "请输入一个整数(输入0结束):" << endl;
+	cin >> n;
+	while (n)
+	{
+		mul = fun(n);
+		cout << n << "各位数之积为" << mul << endl;
+		cout << "请输入一个整数(输入0结束)";
+		cin >> n;
+	}
+	return 0;
 }

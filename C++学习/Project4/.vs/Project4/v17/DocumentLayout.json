@@ -7,6 +7,9 @@
       "RelativeMoniker": "D:0:0:{C55F8C6A-669A-4D87-B759-7DB543E50E42}|Project4\\Project4.vcxproj|solutionrelative:Project4\\mainbody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C55F8C6A-669A-4D87-B759-7DB543E50E42}|Project4\\Project4.vcxproj|D:\\VISUAL STUDIO\\VISUALSTUDIO 2022\\VC\\TOOLS\\MSVC\\14.44.35207\\INCLUDE\\ALGORITHM||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C55F8C6A-669A-4D87-B759-7DB543E50E42}|Project4\\Project4.vcxproj|D:\\VISUAL STUDIO\\VISUALSTUDIO 2022\\VC\\TOOLS\\MSVC\\14.44.35207\\INCLUDE\\XUTILITY||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
@@ -17,18 +20,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "algorithm",
+              "DocumentMoniker": "D:\\visual studio\\visualstudio 2022\\VC\\Tools\\MSVC\\14.44.35207\\include\\algorithm",
+              "ToolTip": "D:\\visual studio\\visualstudio 2022\\VC\\Tools\\MSVC\\14.44.35207\\include\\algorithm",
+              "ViewState": "AgIAAMkOAAAAAAAAAAAmwNcOAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-17T14:08:08.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "xutility",
               "DocumentMoniker": "D:\\visual studio\\visualstudio 2022\\VC\\Tools\\MSVC\\14.44.35207\\include\\xutility",
               "ToolTip": "D:\\visual studio\\visualstudio 2022\\VC\\Tools\\MSVC\\14.44.35207\\include\\xutility",
               "ViewState": "AgIAADAGAAAAAAAAAAApwDwGAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-15T11:49:10.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T11:49:10.342Z"
             },
             {
               "$type": "Document",
@@ -38,7 +51,7 @@
               "RelativeDocumentMoniker": "Project4\\mainbody.cpp",
               "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\C\u002B\u002B\u5B66\u4E60\\Project4\\Project4\\mainbody.cpp",
               "RelativeToolTip": "Project4\\mainbody.cpp",
-              "ViewState": "AgIAACUEAAAAAAAAAAAAACkEAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAIkEAAAAAAAAAAAYwJEEAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-09T08:05:32.993Z",
               "EditorCaption": ""

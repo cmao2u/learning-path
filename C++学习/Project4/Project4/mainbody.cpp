@@ -9,6 +9,7 @@
 #include <set>
 #include <map>
 #include <functional>
+#include <numeric>
 using namespace std;
 /*1.2 函数模板
 template<typename T>
@@ -1054,6 +1055,7 @@ void test01()
 	PrintVector(v);
 	
 }*/
+/*
 void test01()
 {
 	vector<bool> v1;
@@ -1066,7 +1068,103 @@ void test01()
 	PrintVector(v1);
 	transform(v1.begin(), v1.end(), v2.begin(), logical_not<bool>());
 	PrintVector(v2);
+}*/
+/*for_each算法
+void print(int val)
+{
+	cout << val << " ";
 }
+class print
+{
+public:
+	void operator()(int val)
+	{
+		cout << val<<" ";
+	}
+};
+void test01()
+{
+	vector<int> v;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+	for_each(v.begin(), v.end(), print);
+	cout << endl;
+	for_each(v.begin(), v.end(), class::print());
+}*/
+/*transform算法
+class Print
+{
+public:
+	void operator()(int val)
+	{
+		cout << val<<" ";
+	}
+};
+class Transform
+{
+public:
+	int operator()(int v)
+	{
+		return v+100;
+	}
+};
+void test01()
+{
+	vector<int> v;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+	vector<int> vTarget;
+	vTarget.resize(v.size());
+	transform(v.begin(), v.end(), vTarget.begin(), Transform());
+	for_each(vTarget.begin(), vTarget.end(), Print());
+}*/
+/*find算法
+class Person
+{
+public:
+	string m_Name;
+	int m_Age;
+	Person(string name,int age):m_Name(name),m_Age(age){}
+	bool operator==(const Person &p)
+	{
+		if (this->m_Name == p.m_Name && this->m_Age == p.m_Age)
+			return true;
+		else
+			return false;
+	}
+};
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+    vector<int>::iterator it = find(v1.begin(), v1.end(), 6);
+	if (it == v1.end())
+		cout << "没找到元素" << endl;
+	else
+		cout << "找到了元素:" << *it;
+	Person p1("aaa", 10);
+	Person p2("bbb", 20);
+	Person p3("ccc", 30);
+	Person p4("ddd", 40);
+	vector<Person> v2;
+	v2.push_back(p1);
+	v2.push_back(p2);
+	v2.push_back(p3);
+	v2.push_back(p4);
+	Person pp("ccc", 30);
+	vector<Person>::iterator ItBegin = find(v2.begin(), v2.end(), pp);
+	if (ItBegin == v2.end())
+		cout << "没找到该元素" << endl;
+	else
+		cout << "找到了元素,name:" << ItBegin->m_Name <<",age:" << ItBegin->m_Age << endl;
+}*/
 
 int main()
 {
