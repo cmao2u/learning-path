@@ -1165,9 +1165,265 @@ void test01()
 	else
 		cout << "找到了元素,name:" << ItBegin->m_Name <<",age:" << ItBegin->m_Age << endl;
 }*/
-
-int main()
+/*find_if算法
+class Person
 {
+public:
+	string m_Name;
+	int m_Age;
+	Person(string name, int age)
+	{
+		this->m_Name = name;
+		this->m_Age = age;
+	}
+
+};
+class Greater20
+{
+public:
+	bool operator()(const Person& p1)
+	{
+		return p1.m_Age > 20;
+	}
+};
+void test01()
+{
+	vector<Person> v1;
+	Person p1("aaa", 10);
+	Person p2("bbb", 20);
+	Person p3("ccc", 30);
+	Person p4("ddd", 40);
+	v1.push_back(p1);
+	v1.push_back(p2);
+	v1.push_back(p3);
+	v1.push_back(p4);
+	vector<Person>::iterator It=find_if(v1.begin(), v1.end(), Greater20());
+	if (It == v1.end())
+	{
+		cout << "未找到该元素" << endl;
+	}
+	else
+	{
+		cout << "找到了该元素:" <<"name:"<<It->m_Name <<" age:" << It->m_Age << endl;
+	}
+}*/
+/*adjacent算法
+void test01()
+{
+	vector<int> v1;
+	v1.push_back(10);
+	v1.push_back(11);
+	v1.push_back(11);
+	v1.push_back(13);
+	v1.push_back(16);
+	v1.push_back(18);
+	vector<int>::iterator It = adjacent_find(v1.begin(), v1.end());
+	if (It == v1.end())
+		cout << "未找到相邻元素";
+	else
+		cout << "找到了相邻元素:" << *It << endl;
+}*/
+/*binary_search算法
+void test01()
+{
+	vector<int> v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+	bool ret = binary_search(v1.begin(), v1.end(), 22);
+	if (ret)
+		cout << "找到了" << endl;
+	else
+		cout << "没找到" << endl;
+}*/
+/*count算法
+class Person
+{
+public:
+	Person(string name,int age):m_Name(name),m_Age(age){}
+	string m_Name;
+	int m_Age;
+	bool operator==(const Person& p)
+	{
+		if (m_Name == p.m_Name && m_Age == p.m_Age)
+			return true;
+		else return false;
+	}
+};
+void test01()
+{
+	Person p1("张三", 20);
+	Person p2("张四", 21);
+	Person p3("张五", 28);
+	Person p4("张六", 29);
+	Person p5("张七", 21);
+	Person p6("张四", 21);
+	vector<Person> v1;
+	v1.push_back(p1);
+	v1.push_back(p2);
+	v1.push_back(p3);
+	v1.push_back(p4);
+	v1.push_back(p5);
+	v1.push_back(p6);
+	Person pp("张四", 21);
+	int res=count(v1.begin(), v1.end(), pp);
+	cout << res << endl;
+}*/
+/*count_if算法
+class Person
+{
+public:
+	Person(string name,int age):m_Name(name),m_Age(age){}
+	string m_Name;
+	int m_Age;
+
+};
+class AgeGreater20
+{
+public:
+	bool operator()(const Person& p1)
+	{
+		return p1.m_Age> 20;
+	}
+};
+void test01()
+{
+	Person p1("张三", 25);
+	Person p2("张四", 20);
+	Person p3("张五", 18);
+	Person p4("张六", 29);
+	Person p5("张七", 26);
+	vector<Person> v1;
+	v1.push_back(p1);
+	v1.push_back(p2);
+	v1.push_back(p3);
+	v1.push_back(p4);
+	v1.push_back(p5);
+	int res = count_if(v1.begin(), v1.end(), AgeGreater20());
+	cout << res << endl;
+}*/
+/*merge,reverse,copy算法
+void PrintVector(vector<int> &v)
+{
+	for (vector<int>::iterator It = v.begin(); It != v.end(); It++)
+	{
+		cout << *It << " ";
+	}
+	cout << endl;
+}
+void test01()
+{
+	vector<int> v1;
+	vector<int> v2;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+		v2.push_back(i + 1);
+	}
+	vector<int> v3;
+	v3.resize(v1.size() + v2.size());
+	merge(v1.begin(), v1.end(), v2.begin(), v2.end(), v3.begin());
+	PrintVector(v3);
+	reverse(v3.begin(), v3.end());
+	PrintVector(v3);
+	vector<int> v4;
+	v4.resize(v3.size());
+	copy(v3.begin(), v3.end(), v4.begin());
+	PrintVector(v4);
+}*/
+/*
+class Print
+{
+public:
+	void operator()(int val)
+	{
+		cout << val << " ";
+	}
+};
+class Greater1000
+{
+public:
+	bool operator()(int val)
+	{
+		if (val > 1000)
+			return true;
+		else return false;
+	}
+};
+void test01()
+{
+	vector<int> v1;
+	v1.push_back(10);
+	v1.push_back(11);
+	v1.push_back(10);
+	v1.push_back(11);
+	v1.push_back(10);
+	v1.push_back(11);
+	for_each(v1.begin(), v1.end(), Print());
+	cout << endl;
+	replace(v1.begin(), v1.end(), 11,2200);
+	for_each(v1.begin(), v1.end(), Print());
+	cout << endl;
+	replace_if(v1.begin(), v1.end(), Greater1000(), 0);
+	for_each(v1.begin(), v1.end(), Print());
+	cout << endl;
+	vector<int> v2;
+	v2.push_back(10);
+	swap(v1, v2);
+	for_each(v1.begin(), v1.end(), Print());
+	cout << endl;
+	for_each(v2.begin(), v2.end(), Print());
+	cout << endl;
+	vector<int> v4;
+	for (int i = 0; i <= 100; i++)
+	{
+		v4.push_back(i);
+	}
+	int sum=accumulate(v4.begin(), v4.end(), 0);
+	cout << sum << endl;
+	vector<int> v5;
+	v5.resize(10);
+	fill(v5.begin(), v5.end(), 1000);
+	for_each(v5.begin(), v5.end(), Print());
+}*/
+/*set算法
+class Print
+{
+public:
+	void operator()(int val)
+	{
+		cout << val << " ";
+	}
+};
+void test01()
+{
+	vector<int> v1;
+	vector<int> v2;
+	vector<int> vTarget;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+		v2.push_back(i+3);
+	}
+	vTarget.resize(min(v1.size(), v2.size()));
+	vector<int>::iterator ItEnd = set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget.begin());
+	for_each(vTarget.begin(),ItEnd, Print());
+	cout << endl;
+	vector<int> vTarget2;
+	vTarget2.resize((v1.size()+v2.size()));
+	vector<int>::iterator ItEnd2 = set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget2.begin());
+	for_each(vTarget2.begin(), ItEnd2, Print());
+	cout << endl;
+	vector<int> vTarget3;
+	vTarget3.resize(max(v1.size(), v2.size()));
+	vector<int>::iterator ItEnd3 = set_difference(v1.begin(), v1.end(), v2.begin(), v2.end(), vTarget3.begin());
+	for_each(vTarget3.begin(), ItEnd3, Print());
+}*/
+
+
+//int main()
+//{
 	/*1.2 函数模板
 	double a = 19.2;
 	double b = 30.2;
@@ -1182,7 +1438,34 @@ int main()
 	/*test01();
 	test02();*/
 	/*test01();
-	test02();*/
-	test01();
-	return 0;
-}
+//	test02();*/
+//	test01();
+//	return 0;
+//}
+/*2025年11月19日22时35分
+ 程序设计已经全部完成；
+ 我不知道未来能走的有多远；
+ 我不知道未来是好是坏；
+ 但我绝不会后悔；
+ 敲下键盘的第一秒开始；
+ 便已定格成永恒；
+ 或许有一天我会忘记一切；
+ 但我永远会记得这一天；
+ 记得那些在大学学习奋斗的日子；
+ 一切交给时间；
+ 我走在我所热爱的道路上；
+                    by Cmao2
+ -------------End--------------
+
+
+
+
+
+
+
+
+
+
+
+
+*/
