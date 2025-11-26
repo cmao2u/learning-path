@@ -5,6 +5,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{281E0BF7-CBC4-49CB-9F2F-F0579829D9CF}|\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5.vcxproj|C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\\u6570\u636E\u7ED3\u6784\\\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6D4B\u8BD5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{281E0BF7-CBC4-49CB-9F2F-F0579829D9CF}|\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5.vcxproj|solutionrelative:\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6D4B\u8BD5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281E0BF7-CBC4-49CB-9F2F-F0579829D9CF}|\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5.vcxproj|D:\\VISUAL STUDIO\\VISUALSTUDIO 2022\\VC\\TOOLS\\MSVC\\14.44.35207\\INCLUDE\\ALGORITHM||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +17,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "algorithm",
+              "DocumentMoniker": "D:\\visual studio\\visualstudio 2022\\VC\\Tools\\MSVC\\14.44.35207\\include\\algorithm",
+              "ToolTip": "D:\\visual studio\\visualstudio 2022\\VC\\Tools\\MSVC\\14.44.35207\\include\\algorithm",
+              "ViewState": "AgIAAPkcAAAAAAAAAAAIwP8cAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-22T07:46:40.768Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +38,7 @@
               "RelativeDocumentMoniker": "\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6D4B\u8BD5.cpp",
               "ToolTip": "C:\\Users\\cmao2\\Desktop\\\u9879\u76EE\\\u6570\u636E\u7ED3\u6784\\\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6D4B\u8BD5.cpp",
               "RelativeToolTip": "\u6570\u636E\u7ED3\u6784\u6D4B\u8BD5\\\u6D4B\u8BD5.cpp",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAcwIEAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAAALoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-16T04:20:02.806Z",
               "EditorCaption": ""

@@ -329,6 +329,7 @@ void test04()
 //
 //	return 0;
 //}
+/*
 #include <vector>
 #include <map>
 #include <iostream>
@@ -389,4 +390,323 @@ int main()
 	vector<Polynomial> p1 = readPoly();
 	vector<Polynomial> p2 = readPoly();
 
+}*/
+//#include <iostream>
+//#include <algorithm>
+//#include <queue>
+//using namespace std;
+//typedef struct Node* Bintree;
+//struct Node
+//{
+//	int data;
+//	Bintree Left;
+//	Bintree Right;
+//
+//};
+//void PreOrderTravelsal(Bintree BT)
+//{
+//	if (BT)
+//	{
+//		cout << BT->data;
+//		PreOrderTravelsal(BT->Left);
+//		PreOrderTravelsal(BT->Right);
+//	}
+//}
+//void InOrderTravelsal(Bintree BT)
+//{
+//	if (BT)
+//	{
+//		InOrderTravelsal(BT->Left);
+//		cout << BT->data;
+//		InOrderTravelsal(BT->Right);
+//	}
+//}
+//void PostOrderTravelsal(Bintree BT)
+//{
+//	if (BT)
+//	{
+//		PostOrderTravelsal(BT->Left);
+//		PostOrderTravelsal(BT->Right);
+//		cout << BT->data;
+//	}
+//}
+//void LevelOrderTravelsal(Bintree BT)
+//{
+//	queue<Bintree> q;
+//	if (!BT)
+//		return;
+//	while (!q.empty())
+//	{
+//		cout << q.front();
+//		q.pop();
+//		if (BT->Left)
+//			q.push(BT->Left);
+//		if (BT->Right)
+//			q.push(BT->Right);
+//	}
+////}
+//#include <iostream>
+//#include <vector>
+//#include <string>
+//#include <algorithm>
+//#include <iterator>
+//
+//// 定义二叉树节点结构
+//struct TreeNode {
+//	char data;
+//	int left;  // 左孩子的索引，-1表示空
+//	int right; // 右孩子的索引，-1表示空
+//};
+//
+//// 将树的构建逻辑封装在一个函数中
+//// 读取输入并返回根节点的索引
+//int buildTree(std::vector<TreeNode>& tree) {
+//	int n;
+//	std::cin >> n;
+//
+//	if (n == 0) {
+//		return -1; // 空树
+//	}
+//
+//	tree.resize(n);
+//	std::vector<int> parent(n, -1); // 用于寻找根节点
+//
+//	for (int i = 0; i < n; ++i) {
+//		char data;
+//		std::string leftStr, rightStr;
+//
+//		// 直接从标准输入读取数据，不添加任何提示
+//		std::cin >> data >> leftStr >> rightStr;
+//
+//		tree[i].data = data;
+//		 
+//		// 处理左孩子
+//		tree[i].left = (leftStr == "-") ? -1 : std::stoi(leftStr);
+//		// 处理右孩子
+//		tree[i].right = (rightStr == "-") ? -1 : std::stoi(rightStr);
+//
+//		// 更新父节点信息
+//		if (tree[i].left != -1) {
+//			parent[tree[i].left] = i;
+//		}
+//		if (tree[i].right != -1) {
+//			parent[tree[i].right] = i;
+//		}
+//	}
+//
+//	// 根节点是父节点为-1的节点
+//	auto it = std::find(parent.begin(), parent.end(), -1);
+//	if (it != parent.end()) {
+//		return std::distance(parent.begin(), it);
+//	}
+//
+//	return -1; // 理论上不会到达这里
+//}
+//
+//// 递归判断两棵树是否同构
+//bool isIsomorphic(const std::vector<TreeNode>& tree1, int root1,
+//	const std::vector<TreeNode>& tree2, int root2) {
+//	// 1. 如果两个节点都为空，它们是同构的
+//	if (root1 == -1 && root2 == -1) {
+//		return true;
+//	}
+//	// 2. 如果一个为空另一个不为空，它们不同构
+//	if (root1 == -1 || root2 == -1) {
+//		return false;
+//	}
+//	// 3. 如果节点的值不同，它们不同构
+//	if (tree1[root1].data != tree2[root2].data) {
+//		return false;  
+//	}
+//
+//	// 4. 递归检查子树的两种可能情况
+//	// 情况一：不交换左右子树
+//	bool case1 = isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].left) &&
+//		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].right);
+//
+//	// 情况二：交换左右子树
+//	bool case2 = isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].right) &&
+//		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].left);
+//
+//	return case1 || case2;
+//}
+//
+//int main() {
+//	// 关闭 cin 和 cout 的同步，可以加速IO，在数据量大时很有用
+//	std::ios_base::sync_with_stdio(false);
+//	std::cin.tie(NULL);
+//
+//	std::vector<TreeNode> tree1, tree2;
+//	int root1 = buildTree(tree1);
+//	int root2 = buildTree(tree2);
+//
+//	// 调用同构判断函数
+//	if (isIsomorphic(tree1, root1, tree2, root2)) {
+//		std::cout << "Yes" << std::endl;
+//	}
+//	else {
+//		std::cout << "No" << std::endl;
+//	}
+//
+//	return 0;
+//}
+/*创造节点
+建树：
+利用vector存储每个节点 
+找出根（-1的）
+同构函数：
+1.都为空true
+2.一个为空一个有false
+3.根值不同false
+4.1不交换左右子树递归
+4.2交换左右子树递归
+主函数：
+ 调用建树函数建两棵树
+ 判断同构并输出结果
+ */
+//#include <iostream>
+//#include <vector>
+//#include <string>
+//using namespace std;
+//struct TreeNode
+//{
+//	char data;
+//	int left;
+//	int right;
+//};
+//int BuildTree(vector<TreeNode> &Tree)
+//{
+//	int n;
+//	cin >> n;
+//	if (n == 0)
+//		return -1;//空树
+//	Tree.resize(n);
+//	vector<int> parent(n, -1);
+//	for (int i = 0; i < n; i++)
+//	{
+//		char data;
+//		string leftStr;
+//		string rightStr;
+//		cin >> data >> leftStr >> rightStr;
+//		Tree[i].data = data;
+//		Tree[i].left = (leftStr == "-" ? -1 : stoi(leftStr));
+//		Tree[i].right = (rightStr == "-" ? -1 : stoi(rightStr));
+//		if (Tree[i].left != -1)
+//			parent[Tree[i].left] = i;
+//		if (Tree[i].right != -1)
+//			parent[Tree[i].right] = i;
+//	}
+//	auto it = find(parent.begin(), parent.end(), -1);
+//	if (it != parent.end())
+//		return distance(parent.begin(), it);
+//	else 
+//		return -1;//理论上不会到达这里
+//
+//}
+//bool isIsomorphic(const vector<TreeNode>& tree1, int root1,
+//	const vector<TreeNode>& tree2, int root2)
+//{
+//	if (root1 == -1 && root2 == -1)
+//		return true;
+//	if (root1 == -1 && root2 != -1)
+//		return false;
+//	if (tree1[root1].data != tree2[root2].data)
+//		return false;
+//	bool case1 = isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].left) &&
+//		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].right);
+//	bool case2 = isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].right) &&
+//		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].left);
+//	return case1 || case2;
+//}
+//int main()
+//{
+//	ios_base::sync_with_stdio(false);
+//	cin.tie(NULL);
+//	vector<TreeNode> tree1, tree2;
+//	int root1 = BuildTree(tree1);
+//	int root2 = BuildTree(tree2);
+//	if(isIsomorphic(tree1, root1, tree2, root2))
+//		cout << "Yes" << endl;
+//	else
+//		cout << "No" << endl;
+//}
+
+
+
+/*List leaves
+造树：
+存储数据
+层序遍历
+没有左右孩子输出*/
+#include <iostream>
+#include <vector>
+#include <queue>
+#include< string>
+#include <algorithm>
+using namespace std;
+struct TreeNode
+{
+	int left;
+	int right;
+};
+int BuildTree(vector<TreeNode>& Tree)
+{
+	int n; cin >> n;
+	if (n == 0)
+		return -1;//空树
+	Tree.resize(n);
+	vector<int> parent(n, -1);
+	for (int i = 0; i < n; i++)
+	{
+		string leftStr;
+		string rightStr;
+		cin  >> leftStr >> rightStr;
+		Tree[i].left = (leftStr == "-" ? -1 : stoi(leftStr));
+		Tree[i].right = (rightStr == "-" ? -1 : stoi(rightStr));
+		if (Tree[i].left != -1)
+			parent[Tree[i].left] = i;
+		if (Tree[i].right != -1)
+			parent[Tree[i].right] = i;
+	}
+	auto it = find(parent.begin(), parent.end(), -1);
+	if (it != parent.end())
+		return distance(parent.begin(), it);
+	else
+		return -1;//理论上不会到达这里
+}
+void LevelOrderTravelsal(const vector<TreeNode>& Tree, int root)
+{
+	queue<int> q;
+	if (root == -1)
+		return;
+	q.push(root);
+	bool first = true; //声明布尔变量 first，用于 控制输出格式：标记是否是 “第一个要输出的叶子节点”（避免行尾多余空格）。
+	while (!q.empty())
+	{
+		int index = q.front();
+		q.pop();
+		if (Tree[index].left == -1 && Tree[index].right == -1)
+		{
+			if (first)
+			{
+				cout << index;
+				first = false;
+			}
+			else
+				cout << " " << index;
+		}
+		if (Tree[index].left != -1)
+			q.push(Tree[index].left);
+		if (Tree[index].right != -1)
+			q.push(Tree[index].right);
+	}
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	vector<TreeNode>tree;
+	int root = BuildTree(tree);
+	LevelOrderTravelsal(tree,root);
+	return 0;
 }
