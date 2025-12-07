@@ -638,75 +638,372 @@ int main()
 存储数据
 层序遍历
 没有左右孩子输出*/
+//#include <iostream>
+//#include <vector>
+//#include <queue>
+//#include< string>
+//#include <algorithm>
+//using namespace std;
+//struct TreeNode
+//{
+//	int left;
+//	int right;
+//};
+//int BuildTree(vector<TreeNode>& Tree)
+//{
+//	int n; cin >> n;
+//	if (n == 0)
+//		return -1;//空树
+//	Tree.resize(n);
+//	vector<int> parent(n, -1);
+//	for (int i = 0; i < n; i++)
+//	{
+//		string leftStr;
+//		string rightStr;
+//		cin  >> leftStr >> rightStr;
+//		Tree[i].left = (leftStr == "-" ? -1 : stoi(leftStr));
+//		Tree[i].right = (rightStr == "-" ? -1 : stoi(rightStr));
+//		if (Tree[i].left != -1)
+//			parent[Tree[i].left] = i;
+//		if (Tree[i].right != -1)
+//			parent[Tree[i].right] = i;
+//	}
+//	auto it = find(parent.begin(), parent.end(), -1);
+//	if (it != parent.end())
+//		return distance(parent.begin(), it);
+//	else
+//		return -1;//理论上不会到达这里
+//}
+//void LevelOrderTravelsal(const vector<TreeNode>& Tree, int root)
+//{
+//	queue<int> q;
+//	if (root == -1)
+//		return;
+//	q.push(root);
+//	bool first = true; //声明布尔变量 first，用于 控制输出格式：标记是否是 “第一个要输出的叶子节点”（避免行尾多余空格）。
+//	while (!q.empty())
+//	{
+//		int index = q.front();
+//		q.pop();
+//		if (Tree[index].left == -1 && Tree[index].right == -1)
+//		{
+//			if (first)
+//			{
+//				cout << index;
+//				first = false;
+//			}
+//			else
+//				cout << " " << index;
+//		}
+///		if (Tree[index].left != -1)
+//			q.push(Tree[index].left);
+//		if (Tree[index].right != -1)
+//			q.push(Tree[index].right);
+//	}
+//}
+//int main()
+//{
+//	ios_base::sync_with_stdio(false);
+//	cin.tie(NULL);
+//	vector<TreeNode>tree;
+//	int root = BuildTree(tree);
+//	LevelOrderTravelsal(tree,root);
+//	return 0;
+//}
+//#include <iostream>
+//#include <vector>
+//#include <algorithm>
+//using namespace std;
+//
+//// BST节点结构体（C++风格，带构造函数）
+//struct TreeNode {
+//	int val;
+//	TreeNode* left;
+//	TreeNode* right;
+//	// 构造函数：初始化节点值，左右子树为空
+//	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//};
+//
+//// 向BST中插入节点（递归实现）
+//TreeNode* insert(TreeNode* root, int val) {
+//	if (root == nullptr) {  // 空树/叶子节点，新建节点
+//		return new TreeNode(val);
+//	}
+//	if (val < root->val) {  // 小于当前节点，插入左子树
+//		root->left = insert(root->left, val);
+//	}
+//	else {  // 大于当前节点，插入右子树（题目无重复值，无需处理等于）
+//		root->right = insert(root->right, val);
+//	}
+//	return root;
+//}
+//
+//// 前序遍历BST，生成特征序列（存储到vector中）
+//void preOrder(TreeNode* root, vector<int>& res) {
+//	if (root == nullptr) return;
+//	res.push_back(root->val);    // 根
+//	preOrder(root->left, res);   // 左
+//	preOrder(root->right, res);  // 右
+//}
+//
+//// 释放BST所有节点内存（避免内存泄漏）
+//void deleteTree(TreeNode* root) {
+//	if (root == nullptr) return;
+//	deleteTree(root->left);   // 递归释放左子树
+//	deleteTree(root->right);  // 递归释放右子树
+//	delete root;              // 释放当前节点
+//}
+//
+//// 生成插入序列对应的BST前序序列
+//vector<int> getPreSeq(const vector<int>& seq) {
+//	TreeNode* root = nullptr;
+//	// 插入所有元素构建BST
+//	for (int val : seq) {
+//		root = insert(root, val);
+//	}
+//	// 生成前序序列
+//	vector<int> pre;
+//	preOrder(root, pre);
+//	// 释放内存
+//	deleteTree(root);
+//	return pre;
+//}
+//
+//int main() {
+//	int n, m;
+//	// 循环读取测试用例，n=0时结束
+//	while (cin >> n && n != 0) {
+//		cin >> m;
+//		// 读取初始插入序列
+//		vector<int> initSeq(n);
+//		for (int i = 0; i < n; ++i) {
+//			cin >> initSeq[i];
+//		}
+//		// 生成初始序列的前序特征
+//		vector<int> initPre = getPreSeq(initSeq);
+//
+//		// 检查m个待验证序列
+//		for (int i = 0; i < m; ++i) {
+//			vector<int> checkSeq(n);
+//			for (int j = 0; j < n; ++j) {
+//				cin >> checkSeq[j];
+//			}
+//			// 生成待验证序列的前序特征
+//			vector<int> checkPre = getPreSeq(checkSeq);
+//			// 对比特征序列
+//			if (checkPre == initPre) {
+//				cout << "Yes" << endl;
+//			}
+//			else {
+//				cout << "No" << endl;
+//			}
+//		}
+//	}
+//	return 0;
+//}
+/*判断是否是同一颗BST
+1.根据BST的特征——Inorder相同
+只要判断先序是否相同即可
+2.建树
+3.记录完后删除遍历后数据
+4.封装函数
+5.循环调用*/
+//#include <iostream>
+//#include <vector>
+//#include <algorithm>
+//using namespace std;
+//struct TreeNode
+//{
+//	int val;
+//	TreeNode* left;
+//	TreeNode* right;
+//	TreeNode(int x) :val(x), left(nullptr), right(nullptr) {}
+//};
+//TreeNode* insert(TreeNode* root, int val)
+//{
+//	if (root == nullptr)
+//	{
+//		return new TreeNode(val);
+//	}
+//	if (val < root->val)
+//		root->left = insert(root->left, val);
+//	else
+//		root -> right = insert(root->right, val);
+//	return root;
+//}
+//void PreOrder(TreeNode* root, vector<int>& res)
+//{
+//	if (root == nullptr)
+//		return;
+//	res.push_back(root->val);
+//	PreOrder(root->left, res);
+//	PreOrder(root->right, res);
+//}
+//void deleteTree(TreeNode* root)
+//{
+//	if (root == nullptr)
+//		return;
+//	deleteTree(root->left);
+//	deleteTree(root->right);
+//	delete root;
+//}
+//vector<int> getPreSeq(const vector<int>& seq)
+//{
+//	TreeNode* root = nullptr;
+//	for (int val : seq)
+//	{
+//		root = insert(root,val);
+//	}
+//	vector<int> pre;
+//	PreOrder(root, pre);
+//	deleteTree(root);
+//	return pre;
+//}
+//int main()
+//{
+//	int m, n;
+//	while (cin >> m && m != 0)
+//	{
+//		cin >> n;
+//		vector<int> InitSeq(m);
+//		for(int i=0; i < m; i++)
+//		{
+//			cin >> InitSeq[i];
+//		}
+//		InitSeq = getPreSeq(InitSeq);
+//		for (int i = 0; i < n; i++)
+//		{
+//			vector<int> CheckSeq(m);
+//			for (int j = 0; j < m; j++)
+//			{
+//				cin >> CheckSeq[j];
+//			}
+//			CheckSeq = getPreSeq(CheckSeq);
+//			if(CheckSeq == InitSeq)
+//				cout << "Yes" << endl;
+//			else
+//				cout << "No" << endl;
+//		}
+//	}
+//	return 0;
+//
+//
+//}
+
+/*
 #include <iostream>
-#include <vector>
-#include <queue>
-#include< string>
 #include <algorithm>
 using namespace std;
-struct TreeNode
-{
-	int left;
-	int right;
+
+// AVL树节点结构
+struct TreeNode {
+	int val;
+	TreeNode* left;
+	TreeNode* right;
+	int height; // 节点高度
+	TreeNode(int x) : val(x), left(nullptr), right(nullptr), height(1) {}
 };
-int BuildTree(vector<TreeNode>& Tree)
-{
-	int n; cin >> n;
-	if (n == 0)
-		return -1;//空树
-	Tree.resize(n);
-	vector<int> parent(n, -1);
-	for (int i = 0; i < n; i++)
-	{
-		string leftStr;
-		string rightStr;
-		cin  >> leftStr >> rightStr;
-		Tree[i].left = (leftStr == "-" ? -1 : stoi(leftStr));
-		Tree[i].right = (rightStr == "-" ? -1 : stoi(rightStr));
-		if (Tree[i].left != -1)
-			parent[Tree[i].left] = i;
-		if (Tree[i].right != -1)
-			parent[Tree[i].right] = i;
-	}
-	auto it = find(parent.begin(), parent.end(), -1);
-	if (it != parent.end())
-		return distance(parent.begin(), it);
-	else
-		return -1;//理论上不会到达这里
+
+// 获取节点高度（空节点高度为0）
+int getHeight(TreeNode* node) {
+	return node ? node->height : 0;
 }
-void LevelOrderTravelsal(const vector<TreeNode>& Tree, int root)
-{
-	queue<int> q;
-	if (root == -1)
-		return;
-	q.push(root);
-	bool first = true; //声明布尔变量 first，用于 控制输出格式：标记是否是 “第一个要输出的叶子节点”（避免行尾多余空格）。
-	while (!q.empty())
-	{
-		int index = q.front();
-		q.pop();
-		if (Tree[index].left == -1 && Tree[index].right == -1)
-		{
-			if (first)
-			{
-				cout << index;
-				first = false;
-			}
-			else
-				cout << " " << index;
+
+// 更新节点高度
+void updateHeight(TreeNode* node) {
+	node->height = max(getHeight(node->left), getHeight(node->right)) + 1;
+}
+
+// 计算平衡因子（左高-右高）
+int getBalance(TreeNode* node) {
+	return node ? getHeight(node->left) - getHeight(node->right) : 0;
+}
+
+// LL旋转（右旋）：处理左子树的左子树失衡
+TreeNode* rightRotate(TreeNode* y) {
+	TreeNode* x = y->left;
+	TreeNode* T2 = x->right;
+
+	// 执行旋转
+	x->right = y;
+	y->left = T2;
+
+	// 更新高度（先更新子节点，再更新父节点）
+	updateHeight(y);
+	updateHeight(x);
+
+	return x; // 新根节点
+}
+
+// RR旋转（左旋）：处理右子树的右子树失衡
+TreeNode* leftRotate(TreeNode* x) {
+	TreeNode* y = x->right;
+	TreeNode* T2 = y->left;
+
+	// 执行旋转
+	y->left = x;
+	x->right = T2;
+
+	// 更新高度
+	updateHeight(x);
+	updateHeight(y);
+
+	return y; // 新根节点
+}
+
+// AVL树插入函数（递归实现，返回调整后的根）
+TreeNode* insert(TreeNode* root, int val) {
+	// 1. 按二叉搜索树规则插入节点
+	if (root == nullptr) {
+		return new TreeNode(val);
+	}
+	if (val < root->val) {
+		root->left = insert(root->left, val);
+	} else if (val > root->val) {
+		root->right = insert(root->right, val);
+	} else {
+		return root; // 无重复值，直接返回
+	}
+
+	// 2. 更新当前节点高度
+	updateHeight(root);
+
+	// 3. 计算平衡因子，判断是否失衡
+	int balance = getBalance(root);
+
+	// 4. 失衡处理（四种情况）
+	// 情况1：LL失衡（左左）
+	if (balance > 1 && val < root->left->val) {
+		return rightRotate(root);
+	}
+	// 情况2：RR失衡（右右）
+	if (balance < -1 && val > root->right->val) {
+		return leftRotate(root);
+	}
+	// 情况3：LR失衡（左右）
+	if (balance > 1 && val > root->left->val) {
+		root->left = leftRotate(root->left);
+		return rightRotate(root);
+	}
+	// 情况4：RL失衡（右左）
+	if (balance < -1 && val < root->right->val) {
+		root->right = rightRotate(root->right);
+		return leftRotate(root);
+	}
+
+	return root; // 未失衡，返回原根
+}
+
+int main() {
+	int N;
+	while (cin >> N) {
+		TreeNode* root = nullptr;
+		for (int i = 0; i < N; ++i) {
+			int val;
+			cin >> val;
+			root = insert(root, val);
 		}
-		if (Tree[index].left != -1)
-			q.push(Tree[index].left);
-		if (Tree[index].right != -1)
-			q.push(Tree[index].right);
+		cout << root->val << endl; // 输出最终根节点
 	}
-}
-int main()
-{
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	vector<TreeNode>tree;
-	int root = BuildTree(tree);
-	LevelOrderTravelsal(tree,root);
 	return 0;
-}
+}*/

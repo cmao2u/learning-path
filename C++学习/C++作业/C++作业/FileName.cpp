@@ -787,29 +787,355 @@ int main()
 //	return 0;
 //}
 //+
+//#include <iostream>
+//using namespace std;
+//int fun(int num)
+//{
+//	int mul = 1;
+//	while (num)
+//	{
+//		mul *= num % 10;
+//		num /= 10;
+//	}j
+//	return mul;
+//}
+//int main()
+//{
+//	int n, mul;
+//	cout << "请输入一个整数(输入0结束):" << endl;
+//	cin >> n;
+//	while (n)
+//	{
+//		mul = fun(n);
+//		cout << n << "各位数之积为" << mul << endl;
+//		cout << "请输入一个整数(输入0结束)";
+//		cin >> n;
+//	}
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	double scores[20];
+//	for(int i=0;i<20;i++)
+//	{
+//		cout<<"请输入第"<<i+1<<"个学生的成绩：";
+//		cin>>scores[i];
+//	}
+//	double sum = 0;
+//	for(int i=0;i<20;i++)
+//	{
+//		sum += scores[i];
+//	}
+//	cout << "20个学生的平均成绩是：" << sum / 20 << endl;
+//	return 0;
+//	
+//
+// }
+//#include <iostream>
+//using namespace std;
+//void conversion(int n)
+//{
+//	cout << "转换后的十六进制数是:" << hex << n << endl;
+//}
+//int main()
+//{
+//	int n;
+//	cout << "请输入一个十进制整数:" << endl;
+//	cin >> n;
+//	conversion(n);
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//void PrintTriangle()
+//{
+//	int Triangle[8][8];
+//	for (int i = 0; i < 8; i++)
+//	{
+//		for (int j = 0; j <= i; j++)
+//		{
+//			if (j == 0 || j == i)
+//				Triangle[i][j] = 1;
+//			else
+//				Triangle[i][j] = Triangle[i - 1][j - 1] + Triangle[i - 1][j];
+//			cout << Triangle[i][j] << '\t';
+//		}
+//		cout << endl;
+//	}
+//
+//}
+//int main()
+//{
+//	PrintTriangle();
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//
+//void BubbleSort(int arr[], int n)
+//{
+//    for (int i = 0; i < n - 1; i++)
+//    {
+//        for (int j = 0; j < n - 1 - i; j++)
+//        {
+//            if (arr[j] > arr[j + 1])
+//            {
+//                int temp = arr[j];
+//                arr[j] = arr[j + 1];
+//                arr[j + 1] = temp;
+//            }
+//        }
+//    }
+//}
+//
+//int main()
+//{
+//	int arr[5];
+//	cout << "请输入一个整型数：" << endl;
+//	for (int i = 0; i < 5; i++)
+//	{
+//		cin >> arr[i];
+//	}
+//	BubbleSort(arr, 5);
+//	cout << "排序后的整数是：" << endl;
+//	for (int i = 0; i < 5; i++)
+//	{
+//		cout << arr[i];
+//	}
+//	cout << endl;
+//	return 0;
+//}
+//
+//
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int arr[6] = { 9,8,7,6,5,4 };
+//	int i, j, t;
+//	int n = 6;
+//	for (int i = 0; i < n; i++)
+//		for (int j = 0; j < n - i - 1; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				t = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = t;
+//			}
+//		}
+//	for (i = 0; i < n; i++)
+//		cout << arr[i] << '\t';
+//	cout << endl;
+//	return 0;
+//}
+
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int arr[6] = { 9,8,7,6,5,4 };
+//	int i, j, temp, min;
+//	int n = 6;
+//	for (j = 0; j < n - 1; j++)
+//	{
+//		min = j;
+//		for (i = j; i < n; i++)
+//			if (arr[min] > arr[i])
+//				min = i;
+//		temp = arr[min];
+//		arr[min] = arr[j];
+//		arr[j] = temp;
+//	}
+//	for (i = 0; i < n; i++)
+//	{
+//		cout << arr[i] << '\t';
+//	}
+//	cout << endl;
+//	return 0;
+//}
+
+//#include <iostream>
+//using namespace std;
+//void FindMaxinum(int arr[], int n)
+//{
+//	int max = arr[0]; int temp = 0;
+//	for (int i = 0; i < n - 1; i++)
+//	{
+//		if (max < arr[i])
+//		{
+//			max = arr[i];
+//			temp = i + 1;
+//		}
+//	}
+//	cout << "max=" << max << "," << "maxindex=" << temp << endl;
+//}
+//int main()
+//{
+//	int a[10] = { 2,5,78,4,6,3,89,12,15,34 };
+//	int n = sizeof(a) / sizeof(a[0]);
+//	FindMaxinum(a, n);
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int arr[101];
+//	for (int i = 2; i <= 100; i++)
+//		arr[i] = i;
+//	for (int i = 2; i <= 100; i++)
+//		if (arr[i] != 0)
+//		{
+//			for (int j = 2 * i; j <= 100; j += i)
+//			{
+//				arr[j] = 0;
+//			}
+//		}
+//	cout << "100以内的素数" << endl;
+//	for (int i = 2; i <= 100; i++)
+//	{
+//		if (arr[i] != 0)
+//		{
+//			cout << arr[i] << " ";
+//		}
+//	}
+//	cout << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int i, j, row = 0, colum = 0, max;
+//	int a[4][4] = { {5,12,23,56},{19,28,37,46},{-12,-34,6,8},{4,6,34,1} };
+//	max = a[0][0];
+//	for (int i = 0; i < 4; i++)
+//		for (j = 0; j < 4; j++)
+//		{
+//			if (a[i][j] > max)
+//			{
+//				max = a[i][j];
+//				row = i;
+//				colum = j;
+//			}
+//		}
+//	cout << "max=" << max << ",row=" << row << ",colum=" << colum << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int a[4][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} };
+//	int i, j, t;
+//	cout << "转置前的数组a:\n";
+//	for (int i = 0; i < 4; i++)
+//	{
+//		for (int j = 0; j < 4; j++)
+//			cout << a[i][j] << '\t';
+//		cout << '\n';
+//	}
+//	for (int i = 0; i < 4; i++)
+//		for (int j = 0; j < i; j++)
+//		{
+//			t = a[j][i];
+//			a[j][i] = a[i][j];
+//			a[i][j] = t;
+//		}
+//	cout << "转置后的数组a:\n";
+//	for (int i = 0; i < 4; i++)
+//	{
+//		for (int j = 0; j < 4; j++)
+//			cout << a[i][j] << '\t';
+//		cout << '\n';
+//	}
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int IsPrime(int num)
+//{
+//	if (num <= 1)
+//		return 0;
+//	for (int i = 2; i <= num / 2; i++)
+//		if (num % i == 0)
+//			return 0;
+//	return 1;
+//}
+//int higherPrime(int n)
+//{
+//	if (IsPrime(n))
+//	{
+//		do {
+//			n++;
+//		} while (!IsPrime(n));
+//		return n;
+//	}
+//}
+//
+//int main()
+//{
+//	int sum = 0;
+//	int a[4][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} };
+//	cout << "变换前的数组a:\n";
+//	for (int i = 0; i < 4; i++)
+//	{
+//		for (int j = 0; j < 4; j++)
+//			cout << a[i][j] << '\t';
+//		cout << '\n';
+//	}
+//	for (int i = 0; i < 4; i++)
+//	{
+//		for (int j = i; j < 4; j++)
+//		{
+//			if (IsPrime(a[i][j]))
+//			{
+//				int higher = higherPrime(a[i][j]);
+//				a[i][j] = higher;
+//				sum++;
+//			}
+//		}
+//	}
+//	cout << "变换后的数组a:\n";
+//	for (int i = 0; i < 4; i++)
+//	{
+//		for (int j = 0; j < 4; j++)
+//			cout << a[i][j] << '\t';
+//		cout << '\n';
+//	}
+//	cout << "素数个数：" << sum << endl;
+//
+//	return 0;
+//}
 #include <iostream>
 using namespace std;
-int fun(int num)
+void PrintTrianle()
 {
-	int mul = 1;
-	while (num)
+	int Triangle[10][10];
+	for (int i = 0; i < 10; i++)
+		for (int j = 0; j < 10; j++)
+		{
+			Triangle[i][0] = 1;
+			Triangle[i][i] = 1;
+		}
+	for (int i = 0; i < 10; i++)
+		for (int j = 1; j < i; j++)
+		{
+			Triangle[i][j] = Triangle[i - 1][j - 1] + Triangle[i - 1][j];
+		}
+	for (int i = 0; i < 10; i++)
 	{
-		mul *= num % 10;
-		num /= 10;
+		for (int j = 0; j <= i; j++)
+		{
+			cout << Triangle[i][j] << '\t';
+		}
+		cout << endl;
 	}
-	return mul;
 }
 int main()
 {
-	int n, mul;
-	cout << "请输入一个整数(输入0结束):" << endl;
-	cin >> n;
-	while (n)
-	{
-		mul = fun(n);
-		cout << n << "各位数之积为" << mul << endl;
-		cout << "请输入一个整数(输入0结束)";
-		cin >> n;
-	}
-	return 0;
+	PrintTrianle();
 }
