@@ -1110,32 +1110,371 @@ int main()
 //
 //	return 0;
 //}
+//
+#include <iostream>
+//using namespace std;
+//void PrintTrianle()
+//{
+//	int Triangle[10][10];
+//	for (int i = 0; i < 10; i++)
+//		for (int j = 0; j < 10; j++)
+//		{
+//			Triangle[i][0] = 1;
+//			Triangle[i][i] = 1;
+//		}
+//	for (int i = 0; i < 10; i++)
+//		for (int j = 1; j < i; j++)
+//		{
+//			Triangle[i][j] = Triangle[i - 1][j - 1] + Triangle[i - 1][j];
+//		}
+//	for (int i = 0; i < 10; i++)
+//	{
+//		for (int j = 0; j <= i; j++)
+//		{
+//			cout << Triangle[i][j] << '\t';
+//		}
+//		cout << endl;
+//	}
+//}
+//int main()
+//{
+//	PrintTrianle();
+//}
+//#include <iostream>
+//using namespace std;
+//int binary(int array[], int n, int number)
+//{
+//	int low = 0, high = n - 1, mid;
+//	while (low <= high)
+//	{
+//		mid = (low + high) / 2;
+//		if (number < array[mid])
+//			high = mid - 1;
+//		else if (number > array[mid])
+//			low = mid + 1;
+//		else
+//			return mid;
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int a[] = { 2,4,6,8,10,12,14,16,18,20,22,24 };
+//	int num;
+//	cout << "请输入要寻找的数:";
+//	cin >> num;
+//	int index = binary(a, sizeof(a) / sizeof(a[0]), num);
+//	if (index != -1)
+//		cout << "该数在数组中的序号为:" << index << endl;
+//	else
+//		cout << "数组中没有元素" << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int del(int array[], int n)
+//{
+//	for (int i = 0; i < n - 1; i++)
+//	{
+//		if (array[i] == array[i + 1])
+//		{
+//			for (int j = i + 1; j < n; j++)
+//				array[j - 1] = array[j];
+//			n -= 1;
+//			i -= 1;
+//		}
+//	}
+//	return n;
+//}
+//int main() {
+//	int a[] = { 2,2,2,3,4,4,5,6,6,6,6,7,7,8,9,9,10,10,10 };
+//	int n = del(a, sizeof(a) / sizeof(a[0]));
+//	for (int i = 0; i < n; i++)
+//		cout << a[i] << '\t';
+//	cout << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//int sum(int b[3][4], int k)
+//{
+//	int s = 0, i;
+//	for (i = 0; i < 3; i++)
+//		s += b[i][k];
+//	return s;
+//}
+//void exch(int b[][4], int x, int y)
+//{
+//	int a[3];
+//	for (int i = 0; i < 3; i++)
+//	{
+//		a[i] = b[i][x];
+//		b[i][x] = b[i][y];
+//		b[i][y] = a[i];
+//	}
+//}
+//int main()
+//{
+//	int a[3][4] = { {5,8,10,15},{17,6,4,8},{6,15,9,12} };
+//	int i, j, m, t[4];
+//	cout << "原始数组:" << endl;
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//			cout << a[i][j] << '\t';
+//		cout << endl;
+//	}
+//	for (i = 0; i < 4; i++)
+//		t[i] = sum(a, i);
+//	for (i = 0; i < 3; i++)
+//		for (j = 0; j < i + 1; j++)
+//			if (t[j] > t[j + 1])
+//			{
+//				m = t[j];
+//				t[j] = t[j + 1];
+//				t[j + 1] = m;
+//				exch(a, j, j + 1);
+//			}
+//	cout << "排序后的数组是" << endl;
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//			cout << a[i][j] << '\t';
+//		cout << endl;
+//	}
+//	return 0;
+//}
+//
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	char s[200];
+//	cout << "请输入一行字符串:" << endl;
+//	cin.getline(s, 200);
+//	int a = 0, b = 0, c = 0;
+//	for (int i = 0; s[i] != '\0'; i++)
+//	{
+//		if (s[i] >= 'A' && s[i] <= 'Z')
+//			a++;
+//		else if (s[i] >= 'a' && s[i] <= 'z')
+//			b++;
+//		else if (s[i] >= '0' && s[i] <= '9')
+//			c++;
+//	}
+//	cout << "大写字符个数:" << a << endl << "小写字符个数:" << b << endl << "数字字符个数:" << c << endl;
+//	return 0;
+//}
+//#include <iostream>
+//#include <string>
+//using namespace std;
+//int main()
+//{
+//	char str[100];
+//	int flag = 0;
+//	cout << "Input a string:" << endl;
+//	cin.getline(str, 100);
+//	for (int i = 0; str[i] != '\0'; i++)
+//	{
+//		if (str[i] >= 'a' && str[i] <= 'z' && flag == 0)
+//		{
+//			str[i] = str[i] - 32;
+//			flag = 1;
+//		}
+//		if (str[i] == ' ' || str[i] == '\n')
+//			flag = 0;
+//	}
+//	cout << "the result is:" << endl;
+//	cout << str << endl;
+//	return 0;
+//}
+//
+#include <iostream>
+//#include <string>
+//using namespace std;
+//int main()
+//{
+//	int wordNumber = 1;
+//	char str[100];
+//	int flag = 0;
+//	cout << "Input a string:" << endl;
+//	cin.getline(str, 100);
+//	for (int i = 0; str[i] != '\0'; i++)
+//	{
+//
+//		if (str[i] == ' ' && ((str[i + 1] >= 'a' && str[i] <= 'z') || (str[i + 1] >= 'A' && str[i + 1] <= 'Z')))
+//			wordNumber++;
+//	}
+//	cout << "单词个数为" << wordNumber << endl;
+//	return 0;
+//}
+
+//#include <iostream>
+//#include <string>
+//using namespace std;
+//int main()
+//{
+//	int wordNumber = 1;
+//	char str[100];
+//	int flag = 0;
+//	cout << "Input a string:" << endl;
+//	cin.getline(str, 100);
+//	for (int i = 0; str[i] != '\0'; i++)
+//	{
+//
+//		if (str[i] == ' ' && ((str[i + 1] >= 'a' && str[i] <= 'z') || (str[i + 1] >= 'A' && str[i + 1] <= 'Z')))
+//			wordNumber++;
+//	}
+//	cout << "单词个数为" << wordNumber << endl;
+//	return 0;
+////}
+//#include <iostream>
+//#include <string>
+//using namespace std;
+//int main()
+//{
+//	char str[100] = "Apple@12pear watermelon * $ Banana";
+//	char maxlength[100] = "", temp[100];
+//	int i, j, k;
+//	for (int i = 0; str[i] != '\0'; i++)
+//	{
+//		j = 0;
+//		while ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+//		{
+//			temp[j++] = str[i++];
+//		}
+//		if (j != 0)
+//		{
+//			temp[j] = '\0';
+//			if (strlen(temp) > strlen(maxlength))
+//				strcpy_s(maxlength, temp);
+//		}
+//	}
+//	cout << "the maxlength word is " << maxlength << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//
+//int main() {
+//	int arr[1000];  
+//	int len = 0;  
+//	int num;
+//
+//	while (true) {
+//		cin >> num;
+//		if (num == 0) {  
+//			break;
+//		}
+//
+//		if (len == 0) {
+//			arr[len++] = num;
+//		}
+//		else {
+//			int i = len - 1;
+//			while (i >= 0 && arr[i] > num) {
+//				arr[i + 1] = arr[i];
+//				i--;
+//			}
+//			arr[i + 1] = num;
+//			len++;
+//		}
+//	}
+//	for (int i = 0; i < len; i++) {
+//		if (i > 0) cout << " "; 
+//		cout << arr[i];
+//	}
+//	cout << endl;
+//
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//void swap(int *a,int *b)
+//{
+//	int temp = *a;
+//	*a = *b;
+//	*b = temp;
+//}
+//void sort3(int &a,int &b,int &c)
+//{
+//	if(a>b)
+//		swap(&a,&b);
+//	if(a>c)
+//		swap(&a,&c);
+//	if(b>c)
+//		swap(&b,&c);
+//}
+//void sortn(int arr[],int n)
+//{
+//	for(int i=0;i<n-1;i++)
+//	{
+//		for(int j=0;j<n-1-i;j++)
+//		{
+//			if(arr[j]>arr[j+1])
+//				swap(&arr[j],&arr[j+1]);
+//		}
+//	}
+//}
+//int main()
+//{
+//	int a[10];
+//	for(int i=0;i<10;i++)
+//	{
+//		cout<<"请输入第"<<i+1<<"个整数：";
+//		cin>>a[i];
+//	}
+//	sort3(a[0], a[1], a[2]);
+//	for(int i=0;i<3;i++)
+//		cout << a[i] << "\t";
+//	sortn(a+3, 7);
+//	for(int i=3;i<10;i++)
+//		cout << a[i] << "\t";
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//void sLength(char str[], int &length)
+//{
+//	length = 0;
+//	for (int i = 0; str[i] != '\0'; i++)
+//		length++;
+//}
+//int main()
+//{
+//	char str[100];
+//	int length;
+//	cout << "请输入一个字符串:" << endl;
+//	cin.getline(str, 100);
+//	sLength(str, length);
+//	cout << "字符串的长度为:" << length << endl;
+//	return 0;
+//}
 #include <iostream>
 using namespace std;
-void PrintTrianle()
+struct point
 {
-	int Triangle[10][10];
-	for (int i = 0; i < 10; i++)
-		for (int j = 0; j < 10; j++)
-		{
-			Triangle[i][0] = 1;
-			Triangle[i][i] = 1;
-		}
-	for (int i = 0; i < 10; i++)
-		for (int j = 1; j < i; j++)
-		{
-			Triangle[i][j] = Triangle[i - 1][j - 1] + Triangle[i - 1][j];
-		}
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j <= i; j++)
-		{
-			cout << Triangle[i][j] << '\t';
-		}
-		cout << endl;
-	}
+	int x;
+	int y;
+	int z;
+};
+void input(point &p)
+{
+	cout << "请输入点的坐标x,y,z:" << endl;
+	cin >> p.x >> p.y >> p.z;
+}
+void length(point p1, point p2, double &len)
+{
+	len = sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y) + (p1.z - p2.z) * (p1.z - p2.z));
 }
 int main()
 {
-	PrintTrianle();
+	point p1, p2;
+	double len;
+	input(p1);
+	input(p2);
+	length(p1, p2, len);
+	cout << "两点之间的距离为:" << len << endl;
+	return 0;
 }
+
