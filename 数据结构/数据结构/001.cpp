@@ -1007,3 +1007,142 @@ int main() {
 	}
 	return 0;
 }*/
+/*
+最小堆路径
+1.建m(Size)大小的堆 函数
+2.插入最小堆数据函数
+3.封装*/
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+struct Minheap
+{
+	vector<int> data;
+	int Size;
+	int Capacity;
+};
+void CreateMinheap(Minheap& H, int Capacity)
+{
+	H.Capacity = Capacity;
+	H.Size = 0;
+	H.data.resize(Capacity + 1);
+	H.data[0] = -100000;//哨兵
+}
+void Insert(Minheap& H, int val)
+{
+	
+	H.data[++H.Size] = val;
+	int i = H.Size;
+	for (; H.data[i / 2] > val&&i!=1; i /=2)
+	{
+		H.data[i] = H.data[i / 2];
+		H.data[i / 2] = val;
+	}
+}
+void Path(Minheap& H, int index)
+{
+	for(int i=index; i>0; i/=2)
+	{
+		cout << H.data[i];
+		if (i != 1)
+			cout << " ";
+	}
+	cout << endl;
+}
+int main()
+{
+	int n, m;
+	cout << "请输入插入元素的个数以及需要打印的路径条数" << endl;
+	cin >> n >> m;
+	Minheap H;
+	CreateMinheap(H, n);
+	for(int i=0;i<n;i++)
+	{
+		int val;
+		cout << "请输入第" << i + 1 << "个元素的值" << endl;
+		cin >> val;
+		Insert(H, val);
+	}
+	for (int i = 0; i < m; i++)
+	{
+		int index;
+		cout << "请输入需要打印路径的节点索引" << endl;
+		cin >> index;
+		Path(H, index);
+	}
+	return 0;
+}
+/*
+优化版本:
+#include <iostream>
+#include <vector>
+#include <climits>  // 提供INT_MIN
+using namespace std;
+
+// 结构体变量名改用小写（符合C++变量命名习惯）
+struct Minheap {
+    vector<int> data;  // 堆元素（索引1开始，0为哨兵）
+    int size;          // 当前元素个数（原Size→size）
+    int capacity;      // 最大容量（原Capacity→capacity）
+};
+
+// 初始化堆：明确哨兵作用，vector直接初始化
+void CreateMinheap(Minheap& H, int capacity) {
+    H.capacity = capacity;
+    H.size = 0;
+    // 直接初始化vector，避免后续resize可能的隐患
+    H.data = vector<int>(capacity + 1, 0);  // 容量+1，初始值0
+    H.data[0] = INT_MIN;  // 哨兵：确保比所有输入元素小，用于终止上滤
+}
+
+// 插入函数：增加注释，逻辑更清晰
+void Insert(Minheap& H, int val) {
+    if (H.size >= H.capacity) {  // 堆满保护（题目输入合法可省略，但保留更鲁棒）
+        return;
+    }
+    int i = ++H.size;  // 新元素先放末尾
+    // 上滤：父节点值 > 当前值时，父节点下移
+    while (H.data[i/2] > val) {  // 用while比for更直观（逻辑不变）
+        H.data[i] = H.data[i/2];  // 父节点下移
+        i /= 2;  // 指针上移到父节点
+    }
+    H.data[i] = val;  // 找到正确位置，放入新元素
+}
+
+// 路径打印：增加索引合法性检查（防错）
+void Path(Minheap& H, int index) {
+    // 检查索引是否合法（1<=index<=size），避免越界访问
+    if (index < 1 || index > H.size) {
+        return;  // 非法索引直接返回（题目输入合法可省略，防错用）
+    }
+    for (int i = index; i > 0; i /= 2) {
+        cout << H.data[i];
+        if (i != 1) cout << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    
+    Minheap H;
+    CreateMinheap(H, n);  // 传入n作为容量
+    
+    // 插入n个元素
+    for (int i = 0; i < n; ++i) {
+        int val;
+        cin >> val;
+        Insert(H, val);
+    }
+    
+    // 打印m条路径
+    for (int i = 0; i < m; ++i) {
+        int index;
+        cin >> index;
+        Path(H, index);
+    }
+    
+    return 0;
+}*/
