@@ -1,3 +1,7 @@
+
+#从0开始学习，
+# 前面可能写的很烂，
+# 但我相信会越来越好！！！
 # print("hello world")
 # #python严格控制缩进
 # print("hello world","hello everyone",sep='|',end='|')
@@ -44,3 +48,33 @@
 # print(name[1])
 # print(name[-2])
 # print(name[0:3])
+# name="RIVER"
+# print(name.index("V",2))
+# print(name.find("v"))
+# print(name.count("V"))
+# print(name.startswith("R"))
+# print(name.split("V"))
+# list=[1,"r","cmao2",3.424]
+# print(list[0:3])
+# print(list[:])
+# list.append("four")
+# list.extend([1,2,3])
+# print(list)
+# list[1]="SOUL"
+# print(list)
+# print('SOUL' not in list)
+# while True:
+#     name=input("请输入用户名：")
+#     name_list=["Cmao2","ikun","Lin"]
+#     if name in name_list:
+#         print(f"该昵称{name}已存在!")
+#     else:
+#         name_list.append(name)
+#         print(name_list)
+#         break
+# del name_list[0]
+# print(name_list)
+#
+
+
+

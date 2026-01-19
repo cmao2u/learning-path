@@ -1,2 +1,5 @@
 ﻿  FileName.cpp
+C:\Users\cmao2\Desktop\项目\C++学习\C++作业\C++作业\FileName.cpp(742,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\cmao2\Desktop\项目\C++学习\C++作业\C++作业\FileName.cpp(750,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\cmao2\Desktop\项目\C++学习\C++作业\C++作业\FileName.cpp(323,1): warning C4715: “GCD”: 不是所有的控件路径都返回值
   C++作业.vcxproj -> C:\Users\cmao2\Desktop\项目\C++学习\C++作业\x64\Debug\C++作业.exe

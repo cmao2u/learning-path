@@ -1,1480 +1,822 @@
-/*#include <iostream>
-using namespace std;
-int main() {
-	int random1 = rand() % 90 + 10;
-	int random2 = rand() % 21 - 10;
-	cout << "random1是" << random1 << '\n' << "random2是" << random2 << endl;
-	return 0;
-}*/
-/*#include <iostream>
-using namespace std;
-int main()
-{
-	int a, b, sum;
-	cout << "请输入加数与被加数\n";
-	cin >> a >> b;
-	sum = a + b;
-	cout << "sum=" << sum << endl;
-
-	return 0;
-}
-*/
-/*
-#include <iostream>
-using namespace std;
-int main()
-{
-	double f, c;
-	cout << "请输入华氏温度:";
-	cin >> f;
-	c = 5 * (f - 32) / 9;
-	cout << "摄氏温度=" << c << endl;
-	return 0;
-}
-#include <iostream>
-using namespace std;
-#define PI 3.14159
-int main()
-{
-	double r;
-	double area;
-	cout << "请输入圆的半径:" << endl;
-	cin >> r;
-	area = PI * r * r;
-	cout << "圆的面积是" << area << endl;
-	return 0;
-}
-
-
-#include <iostream>
-#include <cmath>
-using namespace std;
-int main()
-{
-	double a, b, c;
-	cout << "请输入三角形三边长:";
-	cin >> a >> b >> c;
-	double s = a + b + c;
-	double area = sqrt((s / 2) * (s / 2 - a) * (s / 2 - b) * (s / 2 - c));
-	cout << "三角形边长是:" << s << endl;
-	cout << "三角形面积是:" << area << endl;
-	return 0;
-}
-
-#include <iostream>
-using namespace std;
-int main()
-{
-	float a, b, c;
-	cout << "input a    b   c\n";
-	cin >> a >> b >> c;
-	if ((a + b <= c) || (a + c <= b) || (b + c <= a))
-		cout << "Not Triangle\n";
-	else
-		cout << "Trianle\n";
-	return 0;
-}
-
-#include <iostream>
-using namespace std;
-int main()
-{
-	int year;
-	cout << "Input year:";
-	cin >> year;
-	if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
-		cout << year << "is a leap year" << endl;
-	else
-		cout << year << " isn't a leap year" << endl;
-	return 0;
-}
-#include <iostream>
-using namespace std;
-int main()
-{
-	float a1, a2;
-	char oper;
-	float result;
-	int flag = 0;
-	cout << "请输入简单的运算式:\n";
-	cin >> a1 >> oper >> a2;
-	switch (oper)
-	{
-	case '+':
-		result = a1 + a2;
-		break;
-	case '-':
-		result = a1 - a2;
-		break;
-	case'*':
-		result = a1 * a2;
-		break;
-	default:
-		cout << "输入错误的运算符!\n";
-		flag = 1;
-	}
-	if (flag == 0)
-		cout << a1 << oper << a2 << "=" << result << endl;
-	return 0;
-}
-#include <iostream>
-#include <cmath>
-using namespace std;
-int main()
-{
-	double a, b, c;
-	cout << "请输入一元二次方程系数a,b,c的值:" << endl;
-	cin >> a >> b >> c;
-	if ((b * b - 4 * a * c) < 0)
-	{
-		cout << "无实根！";
-		return 1;
-	}
-	else
-	{
-		double  x1 = ((-b) + (sqrt(b * b - 4 * a * c))) / (2 * a);
-		double  x2 = ((-b) - (sqrt(b * b - 4 * a * c))) / (2 * a);
-		cout << "该方程的两个实根是：" << x1 << '\t' << x2 << endl;
-	}
-	return 0;
-}
-*/
-/*
-#include <iostream>
-using namespace std;
-int main()
-{
-	float a1, a2;
-	char oper;
-	float result;
-	int flag = 0;
-	cout << "请输入简单的运算式:\n";
-	cin >> a1 >> oper >> a2;
-	switch (oper)
-	{
-	case '+':
-		result = a1 + a2;
-		break;
-	case '-':
-		result = a1 - a2;
-		break;
-	case'*':
-		result = a1 * a2;
-		break;
-	case'/':
-		if (a2 == 0)
-		{
-			cout << "除数不能为0" << endl;
-			return 1;
-		}
-		else
-		{
-			result = a1 / a2;
-			break;
-		}
-	default:
-		cout << "输入错误的运算符!\n";
-		flag = 1;
-	}
-	if (flag == 0)
-		cout << a1 << oper << a2 << "=" << result << endl;
-	return 0;
-}*/
-/*
-#include <iostream>
-using namespace std;
-int main()
-{
-	double x, y;
-	cout << "请输入x的值" << endl;
-	cin >> x;
-	if (x >= -5 && x <= 5)
-	{
-		y = x - 1;
-	}
-	else if (x > 5 && x <= 10)
-	{
-		y = x + 1;
-	}
-	else
-	{
-		y = 15.6;
-	}
-	cout << "y的值是" << y << endl;
-	return 0;
-
-}*/
-/*
-#include <iostream>
-using namespace std;
-#include <cmath>
-int main()
-{
-	double a, x1, x2;
-	cout << "请输入a的值" << endl;
-	cin >> a;
-	x2 = a / 2;
-	do {
-		x1 = x2;
-		x2 = 0.5 * (x1 + a / x1);
-	} while (fabs(x2 - x1) >=1e-5);
-	cout << "近似值是" << x2 << endl;
-	return 0;
-	
-}
-*/
-/*
-#include <iostream>
-using namespace std;
-int main()
-{
-	double salary,tax;
-	cout << "请输入收入" << endl;
-	cin >> salary;
-	if (salary < 0)
-	{
-		cout << "错误" << endl;
-	}
-	else if (salary <= 800)
-		cout << "您无需交税" << endl;
-	else if (salary > 800 && salary <= 1200)
-	{
-		tax = (salary - 800) * 0.05;
-	}
-	else if (salary > 1200 && salary <= 2000)
-	{
-		tax = (1200 - 800) * 0.05 + (salary - 1200) * 0.08;
-	}
-	else 
-	{
-		tax = (1200 - 800) * 0.05 + (200 - 1200) * 0.08 + (salary - 2000) * 0.2;
-	}
-	cout << "您要交税" << tax << "元" << endl;
-	return 0;
-
-}
-*//*
-#include <iostream>
-using namespace std;
-int main()
-{
-	cout << "请输入一行字符" << endl;
-	char ch;
-	int digital=0, letter=0, other=0;
-	while ((ch = cin.get()) != '\n')
-	{
-		if (int(ch) >= 48 && int(ch) <= 57)
-		{
-			digital++;
-		}
-		else if ((int(ch) >= 65 && int(ch) <= 90) || (int(ch) >= 97 && int(ch) <= 122))
-			letter++;
-		else
-			other++;
-	}
-	cout << "数字个数为" << digital<< endl;
-	cout << "字母个数为" << letter<< endl;
-	cout << "其它个数为" << other<< endl;
-	return 0;
-
-}
-*/
 //#include <iostream>
+//#include <cmath>
 //using namespace std;
+//
+//class Point
+//{
+//public:
+//    int x;
+//    int y;
+//    Point(int xCoord, int yCoord) : x(xCoord), y(yCoord) {}
+//};
+//
+//class Line
+//{
+//public:
+//    Point p1;
+//    Point p2;
+//    Line(const Point& a, const Point& b) : p1(a), p2(b) {}
+//    double Length() const
+//    {
+//        return sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
+//    }
+//};
+//
 //int main()
 //{
-//	int x, y;
-//	for (x = 1; x < 30; x++)
-//		for (y = 1; y < 30; y++)
-//			if (2 * x + 4 * y == 90 && x + y == 30)
-//			{
-//				cout << "鸡有:" << x << '\t' << "兔有:" << y << endl;
-//			}
-//	return 0;
-//}
-
-//#include <iostream>
-//using namespace std;
-//int main()
-//{
-//	int a0, a1, a2;
-//	int b;
-//	for (a2 = 1; a2 <= 9; a2++)
-//		for (a1 = 0; a1 <= 9; a1++)
-//			for (a0 = 0; a0 <= 9; a0++)
-//			{
-//				b = a2 * 100 + a1 * 10 + a0;
-//				if (b == a0 * a0 * a0 + a1 * a1 * a1 + a2 * a2 * a2)
-//					cout << b << endl;
-//			}
-//	return 0;
+//    Point p1(1, 2);
+//    Point p2(4, 6);
+//    Line l(p1, p2);
+//    double len = l.Length();
+//    cout << "线段的长度为:" << len << endl;
+//    return 0;
 //}
 //#include <iostream>
 //using namespace std;
 //int main()
 //{
-//	int a0, a1, a2;
-//	int b;
-//	for (b = 100; b <= 999; b++)
+//	char s[10];
+//	int i = 2;
+//	cout << *(s + i);
+//	return 0;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//class Tri
+//{
+//	double a, b, c;
+//public:
+//	Tri(double x, double y, double z)
 //	{
-//		a2 = b / 100;
-//		a1 = b / 10 % 10;
-//		a0 = b % 10;
-//		if (b == a0 * a0 * a0 + a1 * a1 * a1 + a2 * a2 * a2)
-//			cout << b << '\t';
+//		a = x; b = y; c = z;
 //	}
-//	cout << endl;
-//	return 0;
-
-//#include <iostream>
-//using namespace std;
+//	double Peri()
+//	{
+//		return(a + b + c);
+//	}
+//	double Area()
+//	{
+//		double p = Peri() / 2;
+//		return(sqrt(p * (p - a) * (p - b) * (p - c)));
+//	}
+//	void show()
+//	{
+//		cout << "三边长为:" << a << "," << b << "," << c << endl;
+//		cout << "周长为:" << Peri() << endl;
+//		cout << "面积为:" << Area() << endl;
+//	}
+//};
 //int main()
 //{
-//	for (int i = 1; i < 600; i++)
-//		if (i % 3 == 0 && (i % 10 == 5 || i / 10 % 10 == 5 || i / 100 == 5))
+//	Tri tri1(3, 4, 5), tri2(5, 6, 7);
+//	tri1.show();
+//	tri2.show();
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//class NUM {
+//private:
+//	int n;
+//	int* p;
+//public:
+//	NUM(int n1)
+//	{
+//		n = n1;
+//		p = new int[n];      //A
+//	}
+//	int yes(int x)
+//	{
+//		for (int i = 2; i <= x / 2; i++)
+//			if (x % i == 0)
+//				return 1;
+//		return 0;
+//	}
+//	void fun()
+//	{
+//		int j;
+//		for (int i = 3; 1; i++)
 //		{
-//			cout << i << '\t';
+//			j = 0;
+//			while (yes(i) == 0 && j < n)//B
+//			{
+//				p[j] = i;
+//				j++;
+//				i++;
+//			}
+//			if (j == n)
+//				break;
 //		}
+//	}
+//	void print()
+//	{
+//		for (int i = 0; i < n; i++)
+//			cout << p[i] << " ";
+//		cout << endl;
+//	}
+//	~NUM()
+//	{
+//		if (p)delete[] p;
+//	}
+//};
+//int main()
+//{
+//	NUM num(10);
+//	num.fun();//C
+//	num.print();//D
 //	return 0;
 //}
 //#include <iostream>
 //using namespace std;
+//class STR
+//{
+//private:
+//	char *s1;
+//	char *s2;
+//public:
+//	STR(char* str)
+//	{
+//      int len = strlen(str);
+//	  s1 = new char[len + 1];
+//	  strcpy_s(s1, len + 1, str);
+//	  s2 = nullptr; 
+//	}
+//	void delsame()
+//	{
+//		bool IsExist[256] = { false };
+//		char result[1000] = { 0 };
+//		int index = 0;
+//		for (int i = 0; i < strlen(s1); i++)
+//		{
+//			if (IsExist[s1[i] - '\0'] != true)
+//			{
+//				IsExist[s1[i] - '\0'] = true;
+//				result[index++] = s1[i];
+//			}
+//		}
+//		result[index] = '\0';
+//		s2 = new char[strlen(result) + 1];
+//		strcpy_s(s2, strlen(result) + 1, result);
+//	}
+//	void show()
+//	{
+//		cout << "原字符串为:" << s1 << endl;
+//		cout << "去重后的字符串为:" << s2 << endl;
+//	}
+//	~STR()
+//	{
+//		delete []s1;
+//		delete []s2;
+//	}
+//};
 //int main()
 //{
-//	int a;
-//	int b;
-//	int sum = 0;
-//	cout << "请输入一个整数" << endl;
-//	cin >> a;
-//	while (a)
-//	{
-//		b = a % 10;
-//		sum += b;
-//		a = a / 10;
-//	}
-//	cout << "该整数的各位数字之和是" << sum << endl;
+//	char str1[100];
+//	cout << "请输入字符串" << endl;
+//	cin.getline(str1, 100);
+//	STR s1(str1);
+//	s1.delsame();
+//	s1.show();
 //	return 0;
 //}
-//#include<iostream>
+//#include <iostream>
+//#include <string>
 //using namespace std;
+//class WORD
+//{
+//	char* p;
+//	char a[100][20];
+//	int n;
+//	char maxword[20];
+//public:
+//	WORD(char* str)
+//	{
+//		p = new char[strlen(str) + 1];
+//		strcpy_s(p, strlen(str) + 1, str);
+//	}
+//	int alph(char c)
+//	{
+//				if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+//			return 1;
+//		else
+//					return 0;
+//	}
+//	void fun()
+//	{
+//		int i, j, k, maxlength = 0;
+//		j = 0;
+//		for (i = 0; *(p + i) != '\0'; i++)
+//		{
+//			for(k=0;alph(*(p+i));k++,i++)
+//				a[j][k] = *(p + i);
+//			if (k > 0)
+//			{
+//				a[j][k] = '\0';
+//				if (k > maxlength)
+//				{
+//					strcpy_s(maxword, strlen(a[j]) + 1, a[j]);
+//					maxlength = k;
+//				}
+//				j++;
+//				i--;
+//			}
+//		}
+//		n = j;
+//	}
+//	void print()
+//	{
+//		cout << "测试字符串" << p << endl;
+//		cout << "输出各个单词" << endl;
+//		for (int i = 0; i < n; i++)
+//			cout << a[i] << endl;
+//		cout << "最长的单词是:" << maxword << '\t' << "长度是" << strlen(maxword) << endl;
+//
+//	}
+//	~WORD()
+//	{
+//		if(p)
+//		delete[] p;
+//	}
+//};
 //int main()
 //{
-//	int a, b;
-//	int t, x;
-//	cout << "请输入两个正整数";
-//	cin >> a >> b;
-//	x = a * b;
-//	if (a < b)
-//	{
-//		t = a, a = b, b = t;
-//	}
-//	if (t = a % b)
-//	{
-//		a = b;
-//		b = t;
-//	}
-//	cout << "最大公约数为" << b << endl;
-//	cout << "最小公倍数为" << x / b << endl;
+//	char str1[100];
+//	cout << "请输入字符串" << endl;
+//	cin.getline(str1, 100);
+//	WORD w1(str1);
+//	w1.fun();
+//	w1.print();
 //	return 0;
 //}
-
 //#include <iostream>
 //using namespace std;
+//class NUM
+//{
+//	int n, count;
+//	int* p;
+//public:
+//	NUM(int num)
+//	{
+//		n = num;
+//		p = new int[n + 1];
+//		for (int i = 1; i <= n; i++)
+//			*(p + i) = 0;
+//		count = n;
+//	}
+//	int d(int num)
+//	{
+//		int t = num;
+//		while (num)
+//		{
+//			t = t + num % 10;
+//			num /= 10;
+//		}
+//		return t;
+//	}
+//	void fun()
+//	{
+//		int t;
+//		for (int i = 1; i <= n; i++)
+//		{
+//			t = d(i);
+//			if (t <= n && p[t] == 0)
+//			{
+//				p[t] = 1;
+//				count = count - 1;
+//			}
+//		}
+//	}
+//	void print()
+//	{
+//		cout << "不大于" << n << "的自身数有" << count << "个:'\n'";
+//		for (int i = 1; i <= n; i++)
+//		{
+//			if (p[i] == 0)
+//			{
+//				cout << i << '\t';
+//			}
+//		}
+//	}
+//	~NUM()
+//	{
+//		if (p) delete[] p;
+//	}
+//};
 //int main()
 //{
-//	int a, b, c, i;
-//	cout << "Input three number;";
-//	cin >> a >> b >> c;
-//	for (i = a; i <= a; i--)
-//		if (a % i == 0 && b % i == 0 && c % i == 0)
-//			break;
-//	cout << i << endl;
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//int main()
-//{
-//	int a, i;
+//	int x;
 //	cout << "请输入一个正整数:";
-//	cin >> a;
-//	for (i = 2; i <= a / 2; i++)
-//	{
-//		if (a % i == 0)
-//		{
-//			cout << a << "不是素数" << endl;
-//			break;
-//		}
-//		if (i == a / 2)
-//			cout << a << "是素数" << endl;
-//	}
+//	cin >> x;
+//	NUM num(x);
+//	num.fun();
+//	num.print();
+//	return 0;
+//}
+#include <iostream>
+using namespace std;
+int GCD(int a, int b)
+{
+	if (b == 0)
+		return a;
+	GCD(b, a % b);        //递归实现
+}
+int LCM(int a, int b)
+{
+	return a * b / GCD(a, b);
+}
+//int main()
+//{
+//	cout << "请输入两个正整数:" << endl;
+//	int a, b;
+//	cin >> a >> b;
+//	cout << "最大公约数为:" << GCD(a, b) << endl;
+//	cout << "最小公倍数为:" << LCM(a, b) << endl;
 //	return 0;
 //}
 //#include <iostream>
 //using namespace std;
-//int IsPrime(int a)
+//int factorialSum(int n)
 //{
-//	for (int i = 2; i <= a / 2; i++)
+//	int Sum = 0;
+//	int fact = 1;
+//	for (int i = 1; i <= n; i++)
 //	{
-//		if (a % i == 0)
+//		fact = fact * i;
+//		Sum = Sum + fact;
+//	}
+//	return Sum;
+//}
+//int main()
+//{
+//	int n;
+//	cout << "请输入一个正整数:" << endl;
+//	cin >> n;
+//	cout << n << "的阶乘和为:" << factorialSum(n) << endl;
+//	return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//bool IsPrime(int n)
+//{
+//	for (int i = 2; i < n / 2; i++)
+//	{
+//		if (n % i == 0)
 //			return 0;
 //	}
 //	return 1;
 //}
 //int main()
 //{
+//	int num = 0;
 //	for (int i = 100; i <= 200; i++)
 //	{
 //		if (IsPrime(i))
-//			cout << i << '\t';
-//	}
-//	return 0;
-////}
-//#include <iostream>
-//using namespace std;
-//int IsNumber(int a)
-//{
-//	int sum = 0;
-//	for (int i = 1; i < a; i++)
-//	{
-//		if (a % i == 0)
-//			sum += i;
-//	}
-//	if (sum == a)
-//		return 1;
-//	return 0;
-//}
-//int main()
-//{
-//	for (int i = 1; i <= 1000; i++)
-//	{
-//		if (IsNumber(i))
-//			cout << i << '\t';
-//	}
-//	return 0;
-//}
-
-//
-//#include <iostream>
-//using namespace std;
-//int area(int a,int b,int c)
-//{
-//	int s = (a + b + c) / 2;
-//	return sqrt(s * (s - a) * (s - b) * (s - c));
-//}
-//int main()
-//{
-//	int a = 0; int b = 0; int c = 0;
-//	cout << "请输入三角形三边长" << endl;
-//	cin >> a >> b >> c;
-//	cout << "三角形面积是" << area(a, b, c) << endl;
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//int symm(long n)
-//{
-//	int s = 0;
-//	int temp = n;
-//	while (n)
-//	{
-//		s = s * 10 + n % 10;
-//		n /= 10;
-//	}
-//	if (s == temp)
-//		return 1;
-//	else
-//		return 0;
-//}
-//int main()
-//{
-//	for (int m = 11; m< 1000; m++)
-//	{
-//		if (symm(m) && symm(m * m) && symm(m * m * m))
-//			cout << m << '\t';
-//	}
-//}
-/*#include <iostream>
-using namespace std;
-int Fibonnaci(int n)
-{
-	if (n == 1 || n == 2)
-	{
-		return 1;
-	}
-	if (n > 2)
-	{
-		return Fibonnaci(n - 1) + Fibonnaci(n - 2);
-	}
-	
-}
-int main()
-{
-	int n = 0;
-	cout << "请输入要输出的项数" << endl;
-	cin >> n;
-	for (int i = 1; i <= n; i++)
-	{
-		
-		cout << Fibonnaci(i) << '\t';
-		if (i % 5 == 0)
-			cout << endl;
-	}
-	return 0;
-}*///复习
-/*
-#define MAX(a,b) ((a)>(b)?(a):(b))
-#define MIN(a,b) ((a)<(b)?(a):(b))
-#include <iostream>
-using namespace std;
-int main()
-{
-	int a, b, c;
-	cout << "请输入三个整数" << endl;
-	cin >> a >> b >> c;
-	cout << "最大值是" << MAX(MAX(a, b), c) << endl;
-	cout << "最小值是" << MIN(MIN(a, b), c) << endl;
-	return 0;
-}*/
-/*
-#include <iostream>
-using namespace std;
-int main()
-{
-	int t = 2;
-	int s = 0;
-	for (int i = 1; i <= 7; i++)
-	{
-		s += t;
-		t = t * 10 + 2;
-	}
-	cout << "2+22+222+...+2222222=" << s << endl;
-	return 0;
-}*/
-/*
-#include<iostream>
-#include <cmath>
-using namespace std;
-int main()
-{
-	double x;
-	cout << "请输入x的值" << endl;
-	cin >> x;
-	double y, y2;
-	y = x;
-	do {
-		y2 = y;
-		y = 2 * y / 3 + x / (3 * y * y);
-	} while (fabs(y2 - y) >= 1e-5);
-	cout << "x的立方根是" << y << endl;
-
-	return 0;
-}
-*/
-/*
-#include <iostream>
-using namespace std;
-int main()
-{
-	cout << "Input n,x:" << endl;
-	double n, x, y;
-	cin >> n >> x;
-	double sum = 0;
-	for (int i = 1; i <= n; i++)
-	{
-		double temp = 1;
-		y = 1;
-		for (int j = 1; j <= 2 * i - 1; j++)
-		{
-
-			y *= x;
-			temp *= j;
-		}
-		y /= temp;
-		if (i % 2 == 1)
-		{
-			sum += y;
-		}
-		else
-		{
-			sum -= y;
-		}
-	}
-	cout << "值是" << sum << endl;
-	return 0;
-}*/
-
-/*
-#include <iostream>	
-using namespace std;
-int main()
-{
-	float y = 1, t = 1;
-	int n;
-	cout << "Input n:" << endl;
-	cin >> n;
-	for (int i = 1; i <= n; i++)
-	{
-		t = t * i;
-		y = y + t;
-	}
-	cout << "1+1!+2!+...+" << n << "!=" << y << endl;
-	return 0;
-
-}*/
-//#include <iostream>
-//using namespace std;
-//float fun(float x)
-//{
-//	float y;
-//	y = 2 * x * x + 5 * x + 3;
-//	return y;
-//}
-//int main()
-//{
-//	float y1, y2;
-//	y1 = fun(1.0);
-//	y2 = fun(1.2);
-//	cout << "y1=" << y1 << endl;
-//	cout << "y2=" << y2 << endl;
-//	return 0;
-//}
-//#include <iostream>
-//#include <cmath>
-//using namespace std;
-//double f(double x)
-//{
-//	float y;
-//	y = x * x + 3 * x - 4;
-//	return y;
-//}
-//double df(double x)
-//{
-//	float y;
-//	y = 2 * x + 3;
-//	return y;
-//}
-//int main()
-//{
-//	float x1, x0;
-//	x1 = 0;
-//	do
-//	{
-//		x0 = x1;
-//		x1 = x0 - f(x0) / df(x0);
-//	} while (f(x1) > 1e-5);
-//	cout << "x=" << x1 << endl;
-//	return 0;
-//}
-//#include <iostream>
-//#include <cmath>
-//using namespace std;
-//float f(float x)
-//{
-//	return x * x + 3 * x - 4;
-//}
-//int main()
-//{
-//	float x1, x2, x0;
-//	do
-//	{
-//		cout << "请输入初值x1和x2:" << endl;
-//		cin >> x1 >> x2;
-//	} while ((f(x1) * f(x2)) > 0);
-//	do {
-//		x0 = (x1 + x2) / 2;
-//		if ((f(x0) * f(x1)) > 0)
-//			x1 = x0;
-//		else
-//			x2 = x0;
-//	} while (fabs(f(x0)) > 1e-5);
-//	cout << "x0=" << x0 << endl;
-//	return 0;
-//}
-//#include <iostream>
-//#include <cmath>
-//using namespace std;
-//double f(double x)
-//{
-//	return x * x + 3 * x - 4;
-//}
-//double dx(double x)
-//{
-//	return 2 * x + 3;
-//}
-//void recursion(double x0)
-//{
-//	if (fabs(f(x0)) < 1e-5)
-//	{
-//		cout << "x0=" << x0 << endl;
-//		return;
-//	}
-//	double x1 = x0 - f(x0) / dx(x0);
-//	recursion(x1);
-//}
-//int main()
-//{
-//	double x0 = 2;
-//	recursion(x0);
-//	return 0;
-//}
-//#include <iostream>
-//#include <cmath>
-//using namespace std;
-//double f(double x)
-//{
-//	return x * x + 3 * x - 4;
-//}
-//double dx(double x)
-//{
-//	return 2 * x + 3;
-//}
-//void recursion(double x0)
-//{
-//	if (fabs(f(x0)) < 1e-5)
-//	{
-//		cout << "x0=" << x0 << endl;
-//		return;
-//	}
-//	double x1 = x0 - f(x0) / dx(x0);
-//	recursion(x1);
-//}
-//int main()
-//{
-//	double x0 = 2;
-//	recursion(x0);
-//	return 0;
-////}
-//#include <iostream>
-//using namespace std;
-//int prime(int x)
-//{
-//	for (int i = 2; i < x; i++)
-//		if (x & i == 0)
-//			return 0;
-//	return 1;
-//}
-//int main()
-//{
-//	for (int i = 100; i <= 200; i++)
-//	{
-//		if (prime(i) == 1)
-//			cout << i << '\t';
-//	}
-//	return 0;
-//}
-//
-//#include <iostream>
-//using namespace std;
-//int IsPrime(int num)
-//{
-//	for (int i = 2; i < num; i++)
-//		if (num % i == 0)
-//			return 0;
-//	return 1;
-//}
-//int main()
-//{
-//	int n;
-//	cout << "请输入一个整数:" << endl;
-//	cin >> n;
-//	for (int i = 2; i <= n / 2; i++)
-//	{
-//		if (n % i == 0 && IsPrime(i))
-//			cout << i << '\t';
-//	}
-//	cout << endl;
-//	return 0;
-//}
-//+
-//#include <iostream>
-//using namespace std;
-//int fun(int num)
-//{
-//	int mul = 1;
-//	while (num)
-//	{
-//		mul *= num % 10;
-//		num /= 10;
-//	}j
-//	return mul;
-//}
-//int main()
-//{
-//	int n, mul;
-//	cout << "请输入一个整数(输入0结束):" << endl;
-//	cin >> n;
-//	while (n)
-//	{
-//		mul = fun(n);
-//		cout << n << "各位数之积为" << mul << endl;
-//		cout << "请输入一个整数(输入0结束)";
-//		cin >> n;
-//	}
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//int main()
-//{
-//	double scores[20];
-//	for(int i=0;i<20;i++)
-//	{
-//		cout<<"请输入第"<<i+1<<"个学生的成绩：";
-//		cin>>scores[i];
-//	}
-//	double sum = 0;
-//	for(int i=0;i<20;i++)
-//	{
-//		sum += scores[i];
-//	}
-//	cout << "20个学生的平均成绩是：" << sum / 20 << endl;
-//	return 0;
-//	
-//
-// }
-//#include <iostream>
-//using namespace std;
-//void conversion(int n)
-//{
-//	cout << "转换后的十六进制数是:" << hex << n << endl;
-//}
-//int main()
-//{
-//	int n;
-//	cout << "请输入一个十进制整数:" << endl;
-//	cin >> n;
-//	conversion(n);
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//void PrintTriangle()
-//{
-//	int Triangle[8][8];
-//	for (int i = 0; i < 8; i++)
-//	{
-//		for (int j = 0; j <= i; j++)
 //		{
-//			if (j == 0 || j == i)
-//				Triangle[i][j] = 1;
-//			else
-//				Triangle[i][j] = Triangle[i - 1][j - 1] + Triangle[i - 1][j];
-//			cout << Triangle[i][j] << '\t';
+//			cout << i << " ";
+//			num++;
+//			if (num % 5 == 0)
+//				cout << endl;
 //		}
-//		cout << endl;
 //	}
-//
+//	return 0;
+//}
+//#include <iostream>
+//#include <ctime>
+//using namespace std;
+//void SelectSort(int arr[], int n)
+//{
+//	for (int i = 0; i < n-1; i++)
+//	{
+//		int minIndex = i;
+//		for (int j = i + 1; j < n; j++)
+//		{
+//			if(arr[j]<arr[minIndex])
+//				minIndex = j;
+//		}
+//		if (minIndex != i)
+//		{
+//			int temp = arr[i];
+//			arr[i] = arr[minIndex];
+//			arr[minIndex] = temp;
+//		}
+//	}
 //}
 //int main()
 //{
-//	PrintTriangle();
+//	srand(time(0));
+//	int arr[20];
+//	for(int i=0;i<20;i++)
+//	{
+//		arr[i] = rand() % 90 + 10;
+//	}
+//	for (int i = 0; i < 20; i++)
+//	{
+//		cout << arr[i] << " ";
+//	}
+//	cout << endl << "排序后:";
+//	SelectSort(arr, 20);
+//	for (int i = 0; i < 20; i++)
+//	{
+//		cout << arr[i] << " ";
+//	}
 //	return 0;
 //}
 //#include <iostream>
 //using namespace std;
-//
-//void BubbleSort(int arr[], int n)
+//void BubbleSort(int arr[], int size)
 //{
-//    for (int i = 0; i < n - 1; i++)
-//    {
-//        for (int j = 0; j < n - 1 - i; j++)
-//        {
-//            if (arr[j] > arr[j + 1])
-//            {
-//                int temp = arr[j];
-//                arr[j] = arr[j + 1];
-//                arr[j + 1] = temp;
-//            }
-//        }
-//    }
-//}
-//
-//int main()
-//{
-//	int arr[5];
-//	cout << "请输入一个整型数：" << endl;
-//	for (int i = 0; i < 5; i++)
-//	{
-//		cin >> arr[i];
-//	}
-//	BubbleSort(arr, 5);
-//	cout << "排序后的整数是：" << endl;
-//	for (int i = 0; i < 5; i++)
-//	{
-//		cout << arr[i];
-//	}
-//	cout << endl;
-//	return 0;
-//}
-//
-//
-//#include <iostream>
-//using namespace std;
-//int main()
-//{
-//	int arr[6] = { 9,8,7,6,5,4 };
-//	int i, j, t;
-//	int n = 6;
-//	for (int i = 0; i < n; i++)
-//		for (int j = 0; j < n - i - 1; j++)
+//	for (int i = 0; i < size - 1; i++)
+//		for (int j = 0; j < size - i - 1; j++)
 //		{
 //			if (arr[j] > arr[j + 1])
 //			{
-//				t = arr[j];
-//				arr[j] = arr[j + 1];
-//				arr[j + 1] = t;
+//				int temp = arr[j + 1];
+//				arr[j + 1] = arr[j];
+//				arr[j] = temp;
 //			}
 //		}
-//	for (i = 0; i < n; i++)
-//		cout << arr[i] << '\t';
-//	cout << endl;
-//	return 0;
-//}
-
-//#include <iostream>
-//using namespace std;
-//int main()
-//{
-//	int arr[6] = { 9,8,7,6,5,4 };
-//	int i, j, temp, min;
-//	int n = 6;
-//	for (j = 0; j < n - 1; j++)
-//	{
-//		min = j;
-//		for (i = j; i < n; i++)
-//			if (arr[min] > arr[i])
-//				min = i;
-//		temp = arr[min];
-//		arr[min] = arr[j];
-//		arr[j] = temp;
-//	}
-//	for (i = 0; i < n; i++)
-//	{
-//		cout << arr[i] << '\t';
-//	}
-//	cout << endl;
-//	return 0;
-//}
-
-//#include <iostream>
-//using namespace std;
-//void FindMaxinum(int arr[], int n)
-//{
-//	int max = arr[0]; int temp = 0;
-//	for (int i = 0; i < n - 1; i++)
-//	{
-//		if (max < arr[i])
-//		{
-//			max = arr[i];
-//			temp = i + 1;
-//		}
-//	}
-//	cout << "max=" << max << "," << "maxindex=" << temp << endl;
 //}
 //int main()
 //{
-//	int a[10] = { 2,5,78,4,6,3,89,12,15,34 };
-//	int n = sizeof(a) / sizeof(a[0]);
-//	FindMaxinum(a, n);
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//int main()
-//{
-//	int arr[101];
-//	for (int i = 2; i <= 100; i++)
-//		arr[i] = i;
-//	for (int i = 2; i <= 100; i++)
-//		if (arr[i] != 0)
-//		{
-//			for (int j = 2 * i; j <= 100; j += i)
-//			{
-//				arr[j] = 0;
-//			}
-//		}
-//	cout << "100以内的素数" << endl;
-//	for (int i = 2; i <= 100; i++)
+//	cout << "请输入10个整数" << endl;
+//	int arr[10] = { 0 };
+//	for (int i = 0; i < 10; i++)
 //	{
-//		if (arr[i] != 0)
-//		{
-//			cout << arr[i] << " ";
-//		}
+//		cin >> arr[i];
+//	}
+//	int size = sizeof(arr) / sizeof(arr[0]);
+//	BubbleSort(arr, size);
+//	cout << "排序后的整数是" << endl;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		cout << arr[i] << " ";
 //	}
 //	cout << endl;
 //	return 0;
 //}
 //#include <iostream>
 //using namespace std;
+//int fun(char str[])
+//{
+//	int result = 0;
+//	for (int i = 0; str[i] != '\0'; i++)
+//	{
+//		result = result * 10 + (str[i] - '0');
+//	}
+//	return result;
+//}
 //int main()
 //{
-//	int i, j, row = 0, colum = 0, max;
-//	int a[4][4] = { {5,12,23,56},{19,28,37,46},{-12,-34,6,8},{4,6,34,1} };
-//	max = a[0][0];
-//	for (int i = 0; i < 4; i++)
-//		for (j = 0; j < 4; j++)
+//	char str[100];
+//	cout << "请输入一个数字字符串:" << endl;
+//	cin >> str;
+//	int num = fun(str);
+//	cout << "转换后的整数为:" << num << endl;
+//	return 0;
+//}
+//#include <iostream>
+//int sum1(int n)
+//{
+//	int current_sum = 0;
+//	int current_val = 2;
+//	for (int i = 0; i < n; i++)
+//	{
+//		current_sum += current_val;
+//		current_val = current_val * 10 + 2;
+//	}
+//	return current_sum;
+//}
+//int main()
+//{
+//	int n;
+//	std::cout << "请输入项数n:" << std::endl;
+//	std::cin >> n;
+//	int result = sum1(n);
+//	std::cout << "前" << n << "项和为:" << result << std::endl;
+//	return 0;
+//}
+//#include <iostream>
+//void judge(char* str)
+//{
+//	int length = strlen(str);
+//	char* p = str + length-1;
+//	for (int i = 0; i < length / 2; i++)
+//	{
+//		if (*(str + i) != *(p - i))
 //		{
-//			if (a[i][j] > max)
-//			{
-//				max = a[i][j];
-//				row = i;
-//				colum = j;
-//			}
+//			std::cout << "NO" << std::endl;
+//			return;
 //		}
-//	cout << "max=" << max << ",row=" << row << ",colum=" << colum << endl;
+//	}
+//	std::cout << "YES" << std::endl;
+//	return;
+//}
+//int main()
+//{
+//	char str[100];
+//	std::cout << "请输入一个字符串:" << std::endl;
+//	std::cin.getline(str, 1000);
+//	judge(str);
+//	return 0;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//double fun(double x)
+//{
+//    double y = 0;
+//    double term = x; 
+//    int sign = 1;     
+//    int n = 1;         
+//
+//    while (fabs(term) > 1e-5)
+//    {
+//        y += sign * term;
+//        term = term * x * x / ((n + 1) * (n + 2));
+//        sign = -sign;
+//        n += 2;
+//    }
+//    return y;
+//}
+//int main()
+//{
+//	double x;
+//	cout << "请输入一个实数:" << endl;
+//	cin >> x;
+//	double result = fun(x);
+//	cout << "计算结果为:" << result << endl;
 //	return 0;
 //}
 //#include <iostream>
 //using namespace std;
-//int main()
+//int fun1(int m)
 //{
-//	int a[4][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} };
-//	int i, j, t;
-//	cout << "转置前的数组a:\n";
-//	for (int i = 0; i < 4; i++)
-//	{
-//		for (int j = 0; j < 4; j++)
-//			cout << a[i][j] << '\t';
-//		cout << '\n';
-//	}
-//	for (int i = 0; i < 4; i++)
-//		for (int j = 0; j < i; j++)
-//		{
-//			t = a[j][i];
-//			a[j][i] = a[i][j];
-//			a[i][j] = t;
-//		}
-//	cout << "转置后的数组a:\n";
-//	for (int i = 0; i < 4; i++)
-//	{
-//		for (int j = 0; j < 4; j++)
-//			cout << a[i][j] << '\t';
-//		cout << '\n';
-//	}
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//int IsPrime(int num)
-//{
-//	if (num <= 1)
-//		return 0;
-//	for (int i = 2; i <= num / 2; i++)
-//		if (num % i == 0)
+//	if(m==2)
+//		return 1;
+//	for (int i = 2; i < m / 2; i++)
+//		if (m % i == 0)
 //			return 0;
 //	return 1;
 //}
-//int higherPrime(int n)
+//void fun2(int n)
 //{
-//	if (IsPrime(n))
+//	for (int i = 2; i <= n / 2; i++)
 //	{
-//		do {
-//			n++;
-//		} while (!IsPrime(n));
-//		return n;
-//	}
-//}
-//
-//int main()
-//{
-//	int sum = 0;
-//	int a[4][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} };
-//	cout << "变换前的数组a:\n";
-//	for (int i = 0; i < 4; i++)
-//	{
-//		for (int j = 0; j < 4; j++)
-//			cout << a[i][j] << '\t';
-//		cout << '\n';
-//	}
-//	for (int i = 0; i < 4; i++)
-//	{
-//		for (int j = i; j < 4; j++)
-//		{
-//			if (IsPrime(a[i][j]))
-//			{
-//				int higher = higherPrime(a[i][j]);
-//				a[i][j] = higher;
-//				sum++;
-//			}
-//		}
-//	}
-//	cout << "变换后的数组a:\n";
-//	for (int i = 0; i < 4; i++)
-//	{
-//		for (int j = 0; j < 4; j++)
-//			cout << a[i][j] << '\t';
-//		cout << '\n';
-//	}
-//	cout << "素数个数：" << sum << endl;
-//
-//	return 0;
-//}
-//
-#include <iostream>
-//using namespace std;
-//void PrintTrianle()
-//{
-//	int Triangle[10][10];
-//	for (int i = 0; i < 10; i++)
-//		for (int j = 0; j < 10; j++)
-//		{
-//			Triangle[i][0] = 1;
-//			Triangle[i][i] = 1;
-//		}
-//	for (int i = 0; i < 10; i++)
-//		for (int j = 1; j < i; j++)
-//		{
-//			Triangle[i][j] = Triangle[i - 1][j - 1] + Triangle[i - 1][j];
-//		}
-//	for (int i = 0; i < 10; i++)
-//	{
-//		for (int j = 0; j <= i; j++)
-//		{
-//			cout << Triangle[i][j] << '\t';
-//		}
-//		cout << endl;
+//		if(fun1(i)&&fun1(n-i))
+//			cout << n << "=" << i << "+" << n - i << endl;
 //	}
 //}
 //int main()
 //{
-//	PrintTrianle();
-//}
-//#include <iostream>
-//using namespace std;
-//int binary(int array[], int n, int number)
-//{
-//	int low = 0, high = n - 1, mid;
-//	while (low <= high)
-//	{
-//		mid = (low + high) / 2;
-//		if (number < array[mid])
-//			high = mid - 1;
-//		else if (number > array[mid])
-//			low = mid + 1;
-//		else
-//			return mid;
-//	}
-//	return -1;
-//}
-//int main()
-//{
-//	int a[] = { 2,4,6,8,10,12,14,16,18,20,22,24 };
-//	int num;
-//	cout << "请输入要寻找的数:";
-//	cin >> num;
-//	int index = binary(a, sizeof(a) / sizeof(a[0]), num);
-//	if (index != -1)
-//		cout << "该数在数组中的序号为:" << index << endl;
-//	else
-//		cout << "数组中没有元素" << endl;
+//	int n;
+//	cout << "请输入一个不小于6的偶数:" << endl;
+//	cin >> n;
+//	fun2(n);
 //	return 0;
 //}
 //#include <iostream>
+//#include <cmath>
 //using namespace std;
-//int del(int array[], int n)
+//class Ctriangle
 //{
-//	for (int i = 0; i < n - 1; i++)
-//	{
-//		if (array[i] == array[i + 1])
-//		{
-//			for (int j = i + 1; j < n; j++)
-//				array[j - 1] = array[j];
-//			n -= 1;
-//			i -= 1;
-//		}
-//	}
-//	return n;
-//}
-//int main() {
-//	int a[] = { 2,2,2,3,4,4,5,6,6,6,6,7,7,8,9,9,10,10,10 };
-//	int n = del(a, sizeof(a) / sizeof(a[0]));
-//	for (int i = 0; i < n; i++)
-//		cout << a[i] << '\t';
-//	cout << endl;
-//	return 0;
+//    double m_a;
+//    double m_b;
+//    double m_c;
+//public:
+//    Ctriangle(double a, double b, double c)
+//    {
+//        m_a = a;
+//        m_b = b;
+//        m_c = c;
+//    }
+//    double GetPerimeter()
+//    {
+//        return m_a + m_b + m_c;
+//    }
+//    double GetArea()
+//    {
+//        double p = (m_a + m_b + m_c) / 2;
+//        return sqrt(p * (p - m_a) * (p - m_b) * (p - m_c));
+//    }
+//    void display()
+//    {
+//        cout << "三角形的三边长为:" << m_a << " " << m_b << " " << m_c << endl;
+//        cout << "三角形的周长是" << GetPerimeter() << endl;
+//        cout << "三角形面积是" << GetArea() << endl;
+//    }
+//};
+//int main()
+//{
+//    double a, b, c;
+//    cout << "请输入三边长" << endl;
+//    cin >> a >> b >> c;
+//    Ctriangle Tri(a, b, c);
+//    Tri.display();
+//    return 0;
 //}
 //#include <iostream>
 //using namespace std;
-//int sum(int b[3][4], int k)
+//class cycle
 //{
-//	int s = 0, i;
-//	for (i = 0; i < 3; i++)
-//		s += b[i][k];
-//	return s;
-//}
-//void exch(int b[][4], int x, int y)
-//{
-//	int a[3];
-//	for (int i = 0; i < 3; i++)
+//	double m_radius;
+//public:
+//	cycle(double r)
 //	{
-//		a[i] = b[i][x];
-//		b[i][x] = b[i][y];
-//		b[i][y] = a[i];
+//		this->m_radius = r;
 //	}
-//}
+//	double area()
+//	{
+//		return 3.14 * m_radius * m_radius;
+//	}
+//	void show()
+//	{
+//		cout << "半径为:" << m_radius << "\t面积为:" << area() << endl;
+//	}
+//};
 //int main()
 //{
-//	int a[3][4] = { {5,8,10,15},{17,6,4,8},{6,15,9,12} };
-//	int i, j, m, t[4];
-//	cout << "原始数组:" << endl;
-//	for (i = 0; i < 3; i++)
-//	{
-//		for (j = 0; j < 4; j++)
-//			cout << a[i][j] << '\t';
-//		cout << endl;
-//	}
-//	for (i = 0; i < 4; i++)
-//		t[i] = sum(a, i);
-//	for (i = 0; i < 3; i++)
-//		for (j = 0; j < i + 1; j++)
-//			if (t[j] > t[j + 1])
-//			{
-//				m = t[j];
-//				t[j] = t[j + 1];
-//				t[j + 1] = m;
-//				exch(a, j, j + 1);
-//			}
-//	cout << "排序后的数组是" << endl;
-//	for (i = 0; i < 3; i++)
-//	{
-//		for (j = 0; j < 4; j++)
-//			cout << a[i][j] << '\t';
-//		cout << endl;
-//	}
-//	return 0;
-//}
-//
+//	double r;
+//	cout << "请输入圆的半径:" << endl;
+//	cin >> r;
+//	cycle c(r);
+//	c.show();
+//	returmn 0;1.////
 //#include <iostream>
-//using namespace std;
 //int main()
 //{
-//	char s[200];
-//	cout << "请输入一行字符串:" << endl;
-//	cin.getline(s, 200);
-//	int a = 0, b = 0, c = 0;
-//	for (int i = 0; s[i] != '\0'; i++)
-//	{
-//		if (s[i] >= 'A' && s[i] <= 'Z')
-//			a++;
-//		else if (s[i] >= 'a' && s[i] <= 'z')
-//			b++;
-//		else if (s[i] >= '0' && s[i] <= '9')
-//			c++;
-//	}
-//	cout << "大写字符个数:" << a << endl << "小写字符个数:" << b << endl << "数字字符个数:" << c << endl;
-//	return 0;
-//}
-//#include <iostream>
-//#include <string>
-//using namespace std;
-//int main()
-//{
-//	char str[100];
-//	int flag = 0;
-//	cout << "Input a string:" << endl;
-//	cin.getline(str, 100);
-//	for (int i = 0; str[i] != '\0'; i++)
-//	{
-//		if (str[i] >= 'a' && str[i] <= 'z' && flag == 0)
-//		{
-//			str[i] = str[i] - 32;
-//			flag = 1;
-//		}
-//		if (str[i] == ' ' || str[i] == '\n')
-//			flag = 0;
-//	}
-//	cout << "the result is:" << endl;
-//	cout << str << endl;
-//	return 0;
-//}
-//
-#include <iostream>
-//#include <string>
-//using namespace std;
-//int main()
-//{
-//	int wordNumber = 1;
-//	char str[100];
-//	int flag = 0;
-//	cout << "Input a string:" << endl;
-//	cin.getline(str, 100);
-//	for (int i = 0; str[i] != '\0'; i++)
-//	{
-//
-//		if (str[i] == ' ' && ((str[i + 1] >= 'a' && str[i] <= 'z') || (str[i + 1] >= 'A' && str[i + 1] <= 'Z')))
-//			wordNumber++;
-//	}
-//	cout << "单词个数为" << wordNumber << endl;
-//	return 0;
-//}
-
-//#include <iostream>
-//#include <string>
-//using namespace std;
-//int main()
-//{
-//	int wordNumber = 1;
-//	char str[100];
-//	int flag = 0;
-//	cout << "Input a string:" << endl;
-//	cin.getline(str, 100);
-//	for (int i = 0; str[i] != '\0'; i++)
-//	{
-//
-//		if (str[i] == ' ' && ((str[i + 1] >= 'a' && str[i] <= 'z') || (str[i + 1] >= 'A' && str[i + 1] <= 'Z')))
-//			wordNumber++;
-//	}
-//	cout << "单词个数为" << wordNumber << endl;
-//	return 0;
-////}
-//#include <iostream>
-//#include <string>
-//using namespace std;
-//int main()
-//{
-//	char str[100] = "Apple@12pear watermelon * $ Banana";
-//	char maxlength[100] = "", temp[100];
-//	int i, j, k;
-//	for (int i = 0; str[i] != '\0'; i++)
-//	{
-//		j = 0;
-//		while ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
-//		{
-//			temp[j++] = str[i++];
-//		}
-//		if (j != 0)
-//		{
-//			temp[j] = '\0';
-//			if (strlen(temp) > strlen(maxlength))
-//				strcpy_s(maxlength, temp);
-//		}
-//	}
-//	cout << "the maxlength word is " << maxlength << endl;
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//
-//int main() {
-//	int arr[1000];  
-//	int len = 0;  
-//	int num;
-//
-//	while (true) {
-//		cin >> num;
-//		if (num == 0) {  
-//			break;
-//		}
-//
-//		if (len == 0) {
-//			arr[len++] = num;
-//		}
-//		else {
-//			int i = len - 1;
-//			while (i >= 0 && arr[i] > num) {
-//				arr[i + 1] = arr[i];
-//				i--;
-//			}
-//			arr[i + 1] = num;
-//			len++;
-//		}
-//	}
-//	for (int i = 0; i < len; i++) {
-//		if (i > 0) cout << " "; 
-//		cout << arr[i];
-//	}
-//	cout << endl;
-//
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//void swap(int *a,int *b)
-//{
-//	int temp = *a;
-//	*a = *b;
-//	*b = temp;
-//}
-//void sort3(int &a,int &b,int &c)
-//{
-//	if(a>b)
-//		swap(&a,&b);
-//	if(a>c)
-//		swap(&a,&c);
-//	if(b>c)
-//		swap(&b,&c);
-//}
-//void sortn(int arr[],int n)
-//{
-//	for(int i=0;i<n-1;i++)
-//	{
-//		for(int j=0;j<n-1-i;j++)
-//		{
-//			if(arr[j]>arr[j+1])
-//				swap(&arr[j],&arr[j+1]);
-//		}
-//	}
-//}
-//int main()
-//{
-//	int a[10];
-//	for(int i=0;i<10;i++)
-//	{
-//		cout<<"请输入第"<<i+1<<"个整数：";
-//		cin>>a[i];
-//	}
-//	sort3(a[0], a[1], a[2]);
-//	for(int i=0;i<3;i++)
-//		cout << a[i] << "\t";
-//	sortn(a+3, 7);
-//	for(int i=3;i<10;i++)
-//		cout << a[i] << "\t";
-//	return 0;
-//}
-//#include <iostream>
-//using namespace std;
-//void sLength(char str[], int &length)
-//{
-//	length = 0;
-//	for (int i = 0; str[i] != '\0'; i++)
-//		length++;
-//}
-//int main()
-//{
-//	char str[100];
-//	int length;
-//	cout << "请输入一个字符串:" << endl;
-//	cin.getline(str, 100);
-//	sLength(str, length);
-//	cout << "字符串的长度为:" << length << endl;
+//	unsigned char c =256;
+//	std::cout << c << std::endl;
 //	return 0;
 //}
 #include <iostream>
+#include <stdlib.h>
+#include <string>
+#include <algorithm>
+#include <ctime>
 using namespace std;
-struct point
+void BubbleSort(int arr[], int size)
 {
-	int x;
-	int y;
-	int z;
-};
-void input(point &p)
-{
-	cout << "请输入点的坐标x,y,z:" << endl;
-	cin >> p.x >> p.y >> p.z;
+	for (int i = 0; i < size - 1; i++)//外层循环控制趟数
+	{
+		for (int j = 0; j < size - i - 1; j++)//内层循环控制每一趟比较的次数
+		{
+			if (arr[j] < arr[j + 1])//比较相邻的两个元素
+			{
+				int temp = arr[j + 1];//交换
+				arr[j + 1] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
 }
-void length(point p1, point p2, double &len)
+void SelectSort(int arr[], int size)
 {
-	len = sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y) + (p1.z - p2.z) * (p1.z - p2.z));
+	for (int i = 0; i < size - 1; i++)
+	{
+		int MaxIndex = i;
+		for (int j = i + 1; j < size; j++)
+		{
+			if(arr[j]>arr[MaxIndex])
+				MaxIndex = j;
+		}
+		if (MaxIndex != i)
+		{
+			std::swap(arr[MaxIndex], arr[i]);
+		}
+	}
+}
+int IsPrime(int x)
+{
+	for (int i = 2; i <= x / 2; i++)
+	{
+		if (x % i == 0)
+			return 0;
+	}
+		return 1;
+	
+}
+void func(int n)
+{
+	int s2 = 0;
+	int s1 = 1;
+	int a[100];
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			
+			s1 *= j;
+		}
+			a[i] = s1;
+			s1 = 1;
+		
+	}
+	for (int i = 1; i <=n; i++)
+	{
+		s2 += a[i];
+	}
+	cout << s2;
+}
+
+int func2(int n)
+{
+	if (n == 1)
+		return 1;
+	return n * func2(n - 1);
+}
+void test01()
+{
+	int n;
+	int sum = 0;
+	cout << "请输入一个正整数:" << endl;
+	cin >> n;
+	for (int i = n; i >=1; i--)
+	{
+		sum += func2(i);
+	}
+	cout <<"n的阶乘和是"<< sum << endl;
+}
+void func3(char *s,int arr[])
+{
+	int length = strlen(s);
+	for (int i = 0; i < length; i++)
+	{
+		arr[i] = s[i] - '0';
+	}
+}
+void juege(char* s)//把指针和数组结合起来，尤其是数组的首地址
+{
+	int length = strlen(s);
+	for (int i = 0; i < length / 2; i++)
+	{
+		if (s[i] != s[length - 1 - i])
+		{
+			cout << "NO";
+			return ;
+		}
+	}
+	cout << "YES" << endl;
+}
+void judge2(int n)
+{
+	int temp = n;
+	int s=0;
+	while (n)
+	{
+		s = s *10 +n % 10;
+		n = n / 10;
+	}
+	if (s == temp)
+		cout << "是回文数";
+	else
+		cout << "不是" << endl;
+}
+void fun2(int n)
+{
+	
+	for (int i = 2; i <= n / 2; i++)
+	{
+		if ((IsPrime(i)) && (IsPrime(n - i)))
+			cout << i << "+" << n - i << "=" << n << endl;
+
+	}
 }
 int main()
-{
-	point p1, p2;
-	double len;
-	input(p1);
-	input(p2);
-	length(p1, p2, len);
-	cout << "两点之间的距离为:" << len << endl;
-	return 0;
-}
+{    
+	int n;
+	cout << "请输入一个不小于6的偶数" << endl;
+	cin >> n;
+	fun2(n);
+	//char str[100];
+	//cout << "请输入一个字符串" << endl;
+	//cin.getline(str, 100);
+	judge2(12321);
+	/*juege(str);*/
+	//func3(str, arr);
+	//for (int i = 0; str[i] != '\0'; i++)
+	//{
+	//	cout << arr[i];
+	//}
 
+	/*int arr[10] = { 0 };
+	std::cout << "请输入10个整数" << std::endl;
+	for(int i=0;i<10;i++)
+	{
+		std::cin >> arr[i];
+	}
+	SelectSort(arr, 10);
+	std::cout << "排序后的整数是" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	return 0;
+	*/
+	/*func(5);
+	test01();*/
+	//srand(time(0));
+	//int a = rand() % 90 - 100;
+	//cout << a;
+
+}
