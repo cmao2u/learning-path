@@ -1012,67 +1012,67 @@ int main() {
 1.建m(Size)大小的堆 函数
 2.插入最小堆数据函数
 3.封装*/
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
-struct Minheap
-{
-	vector<int> data;
-	int Size;
-	int Capacity;
-};
-void CreateMinheap(Minheap& H, int Capacity)
-{
-	H.Capacity = Capacity;
-	H.Size = 0;
-	H.data.resize(Capacity + 1);
-	H.data[0] = -100000;//哨兵
-}
-void Insert(Minheap& H, int val)
-{
-	
-	H.data[++H.Size] = val;
-	int i = H.Size;
-	for (; H.data[i / 2] > val&&i!=1; i /=2)
-	{
-		H.data[i] = H.data[i / 2];
-		H.data[i / 2] = val;
-	}
-}
-void Path(Minheap& H, int index)
-{
-	for(int i=index; i>0; i/=2)
-	{
-		cout << H.data[i];
-		if (i != 1)
-			cout << " ";
-	}
-	cout << endl;
-}
-int main()
-{
-	int n, m;
-	cout << "请输入插入元素的个数以及需要打印的路径条数" << endl;
-	cin >> n >> m;
-	Minheap H;
-	CreateMinheap(H, n);
-	for(int i=0;i<n;i++)
-	{
-		int val;
-		cout << "请输入第" << i + 1 << "个元素的值" << endl;
-		cin >> val;
-		Insert(H, val);
-	}
-	for (int i = 0; i < m; i++)
-	{
-		int index;
-		cout << "请输入需要打印路径的节点索引" << endl;
-		cin >> index;
-		Path(H, index);
-	}
-	return 0;
-}
+//#include <iostream>
+//#include <vector>
+//#include <algorithm>
+//using namespace std;
+//struct Minheap
+//{
+//	vector<int> data;
+//	int Size;
+//	int Capacity;
+//};
+//void CreateMinheap(Minheap& H, int Capacity)
+//{
+//	H.Capacity = Capacity;
+//	H.Size = 0;
+//	H.data.resize(Capacity + 1);
+//	H.data[0] = -100000;//哨兵
+//}
+//void Insert(Minheap& H, int val)
+//{
+//	
+//	H.data[++H.Size] = val;
+//	int i = H.Size;
+//	for (; H.data[i / 2] > val&&i!=1; i /=2)
+//	{
+//		H.data[i] = H.data[i / 2];
+//		H.data[i / 2] = val;
+//	}
+//}
+//void Path(Minheap& H, int index)
+//{
+//	for(int i=index; i>0; i/=2)
+//	{
+//		cout << H.data[i];
+//		if (i != 1)
+//			cout << " ";
+//	}
+//	cout << endl;
+//}
+//int main()
+//{
+//	int n, m;
+//	cout << "请输入插入元素的个数以及需要打印的路径条数" << endl;
+//	cin >> n >> m;
+//	Minheap H;
+//	CreateMinheap(H, n);
+//	for(int i=0;i<n;i++)
+//	{
+//		int val;
+//		cout << "请输入第" << i + 1 << "个元素的值" << endl;
+//		cin >> val;
+//		Insert(H, val);
+//	}
+//	for (int i = 0; i < m; i++)
+//	{
+//		int index;
+//		cout << "请输入需要打印路径的节点索引" << endl;
+//		cin >> index;
+//		Path(H, index);
+//	}
+//	return 0;
+//}
 /*
 优化版本:
 #include <iostream>
@@ -1146,3 +1146,80 @@ int main() {
     
     return 0;
 }*/
+//呃，有点忘了，重新学一遍吧
+//#include <iostream>
+//void PrintN(int n)
+//{
+//	for (int i = 1; i <= n; i++)
+//	{
+//		std::cout << i << " ";
+//	}
+//}
+//#include<iostream>
+//void PrintN(int n)
+//{
+//	if (n == 1)
+//	{
+//		std::cout << 1 << " ";
+//	}
+//	else
+//	{
+//		PrintN(n - 1);
+//		std::cout << n << " ";
+//	}
+//}
+//int main()
+//{
+//	int n;
+//	std::cin >> n;
+//	PrintN(n);
+//}
+//#include <iostream>
+//double func(int n, int a[], double x)
+//{
+//	double p = a[0];
+//	for (int i = 0; i <= n; i++)
+//	{
+//		p += a[i] * pow(x, i);
+//	}
+//}
+#include <iostream>
+#include <cmath>
+#include <ctime>
+double func1(double x, int n)
+{
+	double p = 1.0;
+	for (int i = 1; i <= n; i++)
+	{
+		p = p + pow(x, i) / i;
+	}
+	return p;
+}
+double func2(double x, int n)
+{
+	 double p = 1.0 / n;
+	for (int i=n-1; i >=1; i--)
+	{
+     p = p * x + 1.0/i;
+	}
+	return p*x+1.0;
+}
+int main()
+{
+	double x = 1.1;
+	const int n = 100;
+	volatile double ans = 0.0;
+	clock_t start, end;
+	start = clock();
+	for (int i = 0; i < 1e7; i++)
+		ans=func1(x, n);
+	end = clock();
+	double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+	std::cout << duration<<'\n';
+	start = clock();
+	for (int i = 0; i <= 1e7; i++)
+		ans=func2(x, n);
+	end = clock();
+	duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+	std::cout << duration<<'\n';
+}
