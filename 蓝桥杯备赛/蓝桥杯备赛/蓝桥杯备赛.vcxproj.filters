@@ -51,5 +51,14 @@
     <ClCompile Include="Day12.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Day13.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Day14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Day15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
