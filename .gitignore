@@ -10,3 +10,6 @@ x64/
 *.exe
 *.dll
 *.lib
+.vs/
+*.ipch.vs/
+*.ipch
