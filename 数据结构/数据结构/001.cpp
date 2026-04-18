@@ -1183,43 +1183,517 @@ int main() {
 //		p += a[i] * pow(x, i);
 //	}
 //}
+//#include <iostream>
+//#include <cmath>
+//#include <ctime>
+//double func1(double x, int n)
+//{
+//	double p = 1.0;
+//	for (int i = 1; i <= n; i++)
+//	{
+//		p = p + pow(x, i) / i;
+//	}
+//	return p;
+//}
+//double func2(double x, int n)
+//{
+//	 double p = 1.0 / n;
+//	for (int i=n-1; i >=1; i--)
+//	{
+//     p = p * x + 1.0/i;
+//	}
+//	return p*x+1.0;
+//}
+//int main()
+//{
+//	double x = 1.1;
+//	const int n = 100;
+//	volatile double ans = 0.0;
+//	clock_t start, end;
+//	start = clock();
+//	for (int i = 0; i < 1e7; i++)
+//		ans=func1(x, n);
+//	end = clock();
+//	double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+//	std::cout << duration<<'\n';
+//	start = clock();
+//	for (int i = 0; i <= 1e7; i++)
+//		ans=func2(x, n);
+//	end = clock();
+//	duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+//	std::cout << duration<<'\n';
+//}
+//#include <iostream>
+//
+//using ElementType = int;
+//using Position = int;   // Position: position，位置/下标
+//
+//class SeqList
+//{
+//public:
+//	static constexpr int kMaxSize = 100;
+//	static constexpr Position kError = -1;
+//
+//	SeqList() : last_(-1) {}  // 初始化空表，last_ = -1
+//
+//	bool isEmpty() const
+//	{
+//		return last_ == -1;
+//	}
+//
+//	bool isFull() const
+//	{
+//		return last_ == kMaxSize - 1;
+//	}
+//
+//	int size() const
+//	{
+//		return last_ + 1;
+//	}
+//
+//	// 查找元素 X，找到返回下标，找不到返回 -1
+//	Position find(ElementType x) const
+//	{
+//		Position i = 0;
+//		while (i <= last_ && data_[i] != x)
+//		{
+//			++i;
+//		}
+//
+//		if (i > last_)
+//		{
+//			return kError;
+//		}
+//		else
+//		{
+//			return i;
+//		}
+//	}
+//
+//	// 在下标 P 位置前插入元素 X
+//	bool insert(ElementType x, Position p)
+//	{
+//		if (isFull())
+//		{
+//			std::cout << "表满，无法插入\n";
+//			return false;
+//		}
+//
+//		if (p < 0 || p > last_ + 1)
+//		{
+//			std::cout << "插入位置不合法\n";
+//			return false;
+//		}
+//
+//		for (Position i = last_; i >= p; --i)
+//		{
+//			data_[i + 1] = data_[i];
+//		}
+//
+//		data_[p] = x;
+//		++last_;
+//		return true;
+//	}
+//
+//	// 删除下标 P 处的元素
+//	bool erase(Position p)
+//	{
+//		if (p < 0 || p > last_)
+//		{
+//			std::cout << "删除位置不合法\n";
+//			return false;
+//		}
+//
+//		for (Position i = p + 1; i <= last_; ++i)
+//		{
+//			data_[i - 1] = data_[i];
+//		}
+//
+//		--last_;
+//		return true;
+//	}
+//
+//	void print() const
+//	{
+//		for (Position i = 0; i <= last_; ++i)
+//		{
+//			std::cout << data_[i] << ' ';
+//		}
+//		std::cout << '\n';
+//	}
+//
+//private:
+//	ElementType data_[kMaxSize];  // data_: data，数据数组
+//	Position last_;               // last_: last，最后一个有效元素的下标
+//};
+//
+//int main()
+//{
+//	SeqList list;
+//
+//	list.insert(10, 0);
+//	list.insert(20, 1);
+//	list.insert(30, 2);
+//	list.print();   // 10 20 30
+//
+//	list.insert(99, 1);
+//	list.print();   // 10 99 20 30
+//
+//	std::cout << "20 的位置: " << list.find(20) << '\n';
+//
+//	list.erase(2);
+//	list.print();   // 10 99 30
+//
+//	return 0;
+//}
+//
+//#include <iostream>
+//using ElementType = int;
+//using Position = int;
+//class Seqlist
+//{
+//public:
+//	static constexpr int kMaxSize = 100;
+//	static constexpr Position kError = -1;
+//	Seqlist() :last_(-1) {}
+//	bool isEmpty() const
+//	{
+//		return last_ == -1;
+//	}
+//	bool isFull() const
+//	{
+//		return last_ == kMaxSize - 1;
+//	}
+//	int size() const
+//	{
+//		return last_ + 1;
+//	}
+//	Position find(ElementType x)const
+//	{
+//		Position i = 0;
+//		while (i <= last_ && data_[i] != x)
+//		{
+//			++i;
+//		}
+//		if (i > last_)
+//			return kError;
+//		else
+//			return i;
+//	}
+//	bool insert(ElementType x, Position p)
+//	{
+//		if (isFull())
+//		{
+//			std::cout << "表满，无法插入\n";
+//			return false;
+//		}
+//		if (p<0 || p>last_ + 1)
+//		{
+//			std::cout << "插入位置不合法\n";
+//			return false;
+//		}
+//		for (Position i = last_; i >= p; --i)
+//		{
+//			data_[i + 1] = data_[i];
+//		}
+//		data_[p] = x;
+//		++last_;
+//		return true;
+//	}
+//	bool erase(Position p)
+//	{
+//		if (p<0 || p>last_)
+//		{
+//			std::cout << "删除位置不合法\n";
+//			return false;
+//		}
+//		for (Position i = p + 1; i <= last_; i++)
+//		{
+//			data_[i - 1] = data_[i];
+//		}
+//		last_--;
+//		return true;
+//	}
+//	void print() const
+//	{
+//		for (Position i = 0;i <= last_; i++)
+//		{
+//			std::cout << data_[i] << ' ';
+//		}
+//		std::cout << '\n';
+//	}
+//private:
+//	ElementType data_[kMaxSize];
+//	Position last_;
+//};
+//int main()
+//{
+//	Seqlist list;
+//	list.insert(10, 0);
+//	list.insert(20, 1);
+//	list.insert(30, 2);
+//	list.print();
+//	list.insert(99, 1);
+//	list.print();
+//	std::cout << "20的位置:" << list.find(20) << '\n';
+//	list.erase(2);
+//	list.print();
+//	return 0;
+//}
+//写一个顺序表，能做到:
+//查找元素 X，找到返回下标，找不到返回 - 1
+//在下标 P 位置前插入元素 X
+//删除下标 P 处的元素
 #include <iostream>
-#include <cmath>
-#include <ctime>
-double func1(double x, int n)
+class SeqList
 {
-	double p = 1.0;
-	for (int i = 1; i <= n; i++)
+	using ElementType = int;
+	using Position = int;
+
+public:
+	static constexpr int kMaxSize = 100;
+	static constexpr Position kError = -1;
+
+	SeqList() :last_(-1) {}
+
+	bool isFull() const
 	{
-		p = p + pow(x, i) / i;
+		return last_ == kMaxSize - 1;
 	}
-	return p;
-}
-double func2(double x, int n)
-{
-	 double p = 1.0 / n;
-	for (int i=n-1; i >=1; i--)
+
+	int size() const
 	{
-     p = p * x + 1.0/i;
+		return last_ + 1;
 	}
-	return p*x+1.0;
-}
+
+	bool isEmpty() const
+	{
+		return last_ == -1;
+	}
+
+	bool insert(ElementType x,Position p)
+	{
+		if (isFull())
+		{
+			std::cout << "表满，无法插入"<<'\n';
+			return false;
+		}
+		if (p < 0 || p > last_+1)
+		{
+			std::cout << "插入目标位置不合法"<<'\n'; //输出格式要统一
+			return false;
+		}
+		for (Position i = last_ + 1; i > p; i--)
+		{
+			data_[i] = data_[i - 1];
+		}
+		data_[p] = x;
+		last_++;
+		return true;
+	}
+
+	void print() const
+	{
+		for (Position i = 0; i <= last_; i++)
+		{
+			std::cout << data_[i] << " ";
+		}
+		std::cout << '\n';
+	}
+	Position find(ElementType x) const
+	{
+		for (Position i = 0; i <= last_; i++)//保持类型一致性。
+		{
+			if (data_[i] == x)
+			{
+				return i;
+			}
+		}
+		return kError;
+	}
+
+	bool erase(Position p)
+	{
+		if (p < 0 || p > last_)
+		{
+			std::cout << "删除位置不合法" << '\n';
+			return false;
+		}
+		for (Position i = p; i < last_; i++)
+		{
+			data_[i] = data_[i + 1];
+		}
+		last_--;
+		return true;
+	}
+
+private:
+	ElementType data_[kMaxSize];
+	Position last_;
+};
 int main()
 {
-	double x = 1.1;
-	const int n = 100;
-	volatile double ans = 0.0;
-	clock_t start, end;
-	start = clock();
-	for (int i = 0; i < 1e7; i++)
-		ans=func1(x, n);
-	end = clock();
-	double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
-	std::cout << duration<<'\n';
-	start = clock();
-	for (int i = 0; i <= 1e7; i++)
-		ans=func2(x, n);
-	end = clock();
-	duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
-	std::cout << duration<<'\n';
+	SeqList list;
+	list.insert(10, 0);
+	list.insert(20, 1);
+	list.insert(30, 2);
+	list.print();
+	list.insert(99, 1);
+	list.print();
+	std::cout << "20的位置:" << list.find(20) << '\n';
+	list.erase(2);
+	list.print();
+	return 0;
 }
+//#include <iostream>
+//
+//using ElementType = int;
+//
+//struct ListNode
+//{
+//	ElementType data;   // data: data，数据域
+//	ListNode* next;     // next: next，下一个结点指针
+//
+//	ListNode(ElementType value = 0, ListNode* nextNode = nullptr)
+//		: data(value), next(nextNode)
+//	{
+//	}
+//};
+//
+//using Position = ListNode*;   // Position: position，位置，这里本质是结点指针
+//
+//class LinkedList
+//{
+//public:
+//	static constexpr Position kError = nullptr;
+//
+//	LinkedList()
+//	{
+//		head_ = new ListNode();   // 头结点，不存有效数据
+//	}
+//
+//	~LinkedList()
+//	{
+//		Position current = head_;
+//		while (current != nullptr)
+//		{
+//			Position nextNode = current->next;
+//			delete current;
+//			current = nextNode;
+//		}
+//	}
+//
+//	// 查找元素 x，找到返回结点指针，找不到返回 nullptr
+//	Position find(ElementType x) const
+//	{
+//		Position p = head_->next;   // p 指向第一个有效结点
+//		while (p != nullptr && p->data != x)
+//		{
+//			p = p->next;
+//		}
+//		return p;
+//	}
+//
+//	// 在结点 p 前插入新结点 x
+//	bool insert(ElementType x, Position p)
+//	{
+//		Position pre = head_;   // pre: predecessor，前驱结点
+//
+//		while (pre != nullptr && pre->next != p)
+//		{
+//			pre = pre->next;
+//		}
+//
+//		if (pre == nullptr)
+//		{
+//			std::cout << "插入位置参数错误\n";
+//			return false;
+//		}
+//
+//		Position tmp = new ListNode(x);  // tmp: temporary，临时新结点
+//		tmp->next = p;
+//		pre->next = tmp;
+//		return true;
+//	}
+//
+//	// 删除结点 p
+//	bool erase(Position p)
+//	{
+//		if (p == nullptr)
+//		{
+//			std::cout << "删除位置参数错误\n";
+//			return false;
+//		}
+//
+//		Position pre = head_;
+//		while (pre != nullptr && pre->next != p)
+//		{
+//			pre = pre->next;
+//		}
+//
+//		if (pre == nullptr)
+//		{
+//			std::cout << "删除位置参数错误\n";
+//			return false;
+//		}
+//
+//		pre->next = p->next;
+//		delete p;
+//		return true;
+//	}
+//
+//	// 尾插，方便测试
+//	void pushBack(ElementType x)
+//	{
+//		Position tail = head_;
+//		while (tail->next != nullptr)
+//		{
+//			tail = tail->next;
+//		}
+//		tail->next = new ListNode(x);
+//	}
+//
+//	void print() const
+//	{
+//		Position p = head_->next;
+//		while (p != nullptr)
+//		{
+//			std::cout << p->data << ' ';
+//			p = p->next;
+//		}
+//		std::cout << '\n';
+//	}
+//
+//	Position first() const
+//	{
+//		return head_->next;
+//	}
+//
+//	Position head() const
+//	{
+//		return head_;
+//	}
+//
+//private:
+//	Position head_;   // head_: head，头结点
+//};
+//
+//int main()
+//{
+//	LinkedList list;
+//
+//	list.pushBack(10);
+//	list.pushBack(20);
+//	list.pushBack(30);
+//	list.print();   // 10 20 30
+//
+//	Position p = list.find(20);
+//	list.insert(99, p);   // 在 20 前插入 99
+//	list.print();         // 10 99 20 30
+//
+//	p = list.find(20);
+//	list.erase(p);        // 删除 20
+//	list.print();         // 10 99 30
+//
+//	return 0;
+//}
