@@ -1,3 +1,0 @@
-﻿  WorkerManager.cpp
-x64\Debug\Worker.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
-  职工管理系统.vcxproj -> C:\Users\cmao2\Desktop\项目\C++学习\职工管理系统\职工管理系统\x64\Debug\职工管理系统.exe
