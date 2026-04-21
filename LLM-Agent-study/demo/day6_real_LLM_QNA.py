@@ -9,9 +9,16 @@ client = OpenAI(
     base_url="https://api.deepseek.com"
 )
 
-question = input("请输入你的问题：")
+while True:
+    question = input("请输入你的问题(输入exit退出)：        ").strip()
 
-prompt = f"""
+    if question.lower() in ["exit", "quit"]:
+        print("退出程序。")
+        break
+    if not question :
+        print("问题不能为空，请重新输入。")
+        continue
+    prompt = f"""
 你是一个严谨的学习助手。
 请你只根据下面提供的学习笔记回答问题，不要使用笔记之外的知识。
 如果笔记中没有明确答案，就直接回答：根据当前笔记，我无法确定。
@@ -24,14 +31,14 @@ prompt = f"""
 {question}
 """.strip()
 
-response = client.chat.completions.create(
-    model="deepseek-chat",
-    messages=[
-        {"role": "system", "content": "你是一个严谨的学习助手。"},
-        {"role": "user", "content": prompt}
-    ],
-    stream=False
-)
+    response = client.chat.completions.create(
+        model="deepseek-chat",
+        messages=[
+            {"role": "system", "content": "你是一个严谨的学习助手。"},
+            {"role": "user", "content": prompt}
+        ],
+        stream=False
+    )
 
-print("\n回答如下：\n")
-print(response.choices[0].message.content)
+    print("\n回答如下：\n")
+    print(response.choices[0].message.content)
