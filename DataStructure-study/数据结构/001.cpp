@@ -16,7 +16,7 @@
 //			cout << N << endl;
 //	}
 //}*/
-/*¹ØÓÚËã·¨Ğ§ÂÊ
+/*å…³äºç®—æ³•æ•ˆç‡
 clock_t start, finish;
 double duration;
 double function01(int n, double a[], double x)
@@ -37,7 +37,7 @@ double function02(int n, double a[], double x)
 	}
 	return p;
 }*/
-/*¹ØÓÚËã·¨Ğ§ÂÊ
+/*å…³äºç®—æ³•æ•ˆç‡
 clock_t start,finish;
 double duration;
 double function01(int n, double a[], double x)
@@ -177,37 +177,37 @@ void test04()
 	//printN(1000);
 	printn(10000);
 }*/
-	/*¹ØÓÚËã·¨Ğ§ÂÊ
-	¶àÏîÊ½ÇóÖµ
-	double a[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 };// ¶àÏîÊ½ÏµÊı
-	int n = 20;  // ¶àÏîÊ½×î¸ß´ÎÊı£¨±ØĞëĞ¡ÓÚÊı×é³¤¶È-1£©
-	double x = 10.0;  // ¶àÏîÊ½×Ô±äÁ¿
+	/*å…³äºç®—æ³•æ•ˆç‡
+	å¤šé¡¹å¼æ±‚å€¼
+	double a[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 };// å¤šé¡¹å¼ç³»æ•°
+	int n = 20;  // å¤šé¡¹å¼æœ€é«˜æ¬¡æ•°ï¼ˆå¿…é¡»å°äºæ•°ç»„é•¿åº¦-1ï¼‰
+	double x = 10.0;  // å¤šé¡¹å¼è‡ªå˜é‡
 
-	// ÖØ¸´µ÷ÓÃ1000000´Î£¬·Å´óÊ±¼ä²îÒì
+	// é‡å¤è°ƒç”¨1000000æ¬¡ï¼Œæ”¾å¤§æ—¶é—´å·®å¼‚
 	const int repeat = 1000000;
 
-	// ²âÊÔfunction01
+	// æµ‹è¯•function01
 	clock_t start = clock();
 	for (int i = 0; i < repeat; i++) {
 		function01(n, a, x);
 	}
 	clock_t finish = clock();
-	double duration01 = double(finish - start) / CLOCKS_PER_SEC;  // ÓÃCLOCKS_PER_SEC¸ü±ê×¼
-	cout << "function01 Ê±¼ä: " << duration01 << "s" << endl;
+	double duration01 = double(finish - start) / CLOCKS_PER_SEC;  // ç”¨CLOCKS_PER_SECæ›´æ ‡å‡†
+	cout << "function01 æ—¶é—´: " << duration01 << "s" << endl;
 	cout << function01(n, a, x) << endl;
 
-	// ²âÊÔfunction02
+	// æµ‹è¯•function02
 	start = clock();
 	for (int i = 0; i < repeat; i++) {
 		function02(n, a, x);
 	}
 	finish = clock();
 	double duration02 = double(finish - start) / CLOCKS_PER_SEC;
-	cout << "function02 Ê±¼ä: " << duration02 << "s" << endl;
+	cout << "function02 æ—¶é—´: " << duration02 << "s" << endl;
 	cout << function02(n, a, x) << endl;	*/
 
 	/*
-	double a[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 };// ¶àÏîÊ½ÏµÊı
+	double a[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 };// å¤šé¡¹å¼ç³»æ•°
 	int n = 20;
 	
 	{
@@ -215,7 +215,7 @@ void test04()
 	}
 	 finish = clock();
 	double duration02 = double(finish - start) / CLOCKS_PER_SEC;
-	cout << "function02 Ê±¼ä: " << duration02 << "s" << endl;
+	cout << "function02 æ—¶é—´: " << duration02 << "s" << endl;
 	cout << function02(n, a, x) << endl;*/
 	/*Maximum Subsequence Sum Problem
 	/test01();
@@ -228,46 +228,46 @@ void test04()
 //#include <algorithm>
 //using namespace std;
 //
-//// ¶àÏîÊ½ÏîÀà
+//// å¤šé¡¹å¼é¡¹ç±»
 //class Polynomial {
 //public:
-//	int coef;  // ÏµÊı
-//	int expon; // Ö¸Êı
+//	int coef;  // ç³»æ•°
+//	int expon; // æŒ‡æ•°
 //	Polynomial(int c, int e) : coef(c), expon(e) {}
 //};
 //
-//// ¶ÁÈ¡¶àÏîÊ½£¨¾²Ä¬¶ÁÈ¡£¬°´Ö¸Êı½µĞò·µ»Ø£©
+//// è¯»å–å¤šé¡¹å¼ï¼ˆé™é»˜è¯»å–ï¼ŒæŒ‰æŒ‡æ•°é™åºè¿”å›ï¼‰
 //vector<Polynomial> readPoly() {
 //	int n;
 //	cin >> n;
-//	map<int, int> polyMap; // ÓÃmap×Ô¶¯°´Ö¸ÊıÉıĞò´æ´¢£¬ºÏ²¢Í¬ÀàÏî
+//	map<int, int> polyMap; // ç”¨mapè‡ªåŠ¨æŒ‰æŒ‡æ•°å‡åºå­˜å‚¨ï¼Œåˆå¹¶åŒç±»é¡¹
 //	for (int i = 0; i < n; i++) {
 //		int c, e;
 //		cin >> c >> e;
-//		polyMap[e] += c; // ×Ô¶¯ºÏ²¢Í¬ÀàÏî£¨ÊäÈë¿ÉÄÜÓĞÖØ¸´Ö¸Êı£¬ÌâÄ¿ËäÎ´Ëµµ«Ğè¼æÈİ£©
+//		polyMap[e] += c; // è‡ªåŠ¨åˆå¹¶åŒç±»é¡¹ï¼ˆè¾“å…¥å¯èƒ½æœ‰é‡å¤æŒ‡æ•°ï¼Œé¢˜ç›®è™½æœªè¯´ä½†éœ€å…¼å®¹ï¼‰
 //	} 
-//	// ×ª»»Îªvector£¬°´Ö¸Êı½µĞòÅÅÁĞ
+//	// è½¬æ¢ä¸ºvectorï¼ŒæŒ‰æŒ‡æ•°é™åºæ’åˆ—
 //	vector<Polynomial> poly;
 //	for (auto it = polyMap.rbegin(); it != polyMap.rend(); it++) {
-//		if (it->second != 0) { // ÏµÊı²»Îª0²Å¼ÓÈë
+//		if (it->second != 0) { // ç³»æ•°ä¸ä¸º0æ‰åŠ å…¥
 //			poly.push_back(Polynomial(it->second, it->first));
 //		}
 //	}
 //	return poly;
 //}
 //
-//// ¶àÏîÊ½¼Ó·¨£¨ÓÃmapÊµÏÖ£¬×Ô¶¯ºÏ²¢Í¬ÀàÏî£©
+//// å¤šé¡¹å¼åŠ æ³•ï¼ˆç”¨mapå®ç°ï¼Œè‡ªåŠ¨åˆå¹¶åŒç±»é¡¹ï¼‰
 //vector<Polynomial> addPoly(const vector<Polynomial>& p1, const vector<Polynomial>& p2) {
 //	map<int, int> polyMap;
-//	// ¼ÓÈëp1µÄÏî
+//	// åŠ å…¥p1çš„é¡¹
 //	for (const auto& term : p1) {
 //		polyMap[term.expon] += term.coef;
 //	}
-//	// ¼ÓÈëp2µÄÏî£¬×Ô¶¯ºÏ²¢Í¬ÀàÏî    
+//	// åŠ å…¥p2çš„é¡¹ï¼Œè‡ªåŠ¨åˆå¹¶åŒç±»é¡¹    
 //	for (const auto& term : p2) {
 //		polyMap[term.expon] += term.coef;
 //	}
-//	// ×ª»»Îªvector£¬°´Ö¸Êı½µĞò
+//	// è½¬æ¢ä¸ºvectorï¼ŒæŒ‰æŒ‡æ•°é™åº
 //	vector<Polynomial> result;
 //	for (auto it = polyMap.rbegin(); it != polyMap.rend(); it++) {
 //		if (it->second != 0) {
@@ -277,28 +277,28 @@ void test04()
 //	return result;
 //}
 //
-//// ¶àÏîÊ½³Ë·¨£¨ÓÃmapÊµÏÖ£¬×Ô¶¯ºÏ²¢Í¬ÀàÏî£©
+//// å¤šé¡¹å¼ä¹˜æ³•ï¼ˆç”¨mapå®ç°ï¼Œè‡ªåŠ¨åˆå¹¶åŒç±»é¡¹ï¼‰
 //vector<Polynomial> mulPoly(const vector<Polynomial>& p1, const vector<Polynomial>& p2) {
 //	map<int, int> polyMap;
-//	// ±éÀúp1ºÍp2µÄËùÓĞÏî£¬¼ÆËã³Ë»ı²¢´æÈëmap
+//	// éå†p1å’Œp2çš„æ‰€æœ‰é¡¹ï¼Œè®¡ç®—ä¹˜ç§¯å¹¶å­˜å…¥map
 //	for (const auto& term1 : p1) {
 //		for (const auto& term2 : p2) {
-//			int new_e = term1.expon + term2.expon; // Ö¸ÊıÏà¼Ó
-//			int new_c = term1.coef * term2.coef;   // ÏµÊıÏà³Ë
-//			polyMap[new_e] += new_c;               // ×Ô¶¯ºÏ²¢Í¬ÀàÏî
+//			int new_e = term1.expon + term2.expon; // æŒ‡æ•°ç›¸åŠ 
+//			int new_c = term1.coef * term2.coef;   // ç³»æ•°ç›¸ä¹˜
+//			polyMap[new_e] += new_c;               // è‡ªåŠ¨åˆå¹¶åŒç±»é¡¹
 //		}
 //	}
-//	// ×ª»»Îªvector£¬°´Ö¸Êı½µĞò
+//	// è½¬æ¢ä¸ºvectorï¼ŒæŒ‰æŒ‡æ•°é™åº
 //	vector<Polynomial> result;
 //	for (auto it = polyMap.rbegin(); it != polyMap.rend(); it++) {
-//		if (it->second != 0) { // ÏµÊı²»Îª0²Å¼ÓÈë
+//		if (it->second != 0) { // ç³»æ•°ä¸ä¸º0æ‰åŠ å…¥
 //			result.push_back(Polynomial(it->second, it->first));
 //		}
 //	}
 //	return result;
 //}
 //
-//// ´òÓ¡¶àÏîÊ½£¨ÑÏ¸ñ°´ÌâÄ¿¸ñÊ½£ºÎŞ¶àÓà¿Õ¸ñ£¬Áã¶àÏîÊ½Êä³ö0 0£©
+//// æ‰“å°å¤šé¡¹å¼ï¼ˆä¸¥æ ¼æŒ‰é¢˜ç›®æ ¼å¼ï¼šæ— å¤šä½™ç©ºæ ¼ï¼Œé›¶å¤šé¡¹å¼è¾“å‡º0 0ï¼‰
 //void printPoly(const vector<Polynomial>& poly) {
 //	if (poly.empty()) {
 //		cout << "0 0";
@@ -315,15 +315,15 @@ void test04()
 //}
 //
 //int main() {
-//	// ¶ÁÈ¡Á½¸ö¶àÏîÊ½£¨ÎŞ½»»¥Ê½ÌáÊ¾£¬¼æÈİÑùÀıÅúÁ¿ÊäÈë£©
+//	// è¯»å–ä¸¤ä¸ªå¤šé¡¹å¼ï¼ˆæ— äº¤äº’å¼æç¤ºï¼Œå…¼å®¹æ ·ä¾‹æ‰¹é‡è¾“å…¥ï¼‰
 //	vector<Polynomial> p1 = readPoly();
 //	vector<Polynomial> p2 = readPoly();
 //
-//	// ¼ÆËã³Ë»ıºÍºÍ
+//	// è®¡ç®—ä¹˜ç§¯å’Œå’Œ
 //	vector<Polynomial> product = mulPoly(p1, p2);
 //	vector<Polynomial> sum_poly = addPoly(p1, p2);
 //
-//	// Êä³ö½á¹û£¨ÏÈ³Ë»ı£¬ºóºÍ£¬·ûºÏÌâÄ¿ÒªÇó£©
+//	// è¾“å‡ºç»“æœï¼ˆå…ˆä¹˜ç§¯ï¼Œåå’Œï¼Œç¬¦åˆé¢˜ç›®è¦æ±‚ï¼‰
 //	printPoly(product);
 //	printPoly(sum_poly);
 //
@@ -345,12 +345,12 @@ public:
 vector<Polynomial> readPoly(int coef = 0, int expon = 0)
 {
 	int n;
-	cout << "ÇëÊäÈëµÚÒ»¸ö¶àÏîÊ½·ÇÁãÏîµÄ¸öÊı" << endl;
+	cout << "è¯·è¾“å…¥ç¬¬ä¸€ä¸ªå¤šé¡¹å¼éé›¶é¡¹çš„ä¸ªæ•°" << endl;
 	cin >> n;
 	map<int, int>m1;
 	for (int i = 0; i < n; i++)
 	{
-		cout << "ÇëÊäÈëÏµÊıºÍÖ¸Êı" << endl;
+		cout << "è¯·è¾“å…¥ç³»æ•°å’ŒæŒ‡æ•°" << endl;
 		cin >> coef >> expon;
 		m1[expon] += coef;
 	}
@@ -451,41 +451,41 @@ int main()
 //#include <algorithm>
 //#include <iterator>
 //
-//// ¶¨Òå¶ş²æÊ÷½Úµã½á¹¹
+//// å®šä¹‰äºŒå‰æ ‘èŠ‚ç‚¹ç»“æ„
 //struct TreeNode {
 //	char data;
-//	int left;  // ×óº¢×ÓµÄË÷Òı£¬-1±íÊ¾¿Õ
-//	int right; // ÓÒº¢×ÓµÄË÷Òı£¬-1±íÊ¾¿Õ
+//	int left;  // å·¦å­©å­çš„ç´¢å¼•ï¼Œ-1è¡¨ç¤ºç©º
+//	int right; // å³å­©å­çš„ç´¢å¼•ï¼Œ-1è¡¨ç¤ºç©º
 //};
 //
-//// ½«Ê÷µÄ¹¹½¨Âß¼­·â×°ÔÚÒ»¸öº¯ÊıÖĞ
-//// ¶ÁÈ¡ÊäÈë²¢·µ»Ø¸ù½ÚµãµÄË÷Òı
+//// å°†æ ‘çš„æ„å»ºé€»è¾‘å°è£…åœ¨ä¸€ä¸ªå‡½æ•°ä¸­
+//// è¯»å–è¾“å…¥å¹¶è¿”å›æ ¹èŠ‚ç‚¹çš„ç´¢å¼•
 //int buildTree(std::vector<TreeNode>& tree) {
 //	int n;
 //	std::cin >> n;
 //
 //	if (n == 0) {
-//		return -1; // ¿ÕÊ÷
+//		return -1; // ç©ºæ ‘
 //	}
 //
 //	tree.resize(n);
-//	std::vector<int> parent(n, -1); // ÓÃÓÚÑ°ÕÒ¸ù½Úµã
+//	std::vector<int> parent(n, -1); // ç”¨äºå¯»æ‰¾æ ¹èŠ‚ç‚¹
 //
 //	for (int i = 0; i < n; ++i) {
 //		char data;
 //		std::string leftStr, rightStr;
 //
-//		// Ö±½Ó´Ó±ê×¼ÊäÈë¶ÁÈ¡Êı¾İ£¬²»Ìí¼ÓÈÎºÎÌáÊ¾
+//		// ç›´æ¥ä»æ ‡å‡†è¾“å…¥è¯»å–æ•°æ®ï¼Œä¸æ·»åŠ ä»»ä½•æç¤º
 //		std::cin >> data >> leftStr >> rightStr;
 //
 //		tree[i].data = data;
 //		 
-//		// ´¦Àí×óº¢×Ó
+//		// å¤„ç†å·¦å­©å­
 //		tree[i].left = (leftStr == "-") ? -1 : std::stoi(leftStr);
-//		// ´¦ÀíÓÒº¢×Ó
+//		// å¤„ç†å³å­©å­
 //		tree[i].right = (rightStr == "-") ? -1 : std::stoi(rightStr);
 //
-//		// ¸üĞÂ¸¸½ÚµãĞÅÏ¢
+//		// æ›´æ–°çˆ¶èŠ‚ç‚¹ä¿¡æ¯
 //		if (tree[i].left != -1) {
 //			parent[tree[i].left] = i;
 //		}
@@ -494,37 +494,37 @@ int main()
 //		}
 //	}
 //
-//	// ¸ù½ÚµãÊÇ¸¸½ÚµãÎª-1µÄ½Úµã
+//	// æ ¹èŠ‚ç‚¹æ˜¯çˆ¶èŠ‚ç‚¹ä¸º-1çš„èŠ‚ç‚¹
 //	auto it = std::find(parent.begin(), parent.end(), -1);
 //	if (it != parent.end()) {
 //		return std::distance(parent.begin(), it);
 //	}
 //
-//	return -1; // ÀíÂÛÉÏ²»»áµ½´ïÕâÀï
+//	return -1; // ç†è®ºä¸Šä¸ä¼šåˆ°è¾¾è¿™é‡Œ
 //}
 //
-//// µİ¹éÅĞ¶ÏÁ½¿ÃÊ÷ÊÇ·ñÍ¬¹¹
+//// é€’å½’åˆ¤æ–­ä¸¤æ£µæ ‘æ˜¯å¦åŒæ„
 //bool isIsomorphic(const std::vector<TreeNode>& tree1, int root1,
 //	const std::vector<TreeNode>& tree2, int root2) {
-//	// 1. Èç¹ûÁ½¸ö½Úµã¶¼Îª¿Õ£¬ËüÃÇÊÇÍ¬¹¹µÄ
+//	// 1. å¦‚æœä¸¤ä¸ªèŠ‚ç‚¹éƒ½ä¸ºç©ºï¼Œå®ƒä»¬æ˜¯åŒæ„çš„
 //	if (root1 == -1 && root2 == -1) {
 //		return true;
 //	}
-//	// 2. Èç¹ûÒ»¸öÎª¿ÕÁíÒ»¸ö²»Îª¿Õ£¬ËüÃÇ²»Í¬¹¹
+//	// 2. å¦‚æœä¸€ä¸ªä¸ºç©ºå¦ä¸€ä¸ªä¸ä¸ºç©ºï¼Œå®ƒä»¬ä¸åŒæ„
 //	if (root1 == -1 || root2 == -1) {
 //		return false;
 //	}
-//	// 3. Èç¹û½ÚµãµÄÖµ²»Í¬£¬ËüÃÇ²»Í¬¹¹
+//	// 3. å¦‚æœèŠ‚ç‚¹çš„å€¼ä¸åŒï¼Œå®ƒä»¬ä¸åŒæ„
 //	if (tree1[root1].data != tree2[root2].data) {
 //		return false;  
 //	}
 //
-//	// 4. µİ¹é¼ì²é×ÓÊ÷µÄÁ½ÖÖ¿ÉÄÜÇé¿ö
-//	// Çé¿öÒ»£º²»½»»»×óÓÒ×ÓÊ÷
+//	// 4. é€’å½’æ£€æŸ¥å­æ ‘çš„ä¸¤ç§å¯èƒ½æƒ…å†µ
+//	// æƒ…å†µä¸€ï¼šä¸äº¤æ¢å·¦å³å­æ ‘
 //	bool case1 = isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].left) &&
 //		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].right);
 //
-//	// Çé¿ö¶ş£º½»»»×óÓÒ×ÓÊ÷
+//	// æƒ…å†µäºŒï¼šäº¤æ¢å·¦å³å­æ ‘
 //	bool case2 = isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].right) &&
 //		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].left);
 //
@@ -532,7 +532,7 @@ int main()
 //}
 //
 //int main() {
-//	// ¹Ø±Õ cin ºÍ cout µÄÍ¬²½£¬¿ÉÒÔ¼ÓËÙIO£¬ÔÚÊı¾İÁ¿´óÊ±ºÜÓĞÓÃ
+//	// å…³é—­ cin å’Œ cout çš„åŒæ­¥ï¼Œå¯ä»¥åŠ é€ŸIOï¼Œåœ¨æ•°æ®é‡å¤§æ—¶å¾ˆæœ‰ç”¨
 //	std::ios_base::sync_with_stdio(false);
 //	std::cin.tie(NULL);
 //
@@ -540,7 +540,7 @@ int main()
 //	int root1 = buildTree(tree1);
 //	int root2 = buildTree(tree2);
 //
-//	// µ÷ÓÃÍ¬¹¹ÅĞ¶Ïº¯Êı
+//	// è°ƒç”¨åŒæ„åˆ¤æ–­å‡½æ•°
 //	if (isIsomorphic(tree1, root1, tree2, root2)) {
 //		std::cout << "Yes" << std::endl;
 //	}
@@ -550,19 +550,19 @@ int main()
 //
 //	return 0;
 //}
-/*´´Ôì½Úµã
-½¨Ê÷£º
-ÀûÓÃvector´æ´¢Ã¿¸ö½Úµã 
-ÕÒ³ö¸ù£¨-1µÄ£©
-Í¬¹¹º¯Êı£º
-1.¶¼Îª¿Õtrue
-2.Ò»¸öÎª¿ÕÒ»¸öÓĞfalse
-3.¸ùÖµ²»Í¬false
-4.1²»½»»»×óÓÒ×ÓÊ÷µİ¹é
-4.2½»»»×óÓÒ×ÓÊ÷µİ¹é
-Ö÷º¯Êı£º
- µ÷ÓÃ½¨Ê÷º¯Êı½¨Á½¿ÃÊ÷
- ÅĞ¶ÏÍ¬¹¹²¢Êä³ö½á¹û
+/*åˆ›é€ èŠ‚ç‚¹
+å»ºæ ‘ï¼š
+åˆ©ç”¨vectorå­˜å‚¨æ¯ä¸ªèŠ‚ç‚¹ 
+æ‰¾å‡ºæ ¹ï¼ˆ-1çš„ï¼‰
+åŒæ„å‡½æ•°ï¼š
+1.éƒ½ä¸ºç©ºtrue
+2.ä¸€ä¸ªä¸ºç©ºä¸€ä¸ªæœ‰false
+3.æ ¹å€¼ä¸åŒfalse
+4.1ä¸äº¤æ¢å·¦å³å­æ ‘é€’å½’
+4.2äº¤æ¢å·¦å³å­æ ‘é€’å½’
+ä¸»å‡½æ•°ï¼š
+ è°ƒç”¨å»ºæ ‘å‡½æ•°å»ºä¸¤æ£µæ ‘
+ åˆ¤æ–­åŒæ„å¹¶è¾“å‡ºç»“æœ
  */
 //#include <iostream>
 //#include <vector>
@@ -579,7 +579,7 @@ int main()
 //	int n;
 //	cin >> n;
 //	if (n == 0)
-//		return -1;//¿ÕÊ÷
+//		return -1;//ç©ºæ ‘
 //	Tree.resize(n);
 //	vector<int> parent(n, -1);
 //	for (int i = 0; i < n; i++)
@@ -600,7 +600,7 @@ int main()
 //	if (it != parent.end())
 //		return distance(parent.begin(), it);
 //	else 
-//		return -1;//ÀíÂÛÉÏ²»»áµ½´ïÕâÀï
+//		return -1;//ç†è®ºä¸Šä¸ä¼šåˆ°è¾¾è¿™é‡Œ
 //
 //}
 //bool isIsomorphic(const vector<TreeNode>& tree1, int root1,
@@ -634,10 +634,10 @@ int main()
 
 
 /*List leaves
-ÔìÊ÷£º
-´æ´¢Êı¾İ
-²ãĞò±éÀú
-Ã»ÓĞ×óÓÒº¢×ÓÊä³ö*/
+é€ æ ‘ï¼š
+å­˜å‚¨æ•°æ®
+å±‚åºéå†
+æ²¡æœ‰å·¦å³å­©å­è¾“å‡º*/
 //#include <iostream>
 //#include <vector>
 //#include <queue>
@@ -653,7 +653,7 @@ int main()
 //{
 //	int n; cin >> n;
 //	if (n == 0)
-//		return -1;//¿ÕÊ÷
+//		return -1;//ç©ºæ ‘
 //	Tree.resize(n);
 //	vector<int> parent(n, -1);
 //	for (int i = 0; i < n; i++)
@@ -672,7 +672,7 @@ int main()
 //	if (it != parent.end())
 //		return distance(parent.begin(), it);
 //	else
-//		return -1;//ÀíÂÛÉÏ²»»áµ½´ïÕâÀï
+//		return -1;//ç†è®ºä¸Šä¸ä¼šåˆ°è¾¾è¿™é‡Œ
 //}
 //void LevelOrderTravelsal(const vector<TreeNode>& Tree, int root)
 //{
@@ -680,7 +680,7 @@ int main()
 //	if (root == -1)
 //		return;
 //	q.push(root);
-//	bool first = true; //ÉùÃ÷²¼¶û±äÁ¿ first£¬ÓÃÓÚ ¿ØÖÆÊä³ö¸ñÊ½£º±ê¼ÇÊÇ·ñÊÇ ¡°µÚÒ»¸öÒªÊä³öµÄÒ¶×Ó½Úµã¡±£¨±ÜÃâĞĞÎ²¶àÓà¿Õ¸ñ£©¡£
+//	bool first = true; //å£°æ˜å¸ƒå°”å˜é‡ firstï¼Œç”¨äº æ§åˆ¶è¾“å‡ºæ ¼å¼ï¼šæ ‡è®°æ˜¯å¦æ˜¯ â€œç¬¬ä¸€ä¸ªè¦è¾“å‡ºçš„å¶å­èŠ‚ç‚¹â€ï¼ˆé¿å…è¡Œå°¾å¤šä½™ç©ºæ ¼ï¼‰ã€‚
 //	while (!q.empty())
 //	{
 //		int index = q.front();
@@ -715,82 +715,82 @@ int main()
 //#include <algorithm>
 //using namespace std;
 //
-//// BST½Úµã½á¹¹Ìå£¨C++·ç¸ñ£¬´ø¹¹Ôìº¯Êı£©
+//// BSTèŠ‚ç‚¹ç»“æ„ä½“ï¼ˆC++é£æ ¼ï¼Œå¸¦æ„é€ å‡½æ•°ï¼‰
 //struct TreeNode {
 //	int val;
 //	TreeNode* left;
 //	TreeNode* right;
-//	// ¹¹Ôìº¯Êı£º³õÊ¼»¯½ÚµãÖµ£¬×óÓÒ×ÓÊ÷Îª¿Õ
+//	// æ„é€ å‡½æ•°ï¼šåˆå§‹åŒ–èŠ‚ç‚¹å€¼ï¼Œå·¦å³å­æ ‘ä¸ºç©º
 //	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 //};
 //
-//// ÏòBSTÖĞ²åÈë½Úµã£¨µİ¹éÊµÏÖ£©
+//// å‘BSTä¸­æ’å…¥èŠ‚ç‚¹ï¼ˆé€’å½’å®ç°ï¼‰
 //TreeNode* insert(TreeNode* root, int val) {
-//	if (root == nullptr) {  // ¿ÕÊ÷/Ò¶×Ó½Úµã£¬ĞÂ½¨½Úµã
+//	if (root == nullptr) {  // ç©ºæ ‘/å¶å­èŠ‚ç‚¹ï¼Œæ–°å»ºèŠ‚ç‚¹
 //		return new TreeNode(val);
 //	}
-//	if (val < root->val) {  // Ğ¡ÓÚµ±Ç°½Úµã£¬²åÈë×ó×ÓÊ÷
+//	if (val < root->val) {  // å°äºå½“å‰èŠ‚ç‚¹ï¼Œæ’å…¥å·¦å­æ ‘
 //		root->left = insert(root->left, val);
 //	}
-//	else {  // ´óÓÚµ±Ç°½Úµã£¬²åÈëÓÒ×ÓÊ÷£¨ÌâÄ¿ÎŞÖØ¸´Öµ£¬ÎŞĞè´¦ÀíµÈÓÚ£©
+//	else {  // å¤§äºå½“å‰èŠ‚ç‚¹ï¼Œæ’å…¥å³å­æ ‘ï¼ˆé¢˜ç›®æ— é‡å¤å€¼ï¼Œæ— éœ€å¤„ç†ç­‰äºï¼‰
 //		root->right = insert(root->right, val);
 //	}
 //	return root;
 //}
 //
-//// Ç°Ğò±éÀúBST£¬Éú³ÉÌØÕ÷ĞòÁĞ£¨´æ´¢µ½vectorÖĞ£©
+//// å‰åºéå†BSTï¼Œç”Ÿæˆç‰¹å¾åºåˆ—ï¼ˆå­˜å‚¨åˆ°vectorä¸­ï¼‰
 //void preOrder(TreeNode* root, vector<int>& res) {
 //	if (root == nullptr) return;
-//	res.push_back(root->val);    // ¸ù
-//	preOrder(root->left, res);   // ×ó
-//	preOrder(root->right, res);  // ÓÒ
+//	res.push_back(root->val);    // æ ¹
+//	preOrder(root->left, res);   // å·¦
+//	preOrder(root->right, res);  // å³
 //}
 //
-//// ÊÍ·ÅBSTËùÓĞ½ÚµãÄÚ´æ£¨±ÜÃâÄÚ´æĞ¹Â©£©
+//// é‡Šæ”¾BSTæ‰€æœ‰èŠ‚ç‚¹å†…å­˜ï¼ˆé¿å…å†…å­˜æ³„æ¼ï¼‰
 //void deleteTree(TreeNode* root) {
 //	if (root == nullptr) return;
-//	deleteTree(root->left);   // µİ¹éÊÍ·Å×ó×ÓÊ÷
-//	deleteTree(root->right);  // µİ¹éÊÍ·ÅÓÒ×ÓÊ÷
-//	delete root;              // ÊÍ·Åµ±Ç°½Úµã
+//	deleteTree(root->left);   // é€’å½’é‡Šæ”¾å·¦å­æ ‘
+//	deleteTree(root->right);  // é€’å½’é‡Šæ”¾å³å­æ ‘
+//	delete root;              // é‡Šæ”¾å½“å‰èŠ‚ç‚¹
 //}
 //
-//// Éú³É²åÈëĞòÁĞ¶ÔÓ¦µÄBSTÇ°ĞòĞòÁĞ
+//// ç”Ÿæˆæ’å…¥åºåˆ—å¯¹åº”çš„BSTå‰åºåºåˆ—
 //vector<int> getPreSeq(const vector<int>& seq) {
 //	TreeNode* root = nullptr;
-//	// ²åÈëËùÓĞÔªËØ¹¹½¨BST
+//	// æ’å…¥æ‰€æœ‰å…ƒç´ æ„å»ºBST
 //	for (int val : seq) {
 //		root = insert(root, val);
 //	}
-//	// Éú³ÉÇ°ĞòĞòÁĞ
+//	// ç”Ÿæˆå‰åºåºåˆ—
 //	vector<int> pre;
 //	preOrder(root, pre);
-//	// ÊÍ·ÅÄÚ´æ
+//	// é‡Šæ”¾å†…å­˜
 //	deleteTree(root);
 //	return pre;
 //}
 //
 //int main() {
 //	int n, m;
-//	// Ñ­»·¶ÁÈ¡²âÊÔÓÃÀı£¬n=0Ê±½áÊø
+//	// å¾ªç¯è¯»å–æµ‹è¯•ç”¨ä¾‹ï¼Œn=0æ—¶ç»“æŸ
 //	while (cin >> n && n != 0) {
 //		cin >> m;
-//		// ¶ÁÈ¡³õÊ¼²åÈëĞòÁĞ
+//		// è¯»å–åˆå§‹æ’å…¥åºåˆ—
 //		vector<int> initSeq(n);
 //		for (int i = 0; i < n; ++i) {
 //			cin >> initSeq[i];
 //		}
-//		// Éú³É³õÊ¼ĞòÁĞµÄÇ°ĞòÌØÕ÷
+//		// ç”Ÿæˆåˆå§‹åºåˆ—çš„å‰åºç‰¹å¾
 //		vector<int> initPre = getPreSeq(initSeq);
 //
-//		// ¼ì²ém¸ö´ıÑéÖ¤ĞòÁĞ
+//		// æ£€æŸ¥mä¸ªå¾…éªŒè¯åºåˆ—
 //		for (int i = 0; i < m; ++i) {
 //			vector<int> checkSeq(n);
 //			for (int j = 0; j < n; ++j) {
 //				cin >> checkSeq[j];
 //			}
-//			// Éú³É´ıÑéÖ¤ĞòÁĞµÄÇ°ĞòÌØÕ÷
+//			// ç”Ÿæˆå¾…éªŒè¯åºåˆ—çš„å‰åºç‰¹å¾
 //			vector<int> checkPre = getPreSeq(checkSeq);
-//			// ¶Ô±ÈÌØÕ÷ĞòÁĞ
+//			// å¯¹æ¯”ç‰¹å¾åºåˆ—
 //			if (checkPre == initPre) {
 //				cout << "Yes" << endl;
 //			}
@@ -801,13 +801,13 @@ int main()
 //	}
 //	return 0;
 //}
-/*ÅĞ¶ÏÊÇ·ñÊÇÍ¬Ò»¿ÅBST
-1.¸ù¾İBSTµÄÌØÕ÷¡ª¡ªInorderÏàÍ¬
-Ö»ÒªÅĞ¶ÏÏÈĞòÊÇ·ñÏàÍ¬¼´¿É
-2.½¨Ê÷
-3.¼ÇÂ¼ÍêºóÉ¾³ı±éÀúºóÊı¾İ
-4.·â×°º¯Êı
-5.Ñ­»·µ÷ÓÃ*/
+/*åˆ¤æ–­æ˜¯å¦æ˜¯åŒä¸€é¢—BST
+1.æ ¹æ®BSTçš„ç‰¹å¾â€”â€”Inorderç›¸åŒ
+åªè¦åˆ¤æ–­å…ˆåºæ˜¯å¦ç›¸åŒå³å¯
+2.å»ºæ ‘
+3.è®°å½•å®Œååˆ é™¤éå†åæ•°æ®
+4.å°è£…å‡½æ•°
+5.å¾ªç¯è°ƒç”¨*/
 //#include <iostream>
 //#include <vector>
 //#include <algorithm>
@@ -895,65 +895,65 @@ int main()
 #include <algorithm>
 using namespace std;
 
-// AVLÊ÷½Úµã½á¹¹
+// AVLæ ‘èŠ‚ç‚¹ç»“æ„
 struct TreeNode {
 	int val;
 	TreeNode* left;
 	TreeNode* right;
-	int height; // ½Úµã¸ß¶È
+	int height; // èŠ‚ç‚¹é«˜åº¦
 	TreeNode(int x) : val(x), left(nullptr), right(nullptr), height(1) {}
 };
 
-// »ñÈ¡½Úµã¸ß¶È£¨¿Õ½Úµã¸ß¶ÈÎª0£©
+// è·å–èŠ‚ç‚¹é«˜åº¦ï¼ˆç©ºèŠ‚ç‚¹é«˜åº¦ä¸º0ï¼‰
 int getHeight(TreeNode* node) {
 	return node ? node->height : 0;
 }
 
-// ¸üĞÂ½Úµã¸ß¶È
+// æ›´æ–°èŠ‚ç‚¹é«˜åº¦
 void updateHeight(TreeNode* node) {
 	node->height = max(getHeight(node->left), getHeight(node->right)) + 1;
 }
 
-// ¼ÆËãÆ½ºâÒò×Ó£¨×ó¸ß-ÓÒ¸ß£©
+// è®¡ç®—å¹³è¡¡å› å­ï¼ˆå·¦é«˜-å³é«˜ï¼‰
 int getBalance(TreeNode* node) {
 	return node ? getHeight(node->left) - getHeight(node->right) : 0;
 }
 
-// LLĞı×ª£¨ÓÒĞı£©£º´¦Àí×ó×ÓÊ÷µÄ×ó×ÓÊ÷Ê§ºâ
+// LLæ—‹è½¬ï¼ˆå³æ—‹ï¼‰ï¼šå¤„ç†å·¦å­æ ‘çš„å·¦å­æ ‘å¤±è¡¡
 TreeNode* rightRotate(TreeNode* y) {
 	TreeNode* x = y->left;
 	TreeNode* T2 = x->right;
 
-	// Ö´ĞĞĞı×ª
+	// æ‰§è¡Œæ—‹è½¬
 	x->right = y;
 	y->left = T2;
 
-	// ¸üĞÂ¸ß¶È£¨ÏÈ¸üĞÂ×Ó½Úµã£¬ÔÙ¸üĞÂ¸¸½Úµã£©
+	// æ›´æ–°é«˜åº¦ï¼ˆå…ˆæ›´æ–°å­èŠ‚ç‚¹ï¼Œå†æ›´æ–°çˆ¶èŠ‚ç‚¹ï¼‰
 	updateHeight(y);
 	updateHeight(x);
 
-	return x; // ĞÂ¸ù½Úµã
+	return x; // æ–°æ ¹èŠ‚ç‚¹
 }
 
-// RRĞı×ª£¨×óĞı£©£º´¦ÀíÓÒ×ÓÊ÷µÄÓÒ×ÓÊ÷Ê§ºâ
+// RRæ—‹è½¬ï¼ˆå·¦æ—‹ï¼‰ï¼šå¤„ç†å³å­æ ‘çš„å³å­æ ‘å¤±è¡¡
 TreeNode* leftRotate(TreeNode* x) {
 	TreeNode* y = x->right;
 	TreeNode* T2 = y->left;
 
-	// Ö´ĞĞĞı×ª
+	// æ‰§è¡Œæ—‹è½¬
 	y->left = x;
 	x->right = T2;
 
-	// ¸üĞÂ¸ß¶È
+	// æ›´æ–°é«˜åº¦
 	updateHeight(x);
 	updateHeight(y);
 
-	return y; // ĞÂ¸ù½Úµã
+	return y; // æ–°æ ¹èŠ‚ç‚¹
 }
 
-// AVLÊ÷²åÈëº¯Êı£¨µİ¹éÊµÏÖ£¬·µ»Øµ÷ÕûºóµÄ¸ù£©
+// AVLæ ‘æ’å…¥å‡½æ•°ï¼ˆé€’å½’å®ç°ï¼Œè¿”å›è°ƒæ•´åçš„æ ¹ï¼‰
 TreeNode* insert(TreeNode* root, int val) {
-	// 1. °´¶ş²æËÑË÷Ê÷¹æÔò²åÈë½Úµã
+	// 1. æŒ‰äºŒå‰æœç´¢æ ‘è§„åˆ™æ’å…¥èŠ‚ç‚¹
 	if (root == nullptr) {
 		return new TreeNode(val);
 	}
@@ -962,36 +962,36 @@ TreeNode* insert(TreeNode* root, int val) {
 	} else if (val > root->val) {
 		root->right = insert(root->right, val);
 	} else {
-		return root; // ÎŞÖØ¸´Öµ£¬Ö±½Ó·µ»Ø
+		return root; // æ— é‡å¤å€¼ï¼Œç›´æ¥è¿”å›
 	}
 
-	// 2. ¸üĞÂµ±Ç°½Úµã¸ß¶È
+	// 2. æ›´æ–°å½“å‰èŠ‚ç‚¹é«˜åº¦
 	updateHeight(root);
 
-	// 3. ¼ÆËãÆ½ºâÒò×Ó£¬ÅĞ¶ÏÊÇ·ñÊ§ºâ
+	// 3. è®¡ç®—å¹³è¡¡å› å­ï¼Œåˆ¤æ–­æ˜¯å¦å¤±è¡¡
 	int balance = getBalance(root);
 
-	// 4. Ê§ºâ´¦Àí£¨ËÄÖÖÇé¿ö£©
-	// Çé¿ö1£ºLLÊ§ºâ£¨×ó×ó£©
+	// 4. å¤±è¡¡å¤„ç†ï¼ˆå››ç§æƒ…å†µï¼‰
+	// æƒ…å†µ1ï¼šLLå¤±è¡¡ï¼ˆå·¦å·¦ï¼‰
 	if (balance > 1 && val < root->left->val) {
 		return rightRotate(root);
 	}
-	// Çé¿ö2£ºRRÊ§ºâ£¨ÓÒÓÒ£©
+	// æƒ…å†µ2ï¼šRRå¤±è¡¡ï¼ˆå³å³ï¼‰
 	if (balance < -1 && val > root->right->val) {
 		return leftRotate(root);
 	}
-	// Çé¿ö3£ºLRÊ§ºâ£¨×óÓÒ£©
+	// æƒ…å†µ3ï¼šLRå¤±è¡¡ï¼ˆå·¦å³ï¼‰
 	if (balance > 1 && val > root->left->val) {
 		root->left = leftRotate(root->left);
 		return rightRotate(root);
 	}
-	// Çé¿ö4£ºRLÊ§ºâ£¨ÓÒ×ó£©
+	// æƒ…å†µ4ï¼šRLå¤±è¡¡ï¼ˆå³å·¦ï¼‰
 	if (balance < -1 && val < root->right->val) {
 		root->right = rightRotate(root->right);
 		return leftRotate(root);
 	}
 
-	return root; // Î´Ê§ºâ£¬·µ»ØÔ­¸ù
+	return root; // æœªå¤±è¡¡ï¼Œè¿”å›åŸæ ¹
 }
 
 int main() {
@@ -1003,15 +1003,15 @@ int main() {
 			cin >> val;
 			root = insert(root, val);
 		}
-		cout << root->val << endl; // Êä³ö×îÖÕ¸ù½Úµã
+		cout << root->val << endl; // è¾“å‡ºæœ€ç»ˆæ ¹èŠ‚ç‚¹
 	}
 	return 0;
 }*/
 /*
-×îĞ¡¶ÑÂ·¾¶
-1.½¨m(Size)´óĞ¡µÄ¶Ñ º¯Êı
-2.²åÈë×îĞ¡¶ÑÊı¾İº¯Êı
-3.·â×°*/
+æœ€å°å †è·¯å¾„
+1.å»ºm(Size)å¤§å°çš„å † å‡½æ•°
+2.æ’å…¥æœ€å°å †æ•°æ®å‡½æ•°
+3.å°è£…*/
 //#include <iostream>
 //#include <vector>
 //#include <algorithm>
@@ -1027,7 +1027,7 @@ int main() {
 //	H.Capacity = Capacity;
 //	H.Size = 0;
 //	H.data.resize(Capacity + 1);
-//	H.data[0] = -100000;//ÉÚ±ø
+//	H.data[0] = -100000;//å“¨å…µ
 //}
 //void Insert(Minheap& H, int val)
 //{
@@ -1053,68 +1053,68 @@ int main() {
 //int main()
 //{
 //	int n, m;
-//	cout << "ÇëÊäÈë²åÈëÔªËØµÄ¸öÊıÒÔ¼°ĞèÒª´òÓ¡µÄÂ·¾¶ÌõÊı" << endl;
+//	cout << "è¯·è¾“å…¥æ’å…¥å…ƒç´ çš„ä¸ªæ•°ä»¥åŠéœ€è¦æ‰“å°çš„è·¯å¾„æ¡æ•°" << endl;
 //	cin >> n >> m;
 //	Minheap H;
 //	CreateMinheap(H, n);
 //	for(int i=0;i<n;i++)
 //	{
 //		int val;
-//		cout << "ÇëÊäÈëµÚ" << i + 1 << "¸öÔªËØµÄÖµ" << endl;
+//		cout << "è¯·è¾“å…¥ç¬¬" << i + 1 << "ä¸ªå…ƒç´ çš„å€¼" << endl;
 //		cin >> val;
 //		Insert(H, val);
 //	}
 //	for (int i = 0; i < m; i++)
 //	{
 //		int index;
-//		cout << "ÇëÊäÈëĞèÒª´òÓ¡Â·¾¶µÄ½ÚµãË÷Òı" << endl;
+//		cout << "è¯·è¾“å…¥éœ€è¦æ‰“å°è·¯å¾„çš„èŠ‚ç‚¹ç´¢å¼•" << endl;
 //		cin >> index;
 //		Path(H, index);
 //	}
 //	return 0;
 //}
 /*
-ÓÅ»¯°æ±¾:
+ä¼˜åŒ–ç‰ˆæœ¬:
 #include <iostream>
 #include <vector>
-#include <climits>  // Ìá¹©INT_MIN
+#include <climits>  // æä¾›INT_MIN
 using namespace std;
 
-// ½á¹¹Ìå±äÁ¿Ãû¸ÄÓÃĞ¡Ğ´£¨·ûºÏC++±äÁ¿ÃüÃûÏ°¹ß£©
+// ç»“æ„ä½“å˜é‡åæ”¹ç”¨å°å†™ï¼ˆç¬¦åˆC++å˜é‡å‘½åä¹ æƒ¯ï¼‰
 struct Minheap {
-    vector<int> data;  // ¶ÑÔªËØ£¨Ë÷Òı1¿ªÊ¼£¬0ÎªÉÚ±ø£©
-    int size;          // µ±Ç°ÔªËØ¸öÊı£¨Ô­Size¡úsize£©
-    int capacity;      // ×î´óÈİÁ¿£¨Ô­Capacity¡úcapacity£©
+    vector<int> data;  // å †å…ƒç´ ï¼ˆç´¢å¼•1å¼€å§‹ï¼Œ0ä¸ºå“¨å…µï¼‰
+    int size;          // å½“å‰å…ƒç´ ä¸ªæ•°ï¼ˆåŸSizeâ†’sizeï¼‰
+    int capacity;      // æœ€å¤§å®¹é‡ï¼ˆåŸCapacityâ†’capacityï¼‰
 };
 
-// ³õÊ¼»¯¶Ñ£ºÃ÷È·ÉÚ±ø×÷ÓÃ£¬vectorÖ±½Ó³õÊ¼»¯
+// åˆå§‹åŒ–å †ï¼šæ˜ç¡®å“¨å…µä½œç”¨ï¼Œvectorç›´æ¥åˆå§‹åŒ–
 void CreateMinheap(Minheap& H, int capacity) {
     H.capacity = capacity;
     H.size = 0;
-    // Ö±½Ó³õÊ¼»¯vector£¬±ÜÃâºóĞøresize¿ÉÄÜµÄÒş»¼
-    H.data = vector<int>(capacity + 1, 0);  // ÈİÁ¿+1£¬³õÊ¼Öµ0
-    H.data[0] = INT_MIN;  // ÉÚ±ø£ºÈ·±£±ÈËùÓĞÊäÈëÔªËØĞ¡£¬ÓÃÓÚÖÕÖ¹ÉÏÂË
+    // ç›´æ¥åˆå§‹åŒ–vectorï¼Œé¿å…åç»­resizeå¯èƒ½çš„éšæ‚£
+    H.data = vector<int>(capacity + 1, 0);  // å®¹é‡+1ï¼Œåˆå§‹å€¼0
+    H.data[0] = INT_MIN;  // å“¨å…µï¼šç¡®ä¿æ¯”æ‰€æœ‰è¾“å…¥å…ƒç´ å°ï¼Œç”¨äºç»ˆæ­¢ä¸Šæ»¤
 }
 
-// ²åÈëº¯Êı£ºÔö¼Ó×¢ÊÍ£¬Âß¼­¸üÇåÎú
+// æ’å…¥å‡½æ•°ï¼šå¢åŠ æ³¨é‡Šï¼Œé€»è¾‘æ›´æ¸…æ™°
 void Insert(Minheap& H, int val) {
-    if (H.size >= H.capacity) {  // ¶ÑÂú±£»¤£¨ÌâÄ¿ÊäÈëºÏ·¨¿ÉÊ¡ÂÔ£¬µ«±£Áô¸üÂ³°ô£©
+    if (H.size >= H.capacity) {  // å †æ»¡ä¿æŠ¤ï¼ˆé¢˜ç›®è¾“å…¥åˆæ³•å¯çœç•¥ï¼Œä½†ä¿ç•™æ›´é²æ£’ï¼‰
         return;
     }
-    int i = ++H.size;  // ĞÂÔªËØÏÈ·ÅÄ©Î²
-    // ÉÏÂË£º¸¸½ÚµãÖµ > µ±Ç°ÖµÊ±£¬¸¸½ÚµãÏÂÒÆ
-    while (H.data[i/2] > val) {  // ÓÃwhile±Èfor¸üÖ±¹Û£¨Âß¼­²»±ä£©
-        H.data[i] = H.data[i/2];  // ¸¸½ÚµãÏÂÒÆ
-        i /= 2;  // Ö¸ÕëÉÏÒÆµ½¸¸½Úµã
+    int i = ++H.size;  // æ–°å…ƒç´ å…ˆæ”¾æœ«å°¾
+    // ä¸Šæ»¤ï¼šçˆ¶èŠ‚ç‚¹å€¼ > å½“å‰å€¼æ—¶ï¼Œçˆ¶èŠ‚ç‚¹ä¸‹ç§»
+    while (H.data[i/2] > val) {  // ç”¨whileæ¯”foræ›´ç›´è§‚ï¼ˆé€»è¾‘ä¸å˜ï¼‰
+        H.data[i] = H.data[i/2];  // çˆ¶èŠ‚ç‚¹ä¸‹ç§»
+        i /= 2;  // æŒ‡é’ˆä¸Šç§»åˆ°çˆ¶èŠ‚ç‚¹
     }
-    H.data[i] = val;  // ÕÒµ½ÕıÈ·Î»ÖÃ£¬·ÅÈëĞÂÔªËØ
+    H.data[i] = val;  // æ‰¾åˆ°æ­£ç¡®ä½ç½®ï¼Œæ”¾å…¥æ–°å…ƒç´ 
 }
 
-// Â·¾¶´òÓ¡£ºÔö¼ÓË÷ÒıºÏ·¨ĞÔ¼ì²é£¨·À´í£©
+// è·¯å¾„æ‰“å°ï¼šå¢åŠ ç´¢å¼•åˆæ³•æ€§æ£€æŸ¥ï¼ˆé˜²é”™ï¼‰
 void Path(Minheap& H, int index) {
-    // ¼ì²éË÷ÒıÊÇ·ñºÏ·¨£¨1<=index<=size£©£¬±ÜÃâÔ½½ç·ÃÎÊ
+    // æ£€æŸ¥ç´¢å¼•æ˜¯å¦åˆæ³•ï¼ˆ1<=index<=sizeï¼‰ï¼Œé¿å…è¶Šç•Œè®¿é—®
     if (index < 1 || index > H.size) {
-        return;  // ·Ç·¨Ë÷ÒıÖ±½Ó·µ»Ø£¨ÌâÄ¿ÊäÈëºÏ·¨¿ÉÊ¡ÂÔ£¬·À´íÓÃ£©
+        return;  // éæ³•ç´¢å¼•ç›´æ¥è¿”å›ï¼ˆé¢˜ç›®è¾“å…¥åˆæ³•å¯çœç•¥ï¼Œé˜²é”™ç”¨ï¼‰
     }
     for (int i = index; i > 0; i /= 2) {
         cout << H.data[i];
@@ -1128,16 +1128,16 @@ int main() {
     cin >> n >> m;
     
     Minheap H;
-    CreateMinheap(H, n);  // ´«Èën×÷ÎªÈİÁ¿
+    CreateMinheap(H, n);  // ä¼ å…¥nä½œä¸ºå®¹é‡
     
-    // ²åÈën¸öÔªËØ
+    // æ’å…¥nä¸ªå…ƒç´ 
     for (int i = 0; i < n; ++i) {
         int val;
         cin >> val;
         Insert(H, val);
     }
     
-    // ´òÓ¡mÌõÂ·¾¶
+    // æ‰“å°mæ¡è·¯å¾„
     for (int i = 0; i < m; ++i) {
         int index;
         cin >> index;
@@ -1146,7 +1146,7 @@ int main() {
     
     return 0;
 }*/
-//ßÀ£¬ÓĞµãÍüÁË£¬ÖØĞÂÑ§Ò»±é°É
+//å‘ƒï¼Œæœ‰ç‚¹å¿˜äº†ï¼Œé‡æ–°å­¦ä¸€éå§
 //#include <iostream>
 //void PrintN(int n)
 //{
@@ -1226,7 +1226,7 @@ int main() {
 //#include <iostream>
 //
 //using ElementType = int;
-//using Position = int;   // Position: position£¬Î»ÖÃ/ÏÂ±ê
+//using Position = int;   // Position: positionï¼Œä½ç½®/ä¸‹æ ‡
 //
 //class SeqList
 //{
@@ -1234,7 +1234,7 @@ int main() {
 //	static constexpr int kMaxSize = 100;
 //	static constexpr Position kError = -1;
 //
-//	SeqList() : last_(-1) {}  // ³õÊ¼»¯¿Õ±í£¬last_ = -1
+//	SeqList() : last_(-1) {}  // åˆå§‹åŒ–ç©ºè¡¨ï¼Œlast_ = -1
 //
 //	bool isEmpty() const
 //	{
@@ -1251,7 +1251,7 @@ int main() {
 //		return last_ + 1;
 //	}
 //
-//	// ²éÕÒÔªËØ X£¬ÕÒµ½·µ»ØÏÂ±ê£¬ÕÒ²»µ½·µ»Ø -1
+//	// æŸ¥æ‰¾å…ƒç´  Xï¼Œæ‰¾åˆ°è¿”å›ä¸‹æ ‡ï¼Œæ‰¾ä¸åˆ°è¿”å› -1
 //	Position find(ElementType x) const
 //	{
 //		Position i = 0;
@@ -1270,18 +1270,18 @@ int main() {
 //		}
 //	}
 //
-//	// ÔÚÏÂ±ê P Î»ÖÃÇ°²åÈëÔªËØ X
+//	// åœ¨ä¸‹æ ‡ P ä½ç½®å‰æ’å…¥å…ƒç´  X
 //	bool insert(ElementType x, Position p)
 //	{
 //		if (isFull())
 //		{
-//			std::cout << "±íÂú£¬ÎŞ·¨²åÈë\n";
+//			std::cout << "è¡¨æ»¡ï¼Œæ— æ³•æ’å…¥\n";
 //			return false;
 //		}
 //
 //		if (p < 0 || p > last_ + 1)
 //		{
-//			std::cout << "²åÈëÎ»ÖÃ²»ºÏ·¨\n";
+//			std::cout << "æ’å…¥ä½ç½®ä¸åˆæ³•\n";
 //			return false;
 //		}
 //
@@ -1295,12 +1295,12 @@ int main() {
 //		return true;
 //	}
 //
-//	// É¾³ıÏÂ±ê P ´¦µÄÔªËØ
+//	// åˆ é™¤ä¸‹æ ‡ P å¤„çš„å…ƒç´ 
 //	bool erase(Position p)
 //	{
 //		if (p < 0 || p > last_)
 //		{
-//			std::cout << "É¾³ıÎ»ÖÃ²»ºÏ·¨\n";
+//			std::cout << "åˆ é™¤ä½ç½®ä¸åˆæ³•\n";
 //			return false;
 //		}
 //
@@ -1323,8 +1323,8 @@ int main() {
 //	}
 //
 //private:
-//	ElementType data_[kMaxSize];  // data_: data£¬Êı¾İÊı×é
-//	Position last_;               // last_: last£¬×îºóÒ»¸öÓĞĞ§ÔªËØµÄÏÂ±ê
+//	ElementType data_[kMaxSize];  // data_: dataï¼Œæ•°æ®æ•°ç»„
+//	Position last_;               // last_: lastï¼Œæœ€åä¸€ä¸ªæœ‰æ•ˆå…ƒç´ çš„ä¸‹æ ‡
 //};
 //
 //int main()
@@ -1339,7 +1339,7 @@ int main() {
 //	list.insert(99, 1);
 //	list.print();   // 10 99 20 30
 //
-//	std::cout << "20 µÄÎ»ÖÃ: " << list.find(20) << '\n';
+//	std::cout << "20 çš„ä½ç½®: " << list.find(20) << '\n';
 //
 //	list.erase(2);
 //	list.print();   // 10 99 30
@@ -1384,12 +1384,12 @@ int main() {
 //	{
 //		if (isFull())
 //		{
-//			std::cout << "±íÂú£¬ÎŞ·¨²åÈë\n";
+//			std::cout << "è¡¨æ»¡ï¼Œæ— æ³•æ’å…¥\n";
 //			return false;
 //		}
 //		if (p<0 || p>last_ + 1)
 //		{
-//			std::cout << "²åÈëÎ»ÖÃ²»ºÏ·¨\n";
+//			std::cout << "æ’å…¥ä½ç½®ä¸åˆæ³•\n";
 //			return false;
 //		}
 //		for (Position i = last_; i >= p; --i)
@@ -1404,7 +1404,7 @@ int main() {
 //	{
 //		if (p<0 || p>last_)
 //		{
-//			std::cout << "É¾³ıÎ»ÖÃ²»ºÏ·¨\n";
+//			std::cout << "åˆ é™¤ä½ç½®ä¸åˆæ³•\n";
 //			return false;
 //		}
 //		for (Position i = p + 1; i <= last_; i++)
@@ -1435,124 +1435,124 @@ int main() {
 //	list.print();
 //	list.insert(99, 1);
 //	list.print();
-//	std::cout << "20µÄÎ»ÖÃ:" << list.find(20) << '\n';
+//	std::cout << "20çš„ä½ç½®:" << list.find(20) << '\n';
 //	list.erase(2);
 //	list.print();
 //	return 0;
 //}
-//Ğ´Ò»¸öË³Ğò±í£¬ÄÜ×öµ½:
-//²éÕÒÔªËØ X£¬ÕÒµ½·µ»ØÏÂ±ê£¬ÕÒ²»µ½·µ»Ø - 1
-//ÔÚÏÂ±ê P Î»ÖÃÇ°²åÈëÔªËØ X
-//É¾³ıÏÂ±ê P ´¦µÄÔªËØ
-#include <iostream>
-class SeqList
-{
-	using ElementType = int;
-	using Position = int;
-
-public:
-	static constexpr int kMaxSize = 100;
-	static constexpr Position kError = -1;
-
-	SeqList() :last_(-1) {}
-
-	bool isFull() const
-	{
-		return last_ == kMaxSize - 1;
-	}
-
-	int size() const
-	{
-		return last_ + 1;
-	}
-
-	bool isEmpty() const
-	{
-		return last_ == -1;
-	}
-
-	bool insert(ElementType x,Position p)
-	{
-		if (isFull())
-		{
-			std::cout << "±íÂú£¬ÎŞ·¨²åÈë"<<'\n';
-			return false;
-		}
-		if (p < 0 || p > last_+1)
-		{
-			std::cout << "²åÈëÄ¿±êÎ»ÖÃ²»ºÏ·¨"<<'\n'; //Êä³ö¸ñÊ½ÒªÍ³Ò»
-			return false;
-		}
-		for (Position i = last_ + 1; i > p; i--)
-		{
-			data_[i] = data_[i - 1];
-		}
-		data_[p] = x;
-		last_++;
-		return true;
-	}
-
-	void print() const
-	{
-		for (Position i = 0; i <= last_; i++)
-		{
-			std::cout << data_[i] << " ";
-		}
-		std::cout << '\n';
-	}
-	Position find(ElementType x) const
-	{
-		for (Position i = 0; i <= last_; i++)//±£³ÖÀàĞÍÒ»ÖÂĞÔ¡£
-		{
-			if (data_[i] == x)
-			{
-				return i;
-			}
-		}
-		return kError;
-	}
-
-	bool erase(Position p)
-	{
-		if (p < 0 || p > last_)
-		{
-			std::cout << "É¾³ıÎ»ÖÃ²»ºÏ·¨" << '\n';
-			return false;
-		}
-		for (Position i = p; i < last_; i++)
-		{
-			data_[i] = data_[i + 1];
-		}
-		last_--;
-		return true;
-	}
-
-private:
-	ElementType data_[kMaxSize];
-	Position last_;
-};
-int main()
-{
-	SeqList list;
-	list.insert(10, 0);
-	list.insert(20, 1);
-	list.insert(30, 2);
-	list.print();
-	list.insert(99, 1);
-	list.print();
-	std::cout << "20µÄÎ»ÖÃ:" << list.find(20) << '\n';
-	list.erase(2);
-	list.print();
-	return 0;
-}
+//å†™ä¸€ä¸ªé¡ºåºè¡¨ï¼Œèƒ½åšåˆ°:
+//æŸ¥æ‰¾å…ƒç´  Xï¼Œæ‰¾åˆ°è¿”å›ä¸‹æ ‡ï¼Œæ‰¾ä¸åˆ°è¿”å› - 1
+//åœ¨ä¸‹æ ‡ P ä½ç½®å‰æ’å…¥å…ƒç´  X
+//åˆ é™¤ä¸‹æ ‡ P å¤„çš„å…ƒç´ 
+//#include <iostream>
+//class SeqList
+//{
+//	using ElementType = int;
+//	using Position = int;
+//
+//public:
+//	static constexpr int kMaxSize = 100;
+//	static constexpr Position kError = -1;
+//
+//	SeqList() :last_(-1) {}
+//
+//	bool isFull() const
+//	{
+//		return last_ == kMaxSize - 1;
+//	}
+//
+//	int size() const
+//	{
+//		return last_ + 1;
+//	}
+//
+//	bool isEmpty() const
+//	{
+//		return last_ == -1;
+//	}
+//
+//	bool insert(ElementType x,Position p)
+//	{
+//		if (isFull())
+//		{
+//			std::cout << "è¡¨æ»¡ï¼Œæ— æ³•æ’å…¥"<<'\n';
+//			return false;
+//		}
+//		if (p < 0 || p > last_+1)
+//		{
+//			std::cout << "æ’å…¥ç›®æ ‡ä½ç½®ä¸åˆæ³•"<<'\n'; //è¾“å‡ºæ ¼å¼è¦ç»Ÿä¸€
+//			return false;
+//		}
+//		for (Position i = last_ + 1; i > p; i--)
+//		{
+//			data_[i] = data_[i - 1];
+//		}
+//		data_[p] = x;
+//		last_++;
+//		return true;
+//	}
+//
+//	void print() const
+//	{
+//		for (Position i = 0; i <= last_; i++)
+//		{
+//			std::cout << data_[i] << " ";
+//		}
+//		std::cout << '\n';
+//	}
+//	Position find(ElementType x) const
+//	{
+//		for (Position i = 0; i <= last_; i++)//ä¿æŒç±»å‹ä¸€è‡´æ€§ã€‚
+//		{
+//			if (data_[i] == x)
+//			{
+//				return i;
+//			}
+//		}
+//		return kError;
+//	}
+//
+//	bool erase(Position p)
+//	{
+//		if (p < 0 || p > last_)
+//		{
+//			std::cout << "åˆ é™¤ä½ç½®ä¸åˆæ³•" << '\n';
+//			return false;
+//		}
+//		for (Position i = p; i < last_; i++)
+//		{
+//			data_[i] = data_[i + 1];
+//		}
+//		last_--;
+//		return true;
+//	}
+//
+//private:
+//	ElementType data_[kMaxSize];
+//	Position last_;
+//};
+//int main()
+//{
+//	SeqList list;
+//	list.insert(10, 0);
+//	list.insert(20, 1);
+//	list.insert(30, 2);
+//	list.print();
+//	list.insert(99, 1);
+//	list.print();
+//	std::cout << "20çš„ä½ç½®:" << list.find(20) << '\n';
+//	list.erase(2);
+//	list.print();
+//	return 0;
+//}
 //#include <iostream>
 //
 //using ElementType = int;
 //
 //struct ListNode
 //{
-//	ElementType data;   // data: data£¬Êı¾İÓò
-//	ListNode* next;     // next: next£¬ÏÂÒ»¸ö½áµãÖ¸Õë
+//	ElementType data;   // data: dataï¼Œæ•°æ®åŸŸ
+//	ListNode* next;     // next: nextï¼Œä¸‹ä¸€ä¸ªç»“ç‚¹æŒ‡é’ˆ
 //
 //	ListNode(ElementType value = 0, ListNode* nextNode = nullptr)
 //		: data(value), next(nextNode)
@@ -1560,7 +1560,7 @@ int main()
 //	}
 //};
 //
-//using Position = ListNode*;   // Position: position£¬Î»ÖÃ£¬ÕâÀï±¾ÖÊÊÇ½áµãÖ¸Õë
+//using Position = ListNode*;   // Position: positionï¼Œä½ç½®ï¼Œè¿™é‡Œæœ¬è´¨æ˜¯ç»“ç‚¹æŒ‡é’ˆ
 //
 //class LinkedList
 //{
@@ -1569,7 +1569,7 @@ int main()
 //
 //	LinkedList()
 //	{
-//		head_ = new ListNode();   // Í·½áµã£¬²»´æÓĞĞ§Êı¾İ
+//		head_ = new ListNode();   // å¤´ç»“ç‚¹ï¼Œä¸å­˜æœ‰æ•ˆæ•°æ®
 //	}
 //
 //	~LinkedList()
@@ -1583,10 +1583,10 @@ int main()
 //		}
 //	}
 //
-//	// ²éÕÒÔªËØ x£¬ÕÒµ½·µ»Ø½áµãÖ¸Õë£¬ÕÒ²»µ½·µ»Ø nullptr
+//	// æŸ¥æ‰¾å…ƒç´  xï¼Œæ‰¾åˆ°è¿”å›ç»“ç‚¹æŒ‡é’ˆï¼Œæ‰¾ä¸åˆ°è¿”å› nullptr
 //	Position find(ElementType x) const
 //	{
-//		Position p = head_->next;   // p Ö¸ÏòµÚÒ»¸öÓĞĞ§½áµã
+//		Position p = head_->next;   // p æŒ‡å‘ç¬¬ä¸€ä¸ªæœ‰æ•ˆç»“ç‚¹
 //		while (p != nullptr && p->data != x)
 //		{
 //			p = p->next;
@@ -1594,10 +1594,10 @@ int main()
 //		return p;
 //	}
 //
-//	// ÔÚ½áµã p Ç°²åÈëĞÂ½áµã x
+//	// åœ¨ç»“ç‚¹ p å‰æ’å…¥æ–°ç»“ç‚¹ x
 //	bool insert(ElementType x, Position p)
 //	{
-//		Position pre = head_;   // pre: predecessor£¬Ç°Çı½áµã
+//		Position pre = head_;   // pre: predecessorï¼Œå‰é©±ç»“ç‚¹
 //
 //		while (pre != nullptr && pre->next != p)
 //		{
@@ -1606,22 +1606,22 @@ int main()
 //
 //		if (pre == nullptr)
 //		{
-//			std::cout << "²åÈëÎ»ÖÃ²ÎÊı´íÎó\n";
+//			std::cout << "æ’å…¥ä½ç½®å‚æ•°é”™è¯¯\n";
 //			return false;
 //		}
 //
-//		Position tmp = new ListNode(x);  // tmp: temporary£¬ÁÙÊ±ĞÂ½áµã
+//		Position tmp = new ListNode(x);  // tmp: temporaryï¼Œä¸´æ—¶æ–°ç»“ç‚¹
 //		tmp->next = p;
 //		pre->next = tmp;
 //		return true;
 //	}
 //
-//	// É¾³ı½áµã p
+//	// åˆ é™¤ç»“ç‚¹ p
 //	bool erase(Position p)
 //	{
 //		if (p == nullptr)
 //		{
-//			std::cout << "É¾³ıÎ»ÖÃ²ÎÊı´íÎó\n";
+//			std::cout << "åˆ é™¤ä½ç½®å‚æ•°é”™è¯¯\n";
 //			return false;
 //		}
 //
@@ -1633,7 +1633,7 @@ int main()
 //
 //		if (pre == nullptr)
 //		{
-//			std::cout << "É¾³ıÎ»ÖÃ²ÎÊı´íÎó\n";
+//			std::cout << "åˆ é™¤ä½ç½®å‚æ•°é”™è¯¯\n";
 //			return false;
 //		}
 //
@@ -1642,7 +1642,7 @@ int main()
 //		return true;
 //	}
 //
-//	// Î²²å£¬·½±ã²âÊÔ
+//	// å°¾æ’ï¼Œæ–¹ä¾¿æµ‹è¯•
 //	void pushBack(ElementType x)
 //	{
 //		Position tail = head_;
@@ -1675,7 +1675,7 @@ int main()
 //	}
 //
 //private:
-//	Position head_;   // head_: head£¬Í·½áµã
+//	Position head_;   // head_: headï¼Œå¤´ç»“ç‚¹
 //};
 //
 //int main()
@@ -1688,12 +1688,197 @@ int main()
 //	list.print();   // 10 20 30
 //
 //	Position p = list.find(20);
-//	list.insert(99, p);   // ÔÚ 20 Ç°²åÈë 99
+//	list.insert(99, p);   // åœ¨ 20 å‰æ’å…¥ 99
 //	list.print();         // 10 99 20 30
 //
 //	p = list.find(20);
-//	list.erase(p);        // É¾³ı 20
+//	list.erase(p);        // åˆ é™¤ 20
 //	list.print();         // 10 99 30
 //
 //	return 0;
 //}
+//ä¸‹é¢è‡ªè¡Œç»ƒä¹ 
+//#include <iostream>
+//
+//using ElementType = int;
+//
+//struct ListNode
+//{
+//	ElementType data;
+//	ListNode* next;
+//
+//	ListNode(ElementType value=0,ListNode* nextNode = nullptr) : data(value),next(nextNode) {}
+//};
+//
+//using Position = ListNode*;
+//
+//class LinkedList
+//{
+//	
+//
+//public:
+//	static constexpr Position kError = nullptr;
+//
+//	LinkedList()
+//	{
+//		head_ = new ListNode();
+//	}
+//
+//	~LinkedList()
+//	{
+//		Position current = head_;
+//		while (current != nullptr)
+//		{
+//			Position nextNode = current->next;
+//			delete current;
+//			current = nextNode;
+//		}
+//	}
+//
+//	Position find(ElementType x) const
+//	{
+//		Position p = head_->next;
+//		while (p != nullptr && p->data != x)
+//		{
+//			p = p->next;
+//		}
+//		return p;
+//	}
+//
+//	bool insert(ElementType x, Position p)
+//	{
+//		Position pre = head_;
+//		
+//		while (pre != nullptr && pre->next != p)
+//		{
+//			pre = pre->next;
+//		}
+//		if (pre == nullptr)
+//		{
+//			std::cout << "æ’å…¥ä½ç½®ä¸åˆæ³•\n";
+//			return false;
+//		}
+//
+//		Position tmp = new ListNode(x);
+//		tmp->next = p;
+//		pre->next = tmp;
+//		return true;
+//	}
+//
+//	bool erase(Position p)
+//	{
+//		if (p == nullptr)
+//		{
+//			std::cout << "æ’å…¥ä½ç½®ä¸åˆæ³•\n";
+//			return false;
+//		}
+//		
+//		Position pre = head_;
+//		while (pre != nullptr && pre->next != p)
+//		{
+//			pre = pre->next;
+//		}
+//
+//		if (pre == nullptr)
+//		{
+//			std::cout << "æ’å…¥ä½ç½®ä¸åˆæ³•\n";
+//		}
+//
+//		pre->next = p->next;
+//		delete p;
+//		return true;
+//	}
+//
+//	void pushBack(ElementType x)
+//	{
+//		Position tail = head_;
+//		while (tail->next != nullptr)
+//		{
+//			tail = tail->next;
+//		}
+//		tail->next = new ListNode(x);
+//	}
+//	void print() const
+//	{
+//		Position p = head_->next;
+//		while (p != nullptr)
+//		{
+//			std::cout << p->data << ' ';
+//			p = p->next;
+//		}
+//		std::cout << '\n';
+//	}
+//
+//	Position first() const
+//	{
+//		return head_->next;
+//	}
+//
+//	Position head() const
+//	{
+//		return head_;
+//	}
+//
+//private:
+//	Position head_ = nullptr;
+//};
+//
+//int main()
+//{
+//	LinkedList list;
+//
+//	list.pushBack(10);
+//	list.pushBack(20);
+//	list.pushBack(30);
+//	list.print();
+//
+//	Position p = list.find(20);
+//	list.insert(99, p);
+//	list.print();
+//
+//	p = list.find(20);
+//	list.erase(p);
+//	list.print();
+//
+//	return 0;
+//}
+#include <iostream>
+
+using ElementType = int;
+
+struct ListNode
+{
+	ElementType data;
+	ListNode* next;
+
+	ListNode(ElementType value = 0, ListNode* nextNode) : data(value), next(nextNode) {};
+};
+
+using Position = ListNode*;
+
+class LinkedList
+{
+public:
+	LinkedList()
+	{
+		head_ = new ListNode();
+	}
+	~LinkedList()
+	{
+		Position current = head_;
+		while (current->next != nullptr)
+		{
+			Position temp = current->next;
+			delete current;
+			current = temp;
+		}
+	}
+private:
+	Position head_;
+};
+
+int main()
+{
+	LinkedList list;
+
+}
