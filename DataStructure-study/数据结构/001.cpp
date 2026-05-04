@@ -1842,43 +1842,333 @@ int main() {
 //
 //	return 0;
 //}
+//#include <iostream>
+//
+//using ElementType = int;
+//
+//struct ListNode
+//{
+//	ElementType data;
+//	ListNode* next;
+//
+//	ListNode(ElementType value = 0, ListNode* nextNode = nullptr) : data(value), next(nextNode) {};
+//};
+//
+//using Position = ListNode*;
+//
+//class LinkedList
+//{
+//public:
+//	LinkedList()
+//	{
+//		head_ = new ListNode();
+//	}
+//	~LinkedList()
+//	{
+//		Position current = head_;
+//		while (current != nullptr)
+//		{
+//			Position temp = current->next;
+//			delete current;
+//			current = temp;
+//		}
+//	}
+//
+//	void pushBack(ElementType value)
+//	{
+//		Position tail = head_;
+//		while (tail->next != nullptr)
+//		{
+//			tail = tail->next;
+//		}
+//		tail->next = new ListNode(value);
+//	}
+//	
+//	void print() const
+//	{
+//		Position pre = head_->next;
+//		while (pre != nullptr)
+//		{
+//			std::cout << pre->data << " ";
+//			pre = pre->next;
+//		}
+//		std::cout << '\n';
+//	}
+//
+//	Position find(ElementType value) const
+//	{
+//		Position pre = head_->next;
+//		while (pre != nullptr && pre->data != value)
+//		{
+//			pre = pre->next;
+//		}
+//		return pre;
+//	}
+//
+//	bool insert(ElementType value, Position p)
+//	{
+//		Position pre = head_;
+//		while (pre != nullptr && pre->next != p)
+//		{
+//			pre = pre->next;
+//		}
+//		if (pre == nullptr)
+//		{
+//			std::cout << "插入位置不合法\n";
+//			return false;
+//		}
+//		
+//		Position temp = new ListNode(value);
+//		temp->next = p;
+//		pre->next = temp;
+//		return true;
+//	}
+//
+//	bool erase(Position p)
+//	{
+//		if (p == nullptr)
+//		{
+//			std::cout << "删除位置不合法\n";
+//			return false;
+//		}
+//
+//		Position pre = head_;
+//
+//		while (pre != nullptr && pre->next != p)
+//		{
+//			pre = pre->next;
+//		}
+//
+//		if (pre == nullptr)
+//		{
+//			std::cout << "删除位置不合法\n";
+//			return false;
+//		}
+//
+//		pre->next = p->next;
+//		delete p;
+//		return true;
+//	}
+//
+//	Position head() const
+//	{
+//		return head_;
+//	}
+//	
+//	Position first() const
+//	{
+//		return head_->next;
+//	}
+//
+//private:
+//	Position head_;
+//};
+//
+//int main()
+//{
+//	LinkedList list;
+//
+//	list.pushBack(10);
+//	list.pushBack(20);
+//	list.pushBack(30);
+//	list.print();
+//
+//	Position p = list.find(20);
+//	list.insert(99, p);
+//	list.print();
+//
+//	p = list.find(20);
+//	list.erase(p);
+//	list.print();
+//
+//	return 0;
+//
+//}
+//#include <iostream>
+//#include <vector>
+//#include <stdexcept>
+//
+//using ElementType = int;
+//using Position = int;
+//
+//class ArrayStack
+//{
+//public:
+//	explicit ArrayStack(int maxSize)
+//		: data_(maxSize), top_(-1), maxSize_(maxSize)
+//	{
+//	}
+//
+//	bool isEmpty() const
+//	{
+//		return top_ == -1;
+//	}
+//
+//	bool isFull() const
+//	{
+//		return top_ == maxSize_ - 1;
+//	}
+//
+//	bool push(ElementType x)
+//	{
+//		if (isFull())
+//		{
+//			std::cout << "堆栈满\n";
+//			return false;
+//		}
+//
+//		data_[++top_] = x;
+//		return true;
+//	}
+//
+//	ElementType pop()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空，无法弹出元素");
+//		}
+//
+//		return data_[top_--];
+//	}
+//
+//	ElementType top() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空，没有栈顶元素");
+//		}
+//
+//		return data_[top_];
+//	}
+//
+//	int size() const
+//	{
+//		return top_ + 1;
+//	}
+//
+//	void print() const
+//	{
+//		for (Position i = 0; i <= top_; ++i)
+//		{
+//			std::cout << data_[i] << ' ';
+//		}
+//		std::cout << '\n';
+//	}
+//
+//private:
+//	std::vector<ElementType> data_;  // data: 数据区，底层是连续空间
+//	Position top_;                   // top: 栈顶元素下标
+//	int maxSize_;                    // max size: 最大容量
+//};
+//
+//int main()
+//{
+//	ArrayStack stack(5);
+//
+//	stack.push(10);
+//	stack.push(20);
+//	stack.push(30);
+//
+//	stack.print();  // 10 20 30
+//
+//	std::cout << "栈顶元素: " << stack.top() << '\n';
+//
+//	std::cout << "弹出: " << stack.pop() << '\n';
+//	std::cout << "弹出: " << stack.pop() << '\n';
+//
+//	stack.print();  // 10
+//
+//	return 0;
+//}
 #include <iostream>
+#include <vector>
+#include <stdexcept>
 
 using ElementType = int;
+using Position = int;
 
-struct ListNode
-{
-	ElementType data;
-	ListNode* next;
-
-	ListNode(ElementType value = 0, ListNode* nextNode) : data(value), next(nextNode) {};
-};
-
-using Position = ListNode*;
-
-class LinkedList
+class ArrayStack
 {
 public:
-	LinkedList()
+	explicit ArrayStack(int maxSize) : data_(maxSize), top_(-1), maxSize_(maxSize) {};
+
+	bool isEmpty() const
 	{
-		head_ = new ListNode();
+		return top_ == -1;
 	}
-	~LinkedList()
+
+	bool isFull() const
 	{
-		Position current = head_;
-		while (current->next != nullptr)
+		return maxSize_ - 1 == top_;
+	}
+
+	bool push(ElementType x)
+	{
+		if (isFull())
 		{
-			Position temp = current->next;
-			delete current;
-			current = temp;
+			std::cout << "堆栈满\n";
+			return false;
 		}
+
+		data_[++top_] = x;
+		return true;
 	}
+
+	ElementType pop()
+	{
+		if (isEmpty())
+		{
+			throw std::runtime_error("堆栈空，无法弹出元素");
+		}
+
+		return data_[top_--];
+	}
+
+	ElementType top() const
+	{
+		if (isEmpty())
+		{
+			throw std::runtime_error("堆栈空，没有栈顶元素");
+		}
+		return data_[top_];
+	}
+
+	int size() const
+	{
+		return top_ + 1;
+	}
+
+	void print() const
+	{
+		for (Position i = 0; i <= top_; ++i)
+		{
+			std::cout << data_[i] << ' ';
+		}
+		std::cout << '\n';
+	}
+
 private:
-	Position head_;
+	std::vector<ElementType> data_;
+	Position top_;
+	int maxSize_;
 };
 
 int main()
 {
-	LinkedList list;
+	ArrayStack stack(5);
 
+	stack.push(10);
+	stack.push(20);
+	stack.push(30);
+
+	stack.print();
+
+	std::cout << "栈顶元素 :" << stack.top() << '\n';
+
+	std::cout << "弹出:" << stack.pop() << '\n';
+	std::cout << "弹出:" << stack.pop() << '\n';
+
+	stack.print();
+
+	return 0;
 }
