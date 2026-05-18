@@ -2080,95 +2080,555 @@ int main() {
 //
 //	return 0;
 //}
+//#include <iostream>
+//#include <vector>
+//#include <stdexcept>
+//
+//using ElementType = int;
+//using Position = int;
+//
+//class ArrayStack
+//{
+//public:
+//	explicit ArrayStack(int maxSize) : data_(maxSize), top_(-1), maxSize_(maxSize) {};
+//
+//	bool isEmpty() const
+//	{
+//		return top_ == -1;
+//	}
+//
+//	bool isFull() const
+//	{
+//		return maxSize_ - 1 == top_;
+//	}
+//
+//	bool push(ElementType x)
+//	{
+//		if (isFull())
+//		{
+//			std::cout << "堆栈满\n";
+//			return false;
+//		}
+//
+//		data_[++top_] = x;
+//		return true;
+//	}
+//
+//	ElementType pop()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空，无法弹出元素");
+//		}
+//
+//		return data_[top_--];
+//	}
+//
+//	ElementType top() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空，没有栈顶元素");
+//		}
+//		return data_[top_];
+//	}
+//
+//	int size() const
+//	{
+//		return top_ + 1;
+//	}
+//
+//	void print() const
+//	{
+//		for (Position i = 0; i <= top_; ++i)
+//		{
+//			std::cout << data_[i] << ' ';
+//		}
+//		std::cout << '\n';
+//	}
+//
+//private:
+//	std::vector<ElementType> data_;
+//	Position top_;
+//	int maxSize_;
+//};
+//#include <iostream>
+//#include <vector>
+//#include <stdexcept>
+//class ArrayStack
+//{
+//	using ElementType = int;
+//	using Position = int;
+//public:
+//	explicit ArrayStack(int maxSize) :data_(maxSize), top_(-1), maxSize_(maxSize) {};
+//
+//	bool isEmpty() const
+//	{
+//		return top_ == -1;
+//	}
+//	
+//	bool isFull() const
+//	{
+//		return top_ == maxSize_ - 1;
+//	}
+//
+//	bool push(ElementType x) 
+//	{
+//		if (isFull())
+//		{
+//			throw std::runtime_error("堆栈满，无法添加新元素");
+//		}
+//		data_[++top_] = x;
+//		return true;
+//	}
+//
+//	ElementType pop()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空，无法弹出元素");
+//		}
+//		return data_[top_--];
+//	}
+//
+//	ElementType top() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空");
+//		}
+//		return data_[top_];
+//	}
+//
+//	int size() const
+//	{
+//		return top_ + 1;
+//	}
+//
+//	void print() const
+//	{
+//		for (int i = 0; i <= top_; i++)
+//		{
+//			std::cout << data_[i] << ' ';
+//		}
+//		std::cout << '\n';
+//	}
+//
+//private:
+//	std::vector<ElementType> data_;
+//	Position top_;
+//	int maxSize_;
+//
+//};
+//
+//int main()
+//{
+//	ArrayStack stack(5);
+//
+//	stack.push(10);
+//	stack.push(20);
+//	stack.push(30);
+//
+//	stack.print();
+//
+//	std::cout << "栈顶元素 :" << stack.top() << '\n';
+//
+//	std::cout << "弹出:" << stack.pop() << '\n';
+//	std::cout << "弹出:" << stack.pop() << '\n';
+//
+//	stack.print();
+//
+//	return 0;
+//}
+//#include <iostream>
+//#include <stdexcept>
+//
+//using ElementType = int;
+//
+//class LinkedStack
+//{
+//private:
+//	struct Node
+//	{
+//		ElementType data;  // data: 数据域
+//		Node* next;        // next: 下一个结点指针
+//
+//		Node(ElementType value = 0, Node* nextNode = nullptr)
+//			: data(value), next(nextNode)
+//		{
+//		}
+//	};
+//
+//public:
+//	LinkedStack()
+//		: head_(new Node())
+//	{
+//	}
+//
+//	~LinkedStack()
+//	{
+//		while (!isEmpty())
+//		{
+//			pop();
+//		}
+//
+//		delete head_;
+//	}
+//
+//	bool isEmpty() const
+//	{
+//		return head_->next == nullptr;
+//	}
+//
+//	bool push(ElementType x)
+//	{
+//		Node* newNode = new Node(x, head_->next);
+//		head_->next = newNode;
+//		return true;
+//	}
+//
+//	ElementType pop()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空，无法弹出元素");
+//		}
+//
+//		Node* firstNode = head_->next;
+//		ElementType topElement = firstNode->data;
+//
+//		head_->next = firstNode->next;
+//		delete firstNode;
+//
+//		return topElement;
+//	}
+//
+//	ElementType top() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("堆栈空，没有栈顶元素");
+//		}
+//
+//		return head_->next->data;
+//	}
+//
+//	void print() const
+//	{
+//		Node* current = head_->next;
+//
+//		while (current != nullptr)
+//		{
+//			std::cout << current->data << ' ';
+//			current = current->next;
+//		}
+//
+//		std::cout << '\n';
+//	}
+//
+//private:
+//	Node* head_;  // head: 头结点，不存有效数据
+//};
+
+/*
+构造
+析构
+空？
+加节点
+pop
+top
+print*/
+
+//#include <iostream>
+//#include <stdexcept>
+//
+//class LinkedStack
+//{
+//public:
+//	using ElementType = int;
+//	struct Node
+//	{
+//		ElementType data_;
+//		Node* next_;
+//
+//		Node (ElementType value = 0, Node *nextNode = nullptr) : data_(value), next_(nextNode){}
+//	};
+//
+//	LinkedStack() :head_(new Node)	{}
+//
+//	~LinkedStack()
+//	{
+//		while (!isEmpty())
+//		{
+//			pop();
+//		}
+//		delete head_; 
+//	}
+//
+//	bool isEmpty() const
+//	{
+//		return head_->next_ == nullptr;
+//	}
+//
+//	void push(ElementType x)
+//	{
+//		Node* newNode = new Node(x, head_->next_);
+//		head_->next_ = newNode;
+//
+//	}
+//
+//	ElementType pop()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("栈空，无法弹出元素");
+//		}
+//
+//		Node* firstNode = head_->next_;
+//		head_->next_ = firstNode->next_;
+//		ElementType topElement = firstNode->data_;
+//		delete firstNode;
+//		return topElement;
+//	}
+//
+//	ElementType top() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("栈空");
+//		}
+//		return head_->next_->data_;
+//	}
+//
+//	void print() const
+//	{
+//		for (Node* P = head_->next_; P != nullptr; P = P->next_)
+//		{
+//			std::cout << P->data_ << " ";
+//		}
+//		std::cout << "\n";
+//	}
+//
+//private:
+//	Node* head_;
+//};
+//
+//
+//int main()
+//{
+//	LinkedStack stack;
+//
+//	stack.push(10);
+//	stack.push(20);
+//	stack.push(30);
+//
+//	stack.print();  // 30 20 10
+//
+//	std::cout << "栈顶元素: " << stack.top() << '\n';
+//
+//	std::cout << "弹出: " << stack.pop() << '\n';
+//	std::cout << "弹出: " << stack.pop() << '\n';
+//
+//	stack.print();  // 10
+//
+//	return 0;
+//}
+
+//#include <iostream>
+//#include <vector>
+//#include <stdexcept>
+//
+//using ElementType = int;
+//using Position = int;
+//
+//class CircularQueue
+//{
+//public:
+//	explicit CircularQueue(int maxSize)
+//		: data_(maxSize), front_(0), rear_(0), maxSize_(maxSize)
+//	{
+//		if (maxSize <= 1)
+//		{
+//			throw std::invalid_argument("队列容量必须大于 1");
+//		}
+//	}
+//
+//	bool isEmpty() const
+//	{
+//		return front_ == rear_;
+//	}
+//
+//	bool isFull() const
+//	{
+//		return (rear_ + 1) % maxSize_ == front_;
+//	}
+//
+//	bool enqueue(ElementType x)
+//	{
+//		if (isFull())
+//		{
+//			std::cout << "队列满，无法入队\n";
+//			return false;
+//		}
+//
+//		rear_ = (rear_ + 1) % maxSize_;
+//		data_[rear_] = x;
+//		return true;
+//	}
+//
+//	ElementType dequeue()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空，无法出队");
+//		}
+//
+//		front_ = (front_ + 1) % maxSize_;
+//		return data_[front_];
+//	}
+//
+//	ElementType front() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空，没有队头元素");
+//		}
+//
+//		Position first = (front_ + 1) % maxSize_;
+//		return data_[first];
+//	}
+//
+//	int size() const
+//	{
+//		return (rear_ - front_ + maxSize_) % maxSize_;
+//	}
+//
+//	void print() const
+//	{
+//		Position current = (front_ + 1) % maxSize_;
+//
+//		while (current != (rear_ + 1) % maxSize_)
+//		{
+//			std::cout << data_[current] << ' ';
+//			current = (current + 1) % maxSize_;
+//		}
+//
+//		std::cout << '\n';
+//	}
+//
+//private:
+//	std::vector<ElementType> data_;
+//	Position front_;     // front: 队头前一个位置
+//	Position rear_;      // rear: 队尾元素位置
+//	int maxSize_;
+//};
+
+/*
+* 空
+* 满
+* 入队
+* 出队
+* 队首元素
+* 个数
+* 打印
+*/
 #include <iostream>
 #include <vector>
 #include <stdexcept>
 
-using ElementType = int;
-using Position = int;
-
-class ArrayStack
+class CircularQueue
 {
+	using ElementType = int;
+	using Position = int;
 public:
-	explicit ArrayStack(int maxSize) : data_(maxSize), top_(-1), maxSize_(maxSize) {};
-
+	explicit CircularQueue(int maxSize): data_(maxSize), front_(0),rear_(0), maxSize_(maxSize)
+	{
+		if (maxSize <= 1)
+			throw std::runtime_error("队列最大值不能小于1");
+	}
 	bool isEmpty() const
 	{
-		return top_ == -1;
+		return rear_ == front_;
 	}
 
 	bool isFull() const
 	{
-		return maxSize_ - 1 == top_;
+		return (rear_ + 1)%maxSize_ == front_;
 	}
-
-	bool push(ElementType x)
+	
+	void enqueue(ElementType x)
 	{
 		if (isFull())
 		{
-			std::cout << "堆栈满\n";
-			return false;
+			throw std::runtime_error("队列满，无法添加新元素");
 		}
-
-		data_[++top_] = x;
-		return true;
+		rear_ = (rear_ + 1) % maxSize_;
+		data_[rear_] = x;
 	}
 
-	ElementType pop()
+	ElementType dequeue()
 	{
 		if (isEmpty())
 		{
-			throw std::runtime_error("堆栈空，无法弹出元素");
+			throw std::runtime_error("队列空，无法出元素");
 		}
-
-		return data_[top_--];
+		front_ = (front_ + 1) % maxSize_;
+		return data_[front_];
 	}
-
-	ElementType top() const
+	ElementType front() const
 	{
 		if (isEmpty())
 		{
-			throw std::runtime_error("堆栈空，没有栈顶元素");
+			throw std::runtime_error("队列空，没有第一个元素");
 		}
-		return data_[top_];
+		return data_[(front_ + 1) % maxSize_];
 	}
 
 	int size() const
 	{
-		return top_ + 1;
+		return (rear_ - front_ + maxSize_) % maxSize_;
 	}
 
-	void print() const
+	void print()
 	{
-		for (Position i = 0; i <= top_; ++i)
+		Position current = (front_ + 1) % maxSize_;
+		while (current != (rear_+1) % maxSize_)
 		{
-			std::cout << data_[i] << ' ';
+			std::cout << data_[current] << " ";
+			current = (current + 1) % maxSize_;
 		}
-		std::cout << '\n';
+		std::cout << "\n";
 	}
 
 private:
 	std::vector<ElementType> data_;
-	Position top_;
+	Position front_;
+	Position rear_;
 	int maxSize_;
 };
 
 int main()
 {
-	ArrayStack stack(5);
+	CircularQueue queue(5);
 
-	stack.push(10);
-	stack.push(20);
-	stack.push(30);
+	queue.enqueue(10);
+	queue.enqueue(20);
+	queue.enqueue(30);
 
-	stack.print();
+	queue.print();  // 10 20 30
 
-	std::cout << "栈顶元素 :" << stack.top() << '\n';
+	std::cout << "队头元素: " << queue.front() << '\n';
 
-	std::cout << "弹出:" << stack.pop() << '\n';
-	std::cout << "弹出:" << stack.pop() << '\n';
+	std::cout << "出队: " << queue.dequeue() << '\n';
+	std::cout << "出队: " << queue.dequeue() << '\n';
 
-	stack.print();
+	queue.enqueue(40);
+	queue.enqueue(50);
+	queue.enqueue(60);
+
+	queue.print();  // 30 40 50 60
+
+	std::cout << "当前队列长度: " << queue.size() << '\n';
 
 	return 0;
 }
