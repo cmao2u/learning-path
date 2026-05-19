@@ -2532,103 +2532,284 @@ print*/
 * 个数
 * 打印
 */
+//#include <iostream>
+//#include <vector>
+//#include <stdexcept>
+//
+//class CircularQueue
+//{
+//	using ElementType = int;
+//	using Position = int;
+//public:
+//	explicit CircularQueue(int maxSize): data_(maxSize), front_(0),rear_(0), maxSize_(maxSize)
+//	{
+//		if (maxSize <= 1)
+//			throw std::runtime_error("队列最大值不能小于1");
+//	}
+//	bool isEmpty() const
+//	{
+//		return rear_ == front_;
+//	}
+//
+//	bool isFull() const
+//	{
+//		return (rear_ + 1)%maxSize_ == front_;
+//	}
+//	
+//	void enqueue(ElementType x)
+//	{
+//		if (isFull())
+//		{
+//			throw std::runtime_error("队列满，无法添加新元素");
+//		}
+//		rear_ = (rear_ + 1) % maxSize_;
+//		data_[rear_] = x;
+//	}
+//
+//	ElementType dequeue()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空，无法出元素");
+//		}
+//		front_ = (front_ + 1) % maxSize_;
+//		return data_[front_];
+//	}
+//	ElementType front() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空，没有第一个元素");
+//		}
+//		return data_[(front_ + 1) % maxSize_];
+//	}
+//
+//	int size() const
+//	{
+//		return (rear_ - front_ + maxSize_) % maxSize_;
+//	}
+//
+//	void print()
+//	{
+//		Position current = (front_ + 1) % maxSize_;
+//		while (current != (rear_+1) % maxSize_)
+//		{
+//			std::cout << data_[current] << " ";
+//			current = (current + 1) % maxSize_;
+//		}
+//		std::cout << "\n";
+//	}
+//
+//private:
+//	std::vector<ElementType> data_;
+//	Position front_;
+//	Position rear_;
+//	int maxSize_;
+//};
+//
+//int main()
+//{
+//	CircularQueue queue(5);
+//
+//	queue.enqueue(10);
+//	queue.enqueue(20);
+//	queue.enqueue(30);
+//
+//	queue.print();  // 10 20 30
+//
+//	std::cout << "队头元素: " << queue.front() << '\n';
+//
+//	std::cout << "出队: " << queue.dequeue() << '\n';
+//	std::cout << "出队: " << queue.dequeue() << '\n';
+//
+//	queue.enqueue(40);
+//	queue.enqueue(50);
+//	queue.enqueue(60);
+//
+//	queue.print();  // 30 40 50 60
+//
+//	std::cout << "当前队列长度: " << queue.size() << '\n';
+//
+//	return 0;
+//}
+//#include <iostream>
+//#include <stdexcept>
+//
+//using ElementType = int;
+//
+//class LinkedQueue
+//{
+//private:
+//	struct Node
+//	{
+//		ElementType data;
+//		Node* next;
+//
+//		Node(ElementType value = 0, Node* nextNode = nullptr)
+//			: data(value), next(nextNode)
+//		{
+//		}
+//	};
+//
+//public:
+//	LinkedQueue()
+//		: front_(new Node()), rear_(front_)
+//	{
+//	}
+//
+//	~LinkedQueue()
+//	{
+//		while (!isEmpty())
+//		{
+//			dequeue();
+//		}
+//
+//		delete front_;
+//	}
+//
+//	bool isEmpty() const
+//	{
+//		return front_ == rear_;
+//	}
+//
+//	bool enqueue(ElementType x)
+//	{
+//		Node* newNode = new Node(x);
+//
+//		rear_->next = newNode;
+//		rear_ = newNode;
+//
+//		return true;
+//	}
+//
+//	ElementType dequeue()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空，无法出队");
+//		}
+//
+//		Node* firstNode = front_->next;
+//		ElementType firstElement = firstNode->data;
+//
+//		front_->next = firstNode->next;
+//
+//		if (rear_ == firstNode)
+//		{
+//			rear_ = front_;
+//		}
+//
+//		delete firstNode;
+//		return firstElement;
+//	}
+//
+//	ElementType front() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空，没有队头元素");
+//		}
+//
+//		return front_->next->data;
+//	}
+//
+//	void print() const
+//	{
+//		Node* current = front_->next;
+//
+//		while (current != nullptr)
+//		{
+//			std::cout << current->data << ' ';
+//			current = current->next;
+//		}
+//
+//		std::cout << '\n';
+//	}
+//
+//private:
+//	Node* front_;  // front: 队头指针，这里指向头结点
+//	Node* rear_;   // rear: 队尾指针，指向最后一个有效结点
+//};
+
+
 #include <iostream>
-#include <vector>
 #include <stdexcept>
 
-class CircularQueue
+class LinkedQueue
 {
 	using ElementType = int;
-	using Position = int;
-public:
-	explicit CircularQueue(int maxSize): data_(maxSize), front_(0),rear_(0), maxSize_(maxSize)
+private:
+	struct Node
 	{
-		if (maxSize <= 1)
-			throw std::runtime_error("队列最大值不能小于1");
+		ElementType data_;
+		Node* next_;
+
+		Node(ElementType value = 0, Node* nextNode = nullptr) : data_(value), next_(nextNode) {};
+	};
+
+public:
+	LinkedQueue() : front_(new Node), rear_(front_) {};
+
+	~LinkedQueue()
+	{
+		while (!isEmpty())
+		{
+			dequeue();
+		}
+		delete front_;
 	}
-	bool isEmpty() const
+
+	bool isEmpty() const 
 	{
 		return rear_ == front_;
 	}
 
-	bool isFull() const
-	{
-		return (rear_ + 1)%maxSize_ == front_;
-	}
-	
 	void enqueue(ElementType x)
 	{
-		if (isFull())
-		{
-			throw std::runtime_error("队列满，无法添加新元素");
-		}
-		rear_ = (rear_ + 1) % maxSize_;
-		data_[rear_] = x;
+		Node* newNode = new Node(x);
+		rear_->next_ = newNode;
+		rear_ = newNode;
 	}
 
 	ElementType dequeue()
 	{
 		if (isEmpty())
 		{
-			throw std::runtime_error("队列空，无法出元素");
+			throw std::runtime_error("队列空,无法出队");
 		}
-		front_ = (front_ + 1) % maxSize_;
-		return data_[front_];
+		Node* firstNode = front_->next_;
+		ElementType firstvalue = firstNode->data_;
+		front_->next_ = firstNode->next_;
+		if (rear_ == firstNode)
+		{
+			rear_ = front_;
+		}
+		delete firstNode;
+		return firstvalue;
 	}
+
 	ElementType front() const
 	{
 		if (isEmpty())
 		{
 			throw std::runtime_error("队列空，没有第一个元素");
 		}
-		return data_[(front_ + 1) % maxSize_];
+		return front_->next_->data_;
 	}
-
-	int size() const
+	
+	void print() const
 	{
-		return (rear_ - front_ + maxSize_) % maxSize_;
-	}
-
-	void print()
-	{
-		Position current = (front_ + 1) % maxSize_;
-		while (current != (rear_+1) % maxSize_)
+		Node* current = front_->next_;
+		while (current != nullptr)
 		{
-			std::cout << data_[current] << " ";
-			current = (current + 1) % maxSize_;
+			std::cout << current->data_ << " ";
+			current = current->next_;
 		}
 		std::cout << "\n";
 	}
 
 private:
-	std::vector<ElementType> data_;
-	Position front_;
-	Position rear_;
-	int maxSize_;
+	Node* front_;
+	Node* rear_;
+
 };
-
-int main()
-{
-	CircularQueue queue(5);
-
-	queue.enqueue(10);
-	queue.enqueue(20);
-	queue.enqueue(30);
-
-	queue.print();  // 10 20 30
-
-	std::cout << "队头元素: " << queue.front() << '\n';
-
-	std::cout << "出队: " << queue.dequeue() << '\n';
-	std::cout << "出队: " << queue.dequeue() << '\n';
-
-	queue.enqueue(40);
-	queue.enqueue(50);
-	queue.enqueue(60);
-
-	queue.print();  // 30 40 50 60
-
-	std::cout << "当前队列长度: " << queue.size() << '\n';
-
-	return 0;
-}
