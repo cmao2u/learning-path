@@ -2731,85 +2731,302 @@ print*/
 //	Node* rear_;   // rear: 队尾指针，指向最后一个有效结点
 //};
 
-
+//#include <vector>
+//#include <iostream>
+//#include <stdexcept>
+//
+//class LinkedQueue
+//{
+//	using ElementType = int;
+//private:
+//	struct Node
+//	{
+//		ElementType data_;
+//		Node* next_;
+//
+//		Node(ElementType value = 0, Node* nextNode = nullptr) : data_(value), next_(nextNode) {};
+//	};
+//
+//public:
+//	LinkedQueue() : front_(new Node), rear_(front_) {};
+//
+//	~LinkedQueue()
+//	{
+//		while (!isEmpty())
+//		{
+//			dequeue();
+//		}
+//		delete front_;
+//	}
+//
+//	bool isEmpty() const 
+//	{
+//		return rear_ == front_;
+//	}
+//
+//	void enqueue(ElementType x)
+//	{
+//		Node* newNode = new Node(x);
+//		rear_->next_ = newNode;
+//		rear_ = newNode;
+//	}
+//
+//	ElementType dequeue()
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空,无法出队");
+//		}
+//		Node* firstNode = front_->next_;
+//		ElementType firstvalue = firstNode->data_;
+//		front_->next_ = firstNode->next_;
+//		if (rear_ == firstNode)
+//		{
+//			rear_ = front_;
+//		}
+//		delete firstNode;
+//		return firstvalue;
+//	}
+//
+//	ElementType front() const
+//	{
+//		if (isEmpty())
+//		{
+//			throw std::runtime_error("队列空，没有第一个元素");
+//		}
+//		return front_->next_->data_;
+//	}
+//	
+//	void print() const
+//	{
+//		Node* current = front_->next_;
+//		while (current != nullptr)
+//		{
+//			std::cout << current->data_ << " ";
+//			current = current->next_;
+//		}
+//		std::cout << "\n";
+//	}
+//
+//private:
+//	Node* front_;
+//	Node* rear_;
+//};
 #include <iostream>
-#include <stdexcept>
 
-class LinkedQueue
+using namespace std;
+
+struct PolyNode
 {
-	using ElementType = int;
-private:
-	struct Node
-	{
-		ElementType data_;
-		Node* next_;
+	int coef_;       // coefficient，系数
+	int expon_;      // exponent，指数
+	PolyNode* next_; // next，下一个节点
 
-		Node(ElementType value = 0, Node* nextNode = nullptr) : data_(value), next_(nextNode) {};
-	};
+	PolyNode(int coef = 0, int expon = 0, PolyNode* nextNode = nullptr)
+		: coef_(coef), expon_(expon), next_(nextNode) {
+	}
+};
 
+class LinkedList
+{
 public:
-	LinkedQueue() : front_(new Node), rear_(front_) {};
+	PolyNode* head_;
+	PolyNode* rear_;
+	int cnt_;
 
-	~LinkedQueue()
+	LinkedList()
+		: head_(new PolyNode()), rear_(head_), cnt_(0) {
+	}
+
+	void appendTerm(int coef, int expon)
 	{
-		while (!isEmpty())
+		if (coef == 0)
 		{
-			dequeue();
+			return;
 		}
-		delete front_;
-	}
 
-	bool isEmpty() const 
-	{
-		return rear_ == front_;
-	}
-
-	void enqueue(ElementType x)
-	{
-		Node* newNode = new Node(x);
+		PolyNode* newNode = new PolyNode(coef, expon);
 		rear_->next_ = newNode;
 		rear_ = newNode;
+		cnt_++;
 	}
 
-	ElementType dequeue()
+	void insertTerm(int coef, int expon)
 	{
-		if (isEmpty())
+		if (coef == 0)
 		{
-			throw std::runtime_error("队列空,无法出队");
+			return;
 		}
-		Node* firstNode = front_->next_;
-		ElementType firstvalue = firstNode->data_;
-		front_->next_ = firstNode->next_;
-		if (rear_ == firstNode)
+
+		PolyNode* prev = head_;        // previous，前一个节点
+		PolyNode* cur = head_->next_;  // current，当前节点
+
+		while (cur != nullptr && cur->expon_ > expon)
 		{
-			rear_ = front_;
+			prev = cur;
+			cur = cur->next_;
 		}
-		delete firstNode;
-		return firstvalue;
+
+		if (cur != nullptr && cur->expon_ == expon)
+		{
+			cur->coef_ += coef;
+
+			if (cur->coef_ == 0)
+			{
+				prev->next_ = cur->next_;
+
+				if (rear_ == cur)
+				{
+					rear_ = prev;
+				}
+
+				delete cur;
+				cnt_--;
+			}
+		}
+		else
+		{
+			PolyNode* newNode = new PolyNode(coef, expon, cur);
+			prev->next_ = newNode;
+
+			if (cur == nullptr)
+			{
+				rear_ = newNode;
+			}
+
+			cnt_++;
+		}
 	}
 
-	ElementType front() const
+	bool empty() const
 	{
-		if (isEmpty())
-		{
-			throw std::runtime_error("队列空，没有第一个元素");
-		}
-		return front_->next_->data_;
+		return head_->next_ == nullptr;
 	}
-	
+
 	void print() const
 	{
-		Node* current = front_->next_;
-		while (current != nullptr)
+		if (empty())
 		{
-			std::cout << current->data_ << " ";
-			current = current->next_;
+			cout << "0 0" << endl;
+			return;
 		}
-		std::cout << "\n";
+
+		PolyNode* cur = head_->next_;
+		bool first = true;
+
+		while (cur != nullptr)
+		{
+			if (!first)
+			{
+				cout << " ";
+			}
+
+			cout << cur->coef_ << " " << cur->expon_;
+			first = false;
+			cur = cur->next_;
+		}
+
+		cout << endl;
+	}
+};
+
+void multiply(const LinkedList& L1, const LinkedList& L2, LinkedList& result)
+{
+	PolyNode* p1 = L1.head_->next_;
+
+	while (p1 != nullptr)
+	{
+		PolyNode* p2 = L2.head_->next_;
+
+		while (p2 != nullptr)
+		{
+			int newCoef = p1->coef_ * p2->coef_;
+			int newExpon = p1->expon_ + p2->expon_;
+
+			result.insertTerm(newCoef, newExpon);
+
+			p2 = p2->next_;
+		}
+
+		p1 = p1->next_;
+	}
+}
+
+void add(const LinkedList& L1, const LinkedList& L2, LinkedList& result)
+{
+	PolyNode* p1 = L1.head_->next_;
+	PolyNode* p2 = L2.head_->next_;
+
+	while (p1 != nullptr && p2 != nullptr)
+	{
+		if (p1->expon_ > p2->expon_)
+		{
+			result.appendTerm(p1->coef_, p1->expon_);
+			p1 = p1->next_;
+		}
+		else if (p1->expon_ < p2->expon_)
+		{
+			result.appendTerm(p2->coef_, p2->expon_);
+			p2 = p2->next_;
+		}
+		else
+		{
+			int newCoef = p1->coef_ + p2->coef_;
+
+			if (newCoef != 0)
+			{
+				result.appendTerm(newCoef, p1->expon_);
+			}
+
+			p1 = p1->next_;
+			p2 = p2->next_;
+		}
 	}
 
-private:
-	Node* front_;
-	Node* rear_;
+	while (p1 != nullptr)
+	{
+		result.appendTerm(p1->coef_, p1->expon_);
+		p1 = p1->next_;
+	}
 
-};
+	while (p2 != nullptr)
+	{
+		result.appendTerm(p2->coef_, p2->expon_);
+		p2 = p2->next_;
+	}
+}
+
+int main()
+{
+	LinkedList L1;
+	LinkedList L2;
+
+	int m, n;
+
+	cin >> m;
+	for (int i = 0; i < m; i++)
+	{
+		int a, b;
+		cin >> a >> b;
+		L1.appendTerm(a, b);
+	}
+
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		int a, b;
+		cin >> a >> b;
+		L2.appendTerm(a, b);
+	}
+
+	LinkedList resultMul;
+	LinkedList resultSum;
+
+	multiply(L1, L2, resultMul);
+	add(L1, L2, resultSum);
+
+	resultMul.print();
+	resultSum.print();
+
+	return 0;
+}
