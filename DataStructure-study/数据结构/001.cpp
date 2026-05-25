@@ -2988,7 +2988,6 @@ void add(const LinkedList& L1, const LinkedList& L2, LinkedList& result)
 		result.appendTerm(p1->coef_, p1->expon_);
 		p1 = p1->next_;
 	}
-
 	while (p2 != nullptr)
 	{
 		result.appendTerm(p2->coef_, p2->expon_);
