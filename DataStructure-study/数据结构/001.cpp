@@ -2812,220 +2812,451 @@ print*/
 //	Node* front_;
 //	Node* rear_;
 //};
+//#include <iostream>
+//
+//using namespace std;
+//
+//struct PolyNode
+//{
+//	int coef_;       // coefficient，系数
+//	int expon_;      // exponent，指数
+//	PolyNode* next_; // next，下一个节点
+//
+//	PolyNode(int coef = 0, int expon = 0, PolyNode* nextNode = nullptr)
+//		: coef_(coef), expon_(expon), next_(nextNode) {
+//	}
+//};
+//
+//class LinkedList
+//{
+//public:
+//	PolyNode* head_;
+//	PolyNode* rear_;
+//	int cnt_;
+//
+//	LinkedList()
+//		: head_(new PolyNode()), rear_(head_), cnt_(0) {
+//	}
+//
+//	void appendTerm(int coef, int expon)
+//	{
+//		if (coef == 0)
+//		{
+//			return;
+//		}
+//
+//		PolyNode* newNode = new PolyNode(coef, expon);
+//		rear_->next_ = newNode;
+//		rear_ = newNode;
+//		cnt_++;
+//	}
+//
+//	void insertTerm(int coef, int expon)
+//	{
+//		if (coef == 0)
+//		{
+//			return;
+//		}
+//
+//		PolyNode* prev = head_;        // previous，前一个节点
+//		PolyNode* cur = head_->next_;  // current，当前节点
+//
+//		while (cur != nullptr && cur->expon_ > expon)
+//		{
+//			prev = cur;
+//			cur = cur->next_;
+//		}
+//
+//		if (cur != nullptr && cur->expon_ == expon)
+//		{
+//			cur->coef_ += coef;
+//
+//			if (cur->coef_ == 0)
+//			{
+//				prev->next_ = cur->next_;
+//
+//				if (rear_ == cur)
+//				{
+//					rear_ = prev;
+//				}
+//
+//				delete cur;
+//				cnt_--;
+//			}
+//		}
+//		else
+//		{
+//			PolyNode* newNode = new PolyNode(coef, expon, cur);
+//			prev->next_ = newNode;
+//
+//			if (cur == nullptr)
+//			{
+//				rear_ = newNode;
+//			}
+//
+//			cnt_++;
+//		}
+//	}
+//
+//	bool empty() const
+//	{
+//		return head_->next_ == nullptr;
+//	}
+//
+//	void print() const
+//	{
+//		if (empty())
+//		{
+//			cout << "0 0" << endl;
+//			return;
+//		}
+//
+//		PolyNode* cur = head_->next_;
+//		bool first = true;
+//
+//		while (cur != nullptr)
+//		{
+//			if (!first)
+//			{
+//				cout << " ";
+//			}
+//
+//			cout << cur->coef_ << " " << cur->expon_;
+//			first = false;
+//			cur = cur->next_;
+//		}
+//
+//		cout << endl;
+//	}
+//};
+//
+//void multiply(const LinkedList& L1, const LinkedList& L2, LinkedList& result)
+//{
+//	PolyNode* p1 = L1.head_->next_;
+//
+//	while (p1 != nullptr)
+//	{
+//		PolyNode* p2 = L2.head_->next_;
+//
+//		while (p2 != nullptr)
+//		{
+//			int newCoef = p1->coef_ * p2->coef_;
+//			int newExpon = p1->expon_ + p2->expon_;
+//
+//			result.insertTerm(newCoef, newExpon);
+//
+//			p2 = p2->next_;
+//		}
+//
+//		p1 = p1->next_;
+//	}
+//}
+//
+//void add(const LinkedList& L1, const LinkedList& L2, LinkedList& result)
+//{
+//	PolyNode* p1 = L1.head_->next_;
+//	PolyNode* p2 = L2.head_->next_;
+//
+//	while (p1 != nullptr && p2 != nullptr)
+//	{
+//		if (p1->expon_ > p2->expon_)
+//		{
+//			result.appendTerm(p1->coef_, p1->expon_);
+//			p1 = p1->next_;
+//		}
+//		else if (p1->expon_ < p2->expon_)
+//		{
+//			result.appendTerm(p2->coef_, p2->expon_);
+//			p2 = p2->next_;
+//		}
+//		else
+//		{
+//			int newCoef = p1->coef_ + p2->coef_;
+//
+//			if (newCoef != 0)
+//			{
+//				result.appendTerm(newCoef, p1->expon_);
+//			}
+//
+//			p1 = p1->next_;
+//			p2 = p2->next_;
+//		}
+//	}
+//
+//	while (p1 != nullptr)
+//	{
+//		result.appendTerm(p1->coef_, p1->expon_);
+//		p1 = p1->next_;
+//	}
+//	while (p2 != nullptr)
+//	{
+//		result.appendTerm(p2->coef_, p2->expon_);
+//		p2 = p2->next_;
+//	}
+//}
+//
+//int main()
+//{
+//	LinkedList L1;
+//	LinkedList L2;
+//
+//	int m, n;
+//
+//	cin >> m;
+//	for (int i = 0; i < m; i++)
+//	{
+//		int a, b;
+//		cin >> a >> b;
+//		L1.appendTerm(a, b);
+//	}
+//
+//	cin >> n;
+//	for (int i = 0; i < n; i++)
+//	{
+//		int a, b;
+//		cin >> a >> b;
+//		L2.appendTerm(a, b);
+//	}
+//
+//	LinkedList resultMul;
+//	LinkedList resultSum;
+//
+//	multiply(L1, L2, resultMul);
+//	add(L1, L2, resultSum);
+//
+//	resultMul.print();
+//	resultSum.print();
+//
+//	return 0;
+//}
+
+//#include <iostream>
+//#include <queue>
+//
+//
+//
+//struct TreeNode
+//{
+//	using ElementType = int;
+//
+//
+//	ElementType data_;
+//	TreeNode* left_;
+//	TreeNode* right_;
+//
+//	TreeNode(ElementType value = 0, TreeNode* leftChild = nullptr, TreeNode* rightChild = nullptr) : data_(value), left_(leftChild), right_(rightChild) {}
+//
+//};
+//
+//using BinaryTree = TreeNode*;
+//
+//	void preorderTraversal(BinaryTree root)
+//	{
+//		if (root == nullptr)
+//		{
+//			return;
+//		}
+//
+//		std::cout << root->data_<<" ";
+//		preorderTraversal(root->left_);
+//		preorderTraversal(root->right_);
+//	}
+//
+//	void inorderTraversal(BinaryTree root)
+//	{
+//		if (root == nullptr)
+//		{
+//			return;
+//		}
+//
+//		inorderTraversal(root->left_);
+//		std::cout << root->data_ << " ";
+//		inorderTraversal(root->right_);
+//	}
+//
+//	void postorderTraversal(BinaryTree root)
+//	{
+//		if (root == nullptr)
+//		{
+//			return;
+//		}
+//		postorderTraversal(root->left_);
+//		postorderTraversal(root->right_);
+//		std::cout << root->data_<<" ";
+//	}
+//
+//	void levelorderTraversal(BinaryTree BT)
+//	{
+//		std::queue<BinaryTree> Q;
+//		if (!BT) return;
+//
+//		Q.push(BT);
+//
+//		while (!Q.empty())
+//		{
+//			BinaryTree current = Q.front();
+//			Q.pop();
+//
+//			std::cout << current->data_ << ' ';
+//
+//			if (current->left_ != nullptr)
+//			{
+//				Q.push(current->left_);
+//			}
+//
+//			if (current->right_)
+//			{
+//				Q.push(current->right_);
+//			}
+//
+//
+//		}
+//	}
+//
+//
+//
+//int main()
+//{
+//	BinaryTree root = new TreeNode(1);
+//	root->left_ = new TreeNode(2);
+//	root->right_ = new TreeNode(3);
+//	root->left_->left_ = new TreeNode(4);
+//	root->left_->right_ = new TreeNode(5);
+//	root->right_->right_ = new TreeNode(6);
+//
+//	std::cout << "先序遍历" << "\n";
+//	preorderTraversal(root);
+//	std::cout << "\n";
+//
+//	std::cout << "中序遍历" << "\n";
+//	inorderTraversal(root);
+//	std::cout << "\n";
+//
+//	std::cout << "后序遍历" << "\n";
+//	postorderTraversal(root);
+//	std::cout << "\n";
+//
+//	std::cout << "层序遍历" << "\n";
+//	levelorderTraversal(root);
+//	std::cout << "\n";
+//
+//}
+
 #include <iostream>
+#include <vector>
+#include <string>
 
-using namespace std;
-
-struct PolyNode
+struct TreeNode
 {
-	int coef_;       // coefficient，系数
-	int expon_;      // exponent，指数
-	PolyNode* next_; // next，下一个节点
-
-	PolyNode(int coef = 0, int expon = 0, PolyNode* nextNode = nullptr)
-		: coef_(coef), expon_(expon), next_(nextNode) {
-	}
+	char data;
+	int left;
+	int right;
 };
 
-class LinkedList
+int convertChildIndex(const std::string& child)
 {
-public:
-	PolyNode* head_;
-	PolyNode* rear_;
-	int cnt_;
-
-	LinkedList()
-		: head_(new PolyNode()), rear_(head_), cnt_(0) {
-	}
-
-	void appendTerm(int coef, int expon)
+	if (child == "-")
 	{
-		if (coef == 0)
-		{
-			return;
-		}
-
-		PolyNode* newNode = new PolyNode(coef, expon);
-		rear_->next_ = newNode;
-		rear_ = newNode;
-		cnt_++;
+		return -1;
 	}
 
-	void insertTerm(int coef, int expon)
-	{
-		if (coef == 0)
-		{
-			return;
-		}
-
-		PolyNode* prev = head_;        // previous，前一个节点
-		PolyNode* cur = head_->next_;  // current，当前节点
-
-		while (cur != nullptr && cur->expon_ > expon)
-		{
-			prev = cur;
-			cur = cur->next_;
-		}
-
-		if (cur != nullptr && cur->expon_ == expon)
-		{
-			cur->coef_ += coef;
-
-			if (cur->coef_ == 0)
-			{
-				prev->next_ = cur->next_;
-
-				if (rear_ == cur)
-				{
-					rear_ = prev;
-				}
-
-				delete cur;
-				cnt_--;
-			}
-		}
-		else
-		{
-			PolyNode* newNode = new PolyNode(coef, expon, cur);
-			prev->next_ = newNode;
-
-			if (cur == nullptr)
-			{
-				rear_ = newNode;
-			}
-
-			cnt_++;
-		}
-	}
-
-	bool empty() const
-	{
-		return head_->next_ == nullptr;
-	}
-
-	void print() const
-	{
-		if (empty())
-		{
-			cout << "0 0" << endl;
-			return;
-		}
-
-		PolyNode* cur = head_->next_;
-		bool first = true;
-
-		while (cur != nullptr)
-		{
-			if (!first)
-			{
-				cout << " ";
-			}
-
-			cout << cur->coef_ << " " << cur->expon_;
-			first = false;
-			cur = cur->next_;
-		}
-
-		cout << endl;
-	}
-};
-
-void multiply(const LinkedList& L1, const LinkedList& L2, LinkedList& result)
-{
-	PolyNode* p1 = L1.head_->next_;
-
-	while (p1 != nullptr)
-	{
-		PolyNode* p2 = L2.head_->next_;
-
-		while (p2 != nullptr)
-		{
-			int newCoef = p1->coef_ * p2->coef_;
-			int newExpon = p1->expon_ + p2->expon_;
-
-			result.insertTerm(newCoef, newExpon);
-
-			p2 = p2->next_;
-		}
-
-		p1 = p1->next_;
-	}
+	return child[0] - '0';
 }
 
-void add(const LinkedList& L1, const LinkedList& L2, LinkedList& result)
+int buildTree(std::vector<TreeNode>& tree)
 {
-	PolyNode* p1 = L1.head_->next_;
-	PolyNode* p2 = L2.head_->next_;
+	int nodeCount;
+	std::cin >> nodeCount;
 
-	while (p1 != nullptr && p2 != nullptr)
+	if (nodeCount == 0)
 	{
-		if (p1->expon_ > p2->expon_)
-		{
-			result.appendTerm(p1->coef_, p1->expon_);
-			p1 = p1->next_;
-		}
-		else if (p1->expon_ < p2->expon_)
-		{
-			result.appendTerm(p2->coef_, p2->expon_);
-			p2 = p2->next_;
-		}
-		else
-		{
-			int newCoef = p1->coef_ + p2->coef_;
+		return -1;
+	}
 
-			if (newCoef != 0)
-			{
-				result.appendTerm(newCoef, p1->expon_);
-			}
+	tree.resize(nodeCount);
+	std::vector<bool> isChild(nodeCount, false);
 
-			p1 = p1->next_;
-			p2 = p2->next_;
+	for (int i = 0; i < nodeCount; ++i)
+	{
+		char data;
+		std::string leftChild;
+		std::string rightChild;
+
+		std::cin >> data >> leftChild >> rightChild;
+
+		tree[i].data = data;
+		tree[i].left = convertChildIndex(leftChild);
+		tree[i].right = convertChildIndex(rightChild);
+
+		if (tree[i].left != -1)
+		{
+			isChild[tree[i].left] = true;
+		}
+
+		if (tree[i].right != -1)
+		{
+			isChild[tree[i].right] = true;
 		}
 	}
 
-	while (p1 != nullptr)
+	for (int i = 0; i < nodeCount; ++i)
 	{
-		result.appendTerm(p1->coef_, p1->expon_);
-		p1 = p1->next_;
+		if (!isChild[i])
+		{
+			return i;
+		}
 	}
-	while (p2 != nullptr)
+
+	return -1;
+}
+
+bool isIsomorphic(const std::vector<TreeNode>& tree1,
+	int root1,
+	const std::vector<TreeNode>& tree2,
+	int root2)
+{
+	if (root1 == -1 && root2 == -1)
 	{
-		result.appendTerm(p2->coef_, p2->expon_);
-		p2 = p2->next_;
+		return true;
 	}
+
+	if (root1 == -1 || root2 == -1)
+	{
+		return false;
+	}
+
+	if (tree1[root1].data != tree2[root2].data)
+	{
+		return false;
+	}
+
+	bool noSwap =
+		isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].left) &&
+		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].right);
+
+	bool swap =
+		isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].right) &&
+		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].left);
+
+	return noSwap || swap;
 }
 
 int main()
 {
-	LinkedList L1;
-	LinkedList L2;
+	std::vector<TreeNode> tree1;
+	std::vector<TreeNode> tree2;
 
-	int m, n;
+	int root1 = buildTree(tree1);
+	int root2 = buildTree(tree2);
 
-	cin >> m;
-	for (int i = 0; i < m; i++)
+	if (isIsomorphic(tree1, root1, tree2, root2))
 	{
-		int a, b;
-		cin >> a >> b;
-		L1.appendTerm(a, b);
+		std::cout << "Yes\n";
 	}
-
-	cin >> n;
-	for (int i = 0; i < n; i++)
+	else
 	{
-		int a, b;
-		cin >> a >> b;
-		L2.appendTerm(a, b);
+		std::cout << "No\n";
 	}
-
-	LinkedList resultMul;
-	LinkedList resultSum;
-
-	multiply(L1, L2, resultMul);
-	add(L1, L2, resultSum);
-
-	resultMul.print();
-	resultSum.print();
 
 	return 0;
 }
