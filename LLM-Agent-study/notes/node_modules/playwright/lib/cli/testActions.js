@@ -42,6 +42,7 @@ const { startProfiling, stopProfiling } = require("playwright-core/lib/coreBundl
 async function runTests(args, opts) {
   await startProfiling();
   const cliOverrides = overridesFromOptions(opts);
+  cliOverrides.argv = process.argv;
   const config = await import_common.configLoader.loadConfigFromFile(opts.config, cliOverrides, opts.deps === false);
   const options = {
     locations: args.length ? args : void 0,
@@ -52,6 +53,7 @@ async function runTests(args, opts) {
     projectFilter: opts.project || void 0,
     passWithNoTests: !!opts.passWithNoTests,
     lastFailed: !!opts.lastFailed,
+    lastFailedFile: opts.lastFailedFile,
     testList: opts.testList ? import_path.default.resolve(process.cwd(), opts.testList) : void 0,
     testListInvert: opts.testListInvert ? import_path.default.resolve(process.cwd(), opts.testListInvert) : void 0,
     shardWeights: resolveShardWeightsOption()

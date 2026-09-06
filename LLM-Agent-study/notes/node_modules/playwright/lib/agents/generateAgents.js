@@ -29,6 +29,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var generateAgents_exports = {};
 __export(generateAgents_exports, {
   ClaudeGenerator: () => ClaudeGenerator,
+  CodexGenerator: () => CodexGenerator,
   CopilotGenerator: () => CopilotGenerator,
   OpencodeGenerator: () => OpencodeGenerator,
   VSCodeGenerator: () => VSCodeGenerator
@@ -40,6 +41,7 @@ var import_seed = require("../mcp/test/seed");
 var import_agentParser = require("./agentParser");
 const colors = require("playwright-core/lib/utilsBundle").colors;
 const yaml = require("playwright-core/lib/utilsBundle").yaml;
+const { tomlArray, tomlBasicString, tomlMultilineBasicString } = require("playwright-core/lib/coreBundle").iso;
 const { mkdirIfNeeded } = require("playwright-core/lib/coreBundle").utils;
 async function loadAgentSpecs() {
   const files = await import_fs.default.promises.readdir(__dirname);
@@ -86,6 +88,51 @@ class ClaudeGenerator {
     lines.push(yaml.stringify(header, { lineWidth: 1e5 }) + `---`);
     lines.push("");
     lines.push(agent.instructions);
+    return lines.join("\n");
+  }
+}
+class CodexGenerator {
+  static async init(fullConfig, projectName, prompts) {
+    await initRepo(fullConfig, projectName, {
+      promptsFolder: prompts ? ".codex/prompts" : void 0
+    });
+    const agents = await loadAgentSpecs();
+    await import_fs.default.promises.mkdir(".codex/agents", { recursive: true });
+    for (const agent of agents)
+      await writeFile(`.codex/agents/${CodexGenerator.codexName(agent)}.toml`, CodexGenerator.agentSpec(agent), "\u{1F916}", "agent definition");
+    initRepoDone();
+  }
+  // Codex's subagent registry rejects hyphenated identifiers at spawn time with
+  // `error=unknown agent_type '<name>'`. Codex's own documentation only shows
+  // snake_case names (`pr_explorer`, `reviewer`, `docs_researcher`, ...), see
+  // https://developers.openai.com/codex/subagents. Translate the shared agent
+  // name into snake_case so the filename and the `name` field stay in sync.
+  static codexName(agent) {
+    return agent.name.replace(/-/g, "_");
+  }
+  static agentSpec(agent) {
+    const mcpName = "playwright-test";
+    const enabledTools = [];
+    for (const tool of agent.tools) {
+      const [first, second] = tool.split("/");
+      if (second && first === mcpName)
+        enabledTools.push(second);
+    }
+    const sandboxMode = agent.tools.includes("edit") ? "workspace-write" : "read-only";
+    const mcpServer = process.platform === "win32" ? { command: "cmd", args: ["/c", "npx", "playwright", "run-test-mcp-server"] } : { command: "npx", args: ["playwright", "run-test-mcp-server"] };
+    const examples = agent.examples.length ? ` Examples: ${agent.examples.map((example) => `<example>${example}</example>`).join("")}` : "";
+    const lines = [];
+    lines.push(`name = ${tomlBasicString(CodexGenerator.codexName(agent))}`);
+    lines.push(`description = ${tomlBasicString(agent.description + examples)}`);
+    lines.push(`sandbox_mode = ${tomlBasicString(sandboxMode)}`);
+    lines.push(`developer_instructions = ${tomlMultilineBasicString(agent.instructions)}`);
+    lines.push("");
+    lines.push(`[mcp_servers.${mcpName}]`);
+    lines.push(`command = ${tomlBasicString(mcpServer.command)}`);
+    lines.push(`args = ${tomlArray(mcpServer.args)}`);
+    if (enabledTools.length)
+      lines.push(`enabled_tools = ${tomlArray(enabledTools)}`);
+    lines.push("");
     return lines.join("\n");
   }
 }
@@ -341,6 +388,7 @@ async function loadPrompt(file, params) {
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   ClaudeGenerator,
+  CodexGenerator,
   CopilotGenerator,
   OpencodeGenerator,
   VSCodeGenerator

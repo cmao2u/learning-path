@@ -3142,121 +3142,439 @@ print*/
 //
 //}
 
-#include <iostream>
-#include <vector>
-#include <string>
+//#include <iostream>
+//#include <vector>
+//#include <string>
+//
+//struct TreeNode
+//{
+//	char data;
+//	int left;
+//	int right;
+//};
+//
+//int convertChildIndex(const std::string& child)
+//{
+//	if (child == "-")
+//	{
+//		return -1;
+//	}
+//
+//	return child[0] - '0';
+//}
+//
+//int buildTree(std::vector<TreeNode>& tree)
+//{
+//	int nodeCount;
+//	std::cin >> nodeCount;
+//
+//	if (nodeCount == 0)
+//	{
+//		return -1;
+//	}
+//
+//	tree.resize(nodeCount);
+//	std::vector<bool> isChild(nodeCount, false);
+//
+//	for (int i = 0; i < nodeCount; ++i)
+//	{
+//		char data;
+//		std::string leftChild;
+//		std::string rightChild;
+//
+//		std::cin >> data >> leftChild >> rightChild;
+//
+//		tree[i].data = data;
+//		tree[i].left = convertChildIndex(leftChild);
+//		tree[i].right = convertChildIndex(rightChild);
+//
+//		if (tree[i].left != -1)
+//		{
+//			isChild[tree[i].left] = true;
+//		}
+//
+//		if (tree[i].right != -1)
+//		{
+//			isChild[tree[i].right] = true;
+//		}
+//	}
+//
+//	for (int i = 0; i < nodeCount; ++i)
+//	{
+//		if (!isChild[i])
+//		{
+//			return i;
+//		}
+//	}
+//
+//	return -1;
+//}
+//
+//bool isIsomorphic(const std::vector<TreeNode>& tree1,
+//	int root1,
+//	const std::vector<TreeNode>& tree2,
+//	int root2)
+//{
+//	if (root1 == -1 && root2 == -1)
+//	{
+//		return true;
+//	}
+//
+//	if (root1 == -1 || root2 == -1)
+//	{
+//		return false;
+//	}
+//
+//	if (tree1[root1].data != tree2[root2].data)
+//	{
+//		return false;
+//	}
+//
+//	bool noSwap =
+//		isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].left) &&
+//		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].right);
+//
+//	bool swap =
+//		isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].right) &&
+//		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].left);
+//
+//	return noSwap || swap;
+//}
+//
+//int main()
+//{
+//	std::vector<TreeNode> tree1;
+//	std::vector<TreeNode> tree2;
+//
+//	int root1 = buildTree(tree1);
+//	int root2 = buildTree(tree2);
+//
+//	if (isIsomorphic(tree1, root1, tree2, root2))
+//	{
+//		std::cout << "Yes\n";
+//	}
+//	else
+//	{
+//		std::cout << "No\n";
+//	}
+//
+//	return 0;
+//}
 
-struct TreeNode
+//#include <iostream>
+//#include <vector>
+//#include <queue>
+//#include <string>
+//
+//struct TreeNode
+//{
+//	int left;
+//	int right;
+//
+//};
+//
+//int parseChild(const std::string& child)
+//{
+//	if (child == "-")
+//	{
+//		return -1;
+//	}
+//
+//	return std::stoi(child);
+//}
+//
+//int main()
+//{
+//	int n;
+//	std::cin >> n;
+//
+//	std::vector<TreeNode> tree(n);
+//	std::vector<bool> isChild(n, false);
+//
+//	for (size_t i = 0; i < n; i++)
+//	{
+//		std::string leftChild;
+//		std::string rightChild;
+//
+//		std::cin >> leftChild >> rightChild;
+//
+//		tree[i].left = parseChild(leftChild);
+//		tree[i].right = parseChild(rightChild);
+//
+//		if (tree[i].left != -1)
+//		{
+//			isChild[tree[i].left] = true;
+//		}
+//
+//		if (tree[i].right != -1)
+//		{
+//			isChild[tree[i].right] = true;
+//		}
+//	}
+//	int root = -1;
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (!isChild[i])
+//		{
+//			root = i;
+//			break;
+//		}
+//	}
+//
+//	std::queue<int> q;
+//	std::vector<int> leaves;
+//
+//	q.push(root);
+//
+//	while (!q.empty())
+//	{
+//		int current = q.front();
+//		q.pop();
+//
+//		if (tree[current].left == -1 && tree[current].right == -1)
+//		{
+//			leaves.push_back(current);
+//		}
+//
+//		if (tree[current].left != -1)
+//		{
+//			q.push(tree[current].left);
+//		}
+//
+//		if (tree[current].right != -1)
+//		{
+//			q.push(tree[current].right);
+//		}
+//	}
+//
+//	for (std::size_t i = 0; i < leaves.size(); i++)
+//	{
+//		if (i > 0)
+//		{
+//			std::cout << ' ';
+//		}
+//
+//		std::cout << leaves[i];
+//	}
+//	std::cout << '\n';
+//
+//	return 0;
+//}
+#include <iostream>
+#include <limits>
+#include <string>
+#include <vector>
+
+struct Graph
 {
-	char data;
-	int left;
-	int right;
+	static constexpr int vertexCount = 7;
+	static constexpr int inf = 1'000'000;
+
+	std::vector<char> vertices{ 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
+	std::vector<std::vector<int>> weight;
+
+	Graph() : weight(vertexCount, std::vector<int>(vertexCount, inf))
+	{
+		for (int i = 0; i < vertexCount; ++i)
+		{
+			weight[i][i] = 0;
+		}
+	}
+
+	void addEdge(int from, int to, int distance)
+	{
+		weight[from][to] = distance;
+	}
 };
 
-int convertChildIndex(const std::string& child)
+Graph createGraph()
 {
-	if (child == "-")
-	{
-		return -1;
-	}
+	Graph graph;
 
-	return child[0] - '0';
+	graph.addEdge(0, 1, 15);
+	graph.addEdge(0, 2, 2);
+	graph.addEdge(0, 3, 12);
+	graph.addEdge(1, 4, 6);
+	graph.addEdge(2, 4, 8);
+	graph.addEdge(2, 5, 4);
+	graph.addEdge(5, 3, 5);
+	graph.addEdge(5, 6, 10);
+	graph.addEdge(3, 6, 2);
+	graph.addEdge(4, 6, 9);
+	graph.addEdge(6, 1, 4);
+
+	return graph;
 }
 
-int buildTree(std::vector<TreeNode>& tree)
+void displayGraph(const Graph& graph)
 {
-	int nodeCount;
-	std::cin >> nodeCount;
-
-	if (nodeCount == 0)
+	std::cout << "邻接矩阵（INF 表示无直接道路）：\n    ";
+	for (char vertex : graph.vertices)
 	{
-		return -1;
+		std::cout << vertex << "\t";
 	}
+	std::cout << '\n';
 
-	tree.resize(nodeCount);
-	std::vector<bool> isChild(nodeCount, false);
-
-	for (int i = 0; i < nodeCount; ++i)
+	for (int i = 0; i < Graph::vertexCount; ++i)
 	{
-		char data;
-		std::string leftChild;
-		std::string rightChild;
-
-		std::cin >> data >> leftChild >> rightChild;
-
-		tree[i].data = data;
-		tree[i].left = convertChildIndex(leftChild);
-		tree[i].right = convertChildIndex(rightChild);
-
-		if (tree[i].left != -1)
+		std::cout << graph.vertices[i] << "   ";
+		for (int j = 0; j < Graph::vertexCount; ++j)
 		{
-			isChild[tree[i].left] = true;
+			if (graph.weight[i][j] == Graph::inf)
+			{
+				std::cout << "INF\t";
+			}
+			else
+			{
+				std::cout << graph.weight[i][j] << "\t";
+			}
 		}
-
-		if (tree[i].right != -1)
-		{
-			isChild[tree[i].right] = true;
-		}
+		std::cout << '\n';
 	}
-
-	for (int i = 0; i < nodeCount; ++i)
-	{
-		if (!isChild[i])
-		{
-			return i;
-		}
-	}
-
-	return -1;
 }
 
-bool isIsomorphic(const std::vector<TreeNode>& tree1,
-	int root1,
-	const std::vector<TreeNode>& tree2,
-	int root2)
+void dijkstra(const Graph& graph,
+	int source,
+	std::vector<int>& distance,
+	std::vector<int>& previous)
 {
-	if (root1 == -1 && root2 == -1)
+	const int n = Graph::vertexCount;
+	std::vector<bool> visited(n, false);
+	distance.assign(n, Graph::inf);
+	previous.assign(n, -1);
+	distance[source] = 0;
+
+	for (int count = 0; count < n; ++count)
 	{
-		return true;
+		int current = -1;
+		int minimum = Graph::inf;
+
+		for (int i = 0; i < n; ++i)
+		{
+			if (!visited[i] && distance[i] < minimum)
+			{
+				minimum = distance[i];
+				current = i;
+			}
+		}
+
+		if (current == -1)
+		{
+			break;
+		}
+
+		visited[current] = true;
+
+		for (int next = 0; next < n; ++next)
+		{
+			if (visited[next] || graph.weight[current][next] == Graph::inf)
+			{
+				continue;
+			}
+
+			const int newDistance =
+				distance[current] + graph.weight[current][next];
+
+			if (newDistance < distance[next])
+			{
+				distance[next] = newDistance;
+				previous[next] = current;
+			}
+		}
+	}
+}
+
+std::vector<int> buildPath(int source,
+	int target,
+	const std::vector<int>& previous)
+{
+	std::vector<int> path;
+
+	for (int current = target; current != -1; current = previous[current])
+	{
+		path.push_back(current);
 	}
 
-	if (root1 == -1 || root2 == -1)
+	std::vector<int> result;
+	for (auto iterator = path.rbegin(); iterator != path.rend(); ++iterator)
 	{
-		return false;
+		result.push_back(*iterator);
 	}
 
-	if (tree1[root1].data != tree2[root2].data)
+	if (result.empty() || result.front() != source)
 	{
-		return false;
+		return {};
 	}
 
-	bool noSwap =
-		isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].left) &&
-		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].right);
+	return result;
+}
 
-	bool swap =
-		isIsomorphic(tree1, tree1[root1].left, tree2, tree2[root2].right) &&
-		isIsomorphic(tree1, tree1[root1].right, tree2, tree2[root2].left);
+void printShortestPaths(const Graph& graph,
+	int source,
+	const std::vector<int>& distance,
+	const std::vector<int>& previous)
+{
+	std::cout << "\n从 " << graph.vertices[source]
+		<< " 出发的最短送货路线：\n";
 
-	return noSwap || swap;
+	for (int target = 0; target < Graph::vertexCount; ++target)
+	{
+		if (target == source)
+		{
+			continue;
+		}
+
+		const std::vector<int> path = buildPath(source, target, previous);
+		if (path.empty())
+		{
+			std::cout << graph.vertices[source] << " -> "
+				<< graph.vertices[target] << "：不可达\n";
+			continue;
+		}
+
+		for (std::size_t i = 0; i < path.size(); ++i)
+		{
+			std::cout << graph.vertices[path[i]];
+			if (i + 1 != path.size())
+			{
+				std::cout << " -> ";
+			}
+		}
+		std::cout << "，最短距离：" << distance[target] << '\n';
+	}
 }
 
 int main()
 {
-	std::vector<TreeNode> tree1;
-	std::vector<TreeNode> tree2;
+	const Graph graph = createGraph();
+	displayGraph(graph);
 
-	int root1 = buildTree(tree1);
-	int root2 = buildTree(tree2);
+	std::vector<int> distance;
+	std::vector<int> previous;
+	dijkstra(graph, 0, distance, previous);
 
-	if (isIsomorphic(tree1, root1, tree2, root2))
+	std::cout << "\nD[] = [";
+	for (int i = 0; i < Graph::vertexCount; ++i)
 	{
-		std::cout << "Yes\n";
+		std::cout << distance[i];
+		if (i + 1 != Graph::vertexCount)
+		{
+			std::cout << ", ";
+		}
 	}
-	else
-	{
-		std::cout << "No\n";
-	}
+	std::cout << "]\n";
 
+	std::cout << "P[] = [";
+	for (int i = 0; i < Graph::vertexCount; ++i)
+	{
+		std::cout << previous[i];
+		if (i + 1 != Graph::vertexCount)
+		{
+			std::cout << ", ";
+		}
+	}
+	std::cout << "]\n";
+
+	printShortestPaths(graph, 0, distance, previous);
 	return 0;
 }

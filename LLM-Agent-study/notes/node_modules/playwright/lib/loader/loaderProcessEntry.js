@@ -24,7 +24,7 @@ var LoaderMain = class extends import_common.ProcessRunner {
     return { fileSuite: fileSuite._deepSerialize(), testErrors };
   }
   async getCompilationCacheFromLoader() {
-    await import_common.esm.incorporateCompilationCache();
+    await import_common.transform.incorporateCompilationCache();
     return import_common.cc.serializeCompilationCache();
   }
 };

@@ -89,6 +89,7 @@ class TestContext {
   async _enqueue(fn) {
     const next = this._testOpQueue.then(fn);
     this._testOpQueue = next.then(() => {
+    }, () => {
     });
     return await next;
   }
@@ -199,7 +200,8 @@ class TestContext {
         releaseStdio();
       }
     };
-    const abortPromise = signal ? signalToPromise(signal).promise.then(() => "interrupted") : new Promise(() => {
+    const abort = signal ? signalToPromise(signal) : void 0;
+    const abortPromise = abort ? abort.promise.then(() => "interrupted") : new Promise(() => {
     });
     try {
       const reporter = new MCPListReporter({ configDir, screen, includeTestId: true });
@@ -225,6 +227,8 @@ class TestContext {
       testRunnerAndScreen.output.push(String(e));
       await cleanup();
       return { output: testRunnerAndScreen.output.join("\n"), status };
+    } finally {
+      abort?.dispose();
     }
     await cleanup();
     return { output: testRunnerAndScreen.output.join("\n"), status };
