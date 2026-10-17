@@ -8,6 +8,7 @@ public class Practice_Switch {
         System.out.println("请输入b:");
         double b = sc.nextDouble();
         String operator ="*";
+
         double result = switch(operator)
         {
             case "+" -> a+b;

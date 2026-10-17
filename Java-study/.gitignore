@@ -1,0 +1,10 @@
+# Java compiled files
+*.class
+
+# Local build caches
+.gradle/
+
+# Local IntelliJ IDEA state
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
