@@ -1,0 +1,279 @@
+<html>
+<head>
+<title>Installing the TextPad Editor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="style1.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h1><a name="#top"></a>Installing the TextPad Editor</h1>
+<p><b>TextPad</b> is a registered trademark of <i>Helios Software Solutions</i>. 
+  Their web site is <a href="http://www.textpad.com" target="new1">www.textpad.com</a>.</p>
+
+<p>Please review the <a href="helios-eula.html">EULA</a> for this software before installing.</p>
+
+<p>Helios has generously permitted us to distribute an unregistered evaluation 
+  copy of <i>TextPad 4</i>. I personally use it as my editor of choice for assembly 
+  language because it can easily customized. I particularly like its built-in 
+  syntax highlighting feature. </p>
+<p>In this short tutorial, we will show you how to add commands to the <i>Tools</i> 
+  menu in TextPad, so you can easily assemble, link, and debug your assembly language 
+  programs. </p>
+<p><b>Step 1:</b> Run the <b>TextPad4.exe</b> program located in the \TextPad 
+  directory of this CDROM. This program will install the TextPad 4 text editor.</p>
+<p><b>Step 2:</b> Install the appropriate Tool Menu commands. It would be helpful 
+  at this point to know what types of assembly language programs you will be writing. 
+  Most of the programs in the first 11 chapters of the book are 32-bit Protected 
+  mode programs. If you're taking a college course, ask your professor what types 
+  of programs you will be writing:</p>
+<ul>
+  <li>If you're going to be writing 32-bit Protected mode programs, <a href="#32-bit">click 
+    here</a>.</li>
+  <li>If you're going to be writing 16-bit Real-mode programs, <a href="#16-bit">click 
+    here</a>.</li>
+</ul>
+<p><b>Step 3:</b> <a href="CreateDocClass.htm">Create a MASM document class in 
+  TextPad.</a> This will enable you to customize colors, add syntax highlighting, 
+  and configure other options.</p>
+<p>You're done!</p>
+<hr>
+<p>&nbsp; </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<h2><a name="16-bit"></a>16-Bit Real-Mode Programs</h2>
+<h3>Step 1: <b><font color="#3333FF">Build 16-bit MASM</font></b></h3>
+<ul>
+  <li>Select <i>Preferences</i> from the Configure menu.</li>
+  <li>Select <i>Tools</i> in the left hand pane, and click the <i>Add</i> button. 
+  </li>
+  <li>Select &quot;DOS command...&quot; from the drop-down list. When the popup 
+    dialog appears, enter the following: 
+    <blockquote> 
+      <pre><b>C:\Masm615\make16.bat $BaseName</b><b> </b></pre>
+    </blockquote>
+  </li>
+  <li>Click the <i>Apply</i> button.</li>
+  <li>Next, you will rename the command to <b>Build 16-bit MASM</b>. To do this, 
+    click once on the name, wait a second, and click again. When it turns blue, 
+    retype the command's name and press <i>Enter</i>. </li>
+  <li>Click <i>OK</i> to close the Preferences window. </li>
+  <li>Select the <b>Tools</b> menu, and find <b>Build 16-bit MASM</b> command 
+    listed there. In the right-hand pane, enter the following into the Initial 
+    folder entry: 
+    <blockquote>
+      <pre>$FileDir</pre>
+    </blockquote>
+  </li>
+</ul>
+<p>Following is a sample screen snapshot. (Optionally, you can check the <i>Capture 
+  output</i> option to redirect the assembler's output messages to a TextPad editor 
+  window.) </p>
+<blockquote> 
+  <blockquote>
+    <p><img src="textpad1.gif" width="684" height="429"></p>
+  </blockquote>
+</blockquote>
+<p>(The <i>Regular expression to match output</i> entry is explained fairly well 
+  in the TextPad help system. It makes it possible to click on an Assembler error 
+  message and have TextPad jump to the appropriate line in your source program.)</p>
+<ul>
+  <li>Click OK to save your changes.</li>
+</ul>
+<h3>Step 2: Run ASM Prog</h3>
+<ul>
+  <li>As you have already created one command in the Tools menu, we can speed 
+    things up a bit. </li>
+  <li>Select <i>Preferences</i> from the <i>Configure</i> menu</li>
+  <li>Select <i>Tools</i> in the left hand pane, and click the <i>Add</i> button 
+    on the right side</li>
+  <li>Select <i>DOS command...</i> from the drop-down list. When the popup dialog 
+    appears, enter the following:</li>
+</ul>
+<blockquote> 
+  <pre> <b> $BaseName</b><b> </b></pre>
+</blockquote>
+<ul>
+  <li>Click the <i>Apply</i> button. </li>
+  <li>Next, rename the command to <b>Run ASM Prog</b>. To do this, click once 
+    on the name, wait a second, and click again. When it turns blue, retype the 
+    command's name and press <i>Enter</i>. Click <i>Apply</i><b>.</b> </li>
+  <li>Click on the &quot;+&quot; next to <i>Tools</i> in the left-hand pane. When 
+    the list expands, select <i>Run ASM Prog</i>. In the right hand pane of the 
+    dialog, remove the check mark next to <i>Capture output</i>. </li>
+  <blockquote> 
+    <p><img src="textpad12.gif" width="684" height="424"> </p>
+  </blockquote>
+  <li>Click <i>OK</i> to close the dialog and save your changes.</li>
+</ul>
+<table width="70%" border="1" cellspacing="0" cellpadding="3">
+  <tr>
+    <td>The two commands you created will always act on the program in the currently 
+      selected window. Normally, you execute the <i>Build 16-bit MASM</i> command, 
+      and then if no errors result, you execute the <i>Run 16-bit MASM</i> command.</td>
+  </tr>
+</table>
+<h3>Step 3: Debug 16-bit MASM</h3>
+<ul>
+  <li>Select <i>Preferences</i> from the <i>Configure</i> menu.</li>
+  <li>Select <i>Tools</i> in the left hand pane, and click the <i>Add</i> button 
+    on the right side.</li>
+  <li>Select <i>DOS command...</i> from the drop-down list. When the popup dialog 
+    appears, enter the following:</li>
+</ul>
+<blockquote> 
+  <pre> <b> C:\Masm615\runCV.bat $BaseName</b><b> </b></pre>
+  <table width="80%" border="1" cellspacing="0" cellpadding="3">
+    <tr> 
+      <td>We assume that you selected <b>C:\Masm615</b> as your default install 
+        directory for the Microsoft Assembler. If that is not the case, substitute 
+        your own directory name every time you see us refer to C:\Masm615 in this 
+        tutorial.</td>
+    </tr>
+  </table>
+  
+</blockquote>
+<ul>
+  <li>Select the <i>Close DOS window on exit</i> option</li>
+  <li>Click the <i>Apply</i> button. </li>
+  <li>Next, you will rename the command to<b> Debug 16-bit MASM.</b> To do this, 
+    click once on the name, wait a second, and click again. When it turns blue, 
+    retype the command's name and press <i>Enter</i>. Click <i>Apply</i><b>.</b> 
+    <blockquote>
+      <p><img src="textpad11.gif" width="684" height="424"> </p>
+    </blockquote>
+  </li>
+</ul>
+<p><b>You're done!</b></p>
+<p>If you need more information, TextPad has extensive online help that shows 
+  how to edit the Tools menu. If you're making these modifications for multiple 
+  users (as in a laboratory), you can use RegEdit to save the registry subtree 
+  to a REG file. Look for the following entry:</p>
+<p>HKEY_CURRENT_USER &gt; SOFTWARE &gt; Helios &gt; TextPad 4 &gt; Tools</p>
+<p><a href="#top">Return to Top</a></p>
+<p>&nbsp;</p>
+<hr>
+<h2><a name="32-bit"></a>32-Bit Protected Mode Programs</h2>
+<h3>Step 1: <b><font color="#3333FF">Build 32-bit MASM</font></b></h3>
+<ul>
+  <li>Select <i>Preferences</i> from the Configure menu.</li>
+  <li>Select <i>Tools</i> in the left hand pane, and click the <i>Add</i> button. 
+  </li>
+  <li>Select &quot;DOS command...&quot; from the drop-down list. When the popup 
+    dialog appears, enter the following: 
+    <blockquote> 
+      <pre><b>make32.bat $BaseName</b><b> </b></pre>
+    </blockquote>
+  </li>
+  <li>Click the <i>Apply</i> button.</li>
+  <li>Next, rename the command to <b>Build 32-bit MASM</b>. To do this, click 
+    once on the name, wait a second, and click again. When it turns blue, retype 
+    the command's name and press <i>Enter</i>. </li>
+  <li>Click <i>OK</i> to close the Preferences window. </li>
+  <li>Select the <b>Tools</b> menu, and find <b>Build 32-bit MASM</b> command 
+    listed there. In the right-hand pane, enter the following into the Initial 
+    folder entry: 
+    <blockquote> 
+      <pre>$FileDir</pre>
+    </blockquote>
+  </li>
+</ul>
+<p>Following is a sample screen snapshot. (Optionally, you can check the <i>Capture 
+  output</i> option to redirect the assembler's output messages to a TextPad editor 
+  window.) </p>
+<blockquote> 
+  <blockquote> 
+    <p><img src="textpad10.gif" width="684" height="424"></p>
+  </blockquote>
+</blockquote>
+<p>(The <i>Regular expression to match output</i> entry is explained fairly well 
+  in the TextPad help system. It makes it possible to click on an Assembler error 
+  message and have TextPad jump to the appropriate line in your source program.)</p>
+<ul>
+  <li>Click OK to save your changes.</li>
+</ul>
+<h3>Step 2: Run ASM Prog</h3>
+<ul>
+  <li>As you have already created one command in the Tools menu, we can speed 
+    things up a bit. </li>
+  <li>Select <i>Preferences</i> from the <i>Configure</i> menu</li>
+  <li>Select <i>Tools</i> in the left hand pane, and click the <i>Add</i> button 
+    on the right side</li>
+  <li>Select <i>DOS command...</i> from the drop-down list. When the popup dialog 
+    appears, enter the following:</li>
+</ul>
+<blockquote> 
+  <pre> <b> $BaseName</b><b> </b></pre>
+</blockquote>
+<ul>
+  <li>Click the <i>Apply</i> button. </li>
+  <li>Next, you will rename the command to <b>Run ASM Prog</b>. To do this, click 
+    once on the name, wait a second, and click again. When it turns blue, retype 
+    the command's name and press <i>Enter</i>. Click <i>Apply</i><b>.</b> </li>
+  <li>Click on the &quot;+&quot; next to <i>Tools</i> in the left-hand pane. When 
+    the list expands, select <i>Run ASM Prog</i>. In the right hand pane of the 
+    dialog, remove the check mark next to <i>Capture output</i>. </li>
+  <blockquote> 
+    <p> <img src="textpad2.gif" width="684" height="429"></p>
+  </blockquote>
+  <li>Click <i>OK</i> to close the dialog and save your changes.</li>
+</ul>
+<table width="70%" border="1" cellspacing="0" cellpadding="3">
+  <tr> 
+    <td>The two commands you created will always act on the program in the currently 
+      selected window. Normally, you execute the <i>Build 32-bit MASM</i> command, 
+      and then if no errors result, you execute the <i>Run 32-bit MASM</i> command.</td>
+  </tr>
+</table>
+<h3>Step 3: Debug 32-bit MASM</h3>
+<p>This command may only be used if you have <b>Microsoft Visual C++</b> installed 
+  on your computer. The 32-bit debugger is named MSDEV.EXE (that name may change 
+  in the future).</p>
+<ul>
+  <li>Select <i>Preferences</i> from the <i>Configure</i> menu.</li>
+  <li>Select <i>Tools</i> in the left hand pane, and click the <i>Add</i> button 
+    on the right side.</li>
+  <li>Select <i>DOS command...</i> from the drop-down list. When the popup dialog 
+    appears, enter the following:</li>
+</ul>
+<blockquote> 
+  <pre> <b> C:\Masm615\runCV.bat $BaseName</b><b> </b></pre>
+</blockquote>
+<ul>
+  <li>Select the <i>Close DOS window on exit</i> option</li>
+  <li>Click the <i>Apply</i> button. </li>
+  <li>Next, you will rename the command to <b>Debug 32-bit MASM</b>. To do this, 
+    click once on the name, wait a second, and click again. When it turns blue, 
+    retype the command's name and press <i>Enter</i>. Click <i>Apply</i><b>.</b> 
+  </li>
+  <blockquote>
+    <p><img src="textpad13.gif" width="684" height="424"> </p>
+  </blockquote>
+  <li>You're done!</li>
+</ul>
+<p>If you need more information, TextPad has extensive online help that shows 
+  how to edit the Tools menu. If you're making these modifications for multiple 
+  users (as in a laboratory), you can use RegEdit to save the registry subtree 
+  to a REG file. Look for the following entry:</p>
+<p>HKEY_CURRENT_USER &gt; SOFTWARE &gt; Helios &gt; TextPad 4 &gt; Tools</p>
+<p><a href="#top">Return to Top</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p></p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+</body>
+</html>
